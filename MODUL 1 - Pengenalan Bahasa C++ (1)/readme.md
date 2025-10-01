@@ -262,7 +262,7 @@ int main() {
 
 ```
 ### Output:
-
+<img width="506" height="330" alt="Image" src="https://github.com/user-attachments/assets/76789aec-e9bf-4cb6-a24c-ca0cdcecd4fc" />
 
 Program di atas bertujuan untuk mengubah angka dari 0 hingga 100 menjadi kata dalam bahasa Indonesia. Program ini menggunakan tiga array satuan, belasan, dan puluhan untuk menyimpan representasi kata dari angka 0–9, 10–19, dan kelipatan puluhan. Pengguna diminta memasukkan sebuah angka n, lalu program memeriksa nilainya: jika kurang dari 10, ditampilkan dari array satuan; jika antara 10–19, ditampilkan dari array belasan; jika 20–99, ditampilkan dari array puluhan dan, jika ada sisa, ditambahkan kata dari array satuan; jika 100, ditampilkan "seratus"; selain itu, program menampilkan pesan "di luar jangkauan".
 
