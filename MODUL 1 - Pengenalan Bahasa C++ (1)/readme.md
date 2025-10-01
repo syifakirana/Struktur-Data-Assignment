@@ -226,7 +226,7 @@ int main() {
 Program di atas bertujuan untuk memperlihatkan implementasi operator aritmatika dasar dalam C++. Pengguna diminta untuk memasukkan dua bilangan bertipe float yang disimpan dalam variabel a dan b. Selanjutnya, program akan menampilkan hasil dari operasi aritmatika seperti penjumlahan, pengurangan, perkalian, dan pembagian antara kedua bilangan tersebut. Program ini berfungsi sebagai latihan dasar untuk memahami cara kerja operator aritmatika dalam C++ serta bagaimana hasil perhitungannya ditampilkan sebagai keluaran menggunakan cout.
 
 ### Full Code Screenshot:
-
+<img width="1913" height="1028" alt="Image" src="https://github.com/user-attachments/assets/d9656c1b-a2c0-4f81-91c5-ceec7868c327" />
 
 
 ### 2. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100. Contoh: 79 : tujuh puluh sembilan
