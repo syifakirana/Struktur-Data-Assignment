@@ -289,7 +289,7 @@ Program di atas bertujuan untuk mengubah angka dari 0 hingga 100 menjadi kata da
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f1096193-6b67-4107-89cc-c71d1c0962a5" />
 
 ### 3. Buatlah program yang dapat memberikan input dan output sbb.
-
+<img width="116" height="138" alt="Image" src="https://github.com/user-attachments/assets/e0581782-5025-4c82-84b3-aaf78da073c9" />
 
 
 ```cpp
