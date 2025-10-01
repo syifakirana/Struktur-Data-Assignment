@@ -221,7 +221,7 @@ int main() {
 }
 ```
 ### Output:
-
+<img width="513" height="306" alt="Image" src="https://github.com/user-attachments/assets/820d5bb0-69d5-4c2d-9600-63f8594d1b98" />
 
 Program di atas bertujuan untuk memperlihatkan implementasi operator aritmatika dasar dalam C++. Pengguna diminta untuk memasukkan dua bilangan bertipe float yang disimpan dalam variabel a dan b. Selanjutnya, program akan menampilkan hasil dari operasi aritmatika seperti penjumlahan, pengurangan, perkalian, dan pembagian antara kedua bilangan tersebut. Program ini berfungsi sebagai latihan dasar untuk memahami cara kerja operator aritmatika dalam C++ serta bagaimana hasil perhitungannya ditampilkan sebagai keluaran menggunakan cout.
 
