@@ -315,7 +315,7 @@ int main() {
 
 ```
 ### Output:
-
+<img width="580" height="447" alt="Image" src="https://github.com/user-attachments/assets/27b301a3-0129-4a4b-a5d9-e5873750104f" />
 
 Program di atas bertujuan untuk mencetak pola segitiga angka dengan simbol bintang di tengah berdasarkan input angka n. Program meminta pengguna memasukkan sebuah angka n, kemudian menggunakan loop for untuk mencetak setiap baris dari atas ke bawah. Pada setiap baris: pertama dicetak spasi agar pola rata tengah, lalu deretan angka menurun dari i ke 1 di sebelah kiri, diikuti simbol *, lalu deretan angka menaik dari 1 ke i di sebelah kanan. Setelah semua baris dicetak, program menambahkan baris terakhir yang hanya berisi spasi dan satu simbol * di tengah.
 
