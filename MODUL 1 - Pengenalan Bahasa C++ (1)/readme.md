@@ -3,25 +3,25 @@
 ---
 
 ## Dasar Teori
-1. Variabel dan Tipe Data
+1. Variabel dan Tipe Data  
 Variabel merupakan wadah untuk menyimpan data dalam program. Setiap variabel memiliki tipe data tertentu yang menentukan jenis nilai yang dapat disimpan, seperti int untuk bilangan bulat, float untuk bilangan desimal, dan string untuk teks. Pemilihan tipe data yang tepat penting agar program dapat berjalan secara efisien dan meminimalisir kesalahan.
 
-2. Input dan Output
+2. Input dan Output  
 Input adalah proses memasukkan data ke dalam program, biasanya menggunakan fungsi cin pada C++. Output merupakan proses menampilkan data ke layar, contohnya menggunakan cout. Dengan mekanisme input dan output, program dapat berinteraksi secara langsung dengan pengguna.
 
-3. Operator Aritmatika
+3. Operator Aritmatika  
 Operator aritmatika digunakan untuk melakukan perhitungan matematis, seperti penjumlahan (+), pengurangan (-), perkalian (*), dan pembagian (/). Operator ini dapat diterapkan pada berbagai tipe data numerik untuk menghasilkan nilai baru.
 
-4. Operator Perbandingan
+4. Operator Perbandingan  
 Operator perbandingan digunakan untuk membandingkan dua nilai dan menghasilkan hasil berupa nilai logika true atau false. Contohnya == (sama dengan), != (tidak sama dengan), < (lebih kecil), > (lebih besar), <= (lebih kecil atau sama dengan), dan >= (lebih besar atau sama dengan). Operator ini sering digunakan dalam percabangan dan perulangan untuk pengambilan keputusan.
 
-5. Percabangan (Conditional Statement)
+5. Percabangan (Conditional Statement)  
 Percabangan memungkinkan program memilih jalannya eksekusi berdasarkan kondisi tertentu. Struktur if, else if, dan else memungkinkan kode tertentu dijalankan hanya jika kondisi terpenuhi, sehingga program dapat berjalan secara fleksibel dan responsif terhadap input pengguna.
 
-6. Perulangan (Loop)
+6. Perulangan (Loop)  
 Perulangan digunakan untuk mengeksekusi sekelompok perintah secara berulang hingga kondisi tertentu terpenuhi. Contohnya for, while, dan do-while. Penggunaan perulangan membantu mengurangi penulisan kode berulang dan mempermudah pengolahan data dalam jumlah besar.
 
-7. Array
+7. Array  
 Array adalah struktur data yang menyimpan sekumpulan nilai dengan tipe yang sama dalam satu variabel. Nilai-nilai dalam array dapat diakses melalui indeksnya. Array mempermudah pengelolaan data yang banyak, sehingga program dapat dijalankan dengan lebih efisien dan terstruktur.
 
 ---
