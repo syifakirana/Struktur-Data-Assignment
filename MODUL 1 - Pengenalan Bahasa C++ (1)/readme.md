@@ -21,7 +21,7 @@ Percabangan memungkinkan program memilih jalannya eksekusi berdasarkan kondisi t
 6. Perulangan (Loop)
 Perulangan digunakan untuk mengeksekusi sekelompok perintah secara berulang hingga kondisi tertentu terpenuhi. Contohnya for, while, dan do-while. Penggunaan perulangan membantu mengurangi penulisan kode berulang dan mempermudah pengolahan data dalam jumlah besar.
 
-7 Array
+7. Array
 Array adalah struktur data yang menyimpan sekumpulan nilai dengan tipe yang sama dalam satu variabel. Nilai-nilai dalam array dapat diakses melalui indeksnya. Array mempermudah pengelolaan data yang banyak, sehingga program dapat dijalankan dengan lebih efisien dan terstruktur.
 
 ---
