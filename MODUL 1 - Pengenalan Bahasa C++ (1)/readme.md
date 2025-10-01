@@ -3,7 +3,7 @@
 ---
 
 ## Dasar Teori
-Dasar teori modul ini mencakup berbagai konsep penting dalam pemrograman C++. Variabel berfungsi sebagai wadah untuk menyimpan data, sedangkan tipe data menentukan jenis nilai yang dapat disimpan, seperti int untuk bilangan bulat, float untuk bilangan desimal, dan string untuk teks. Input dan output (cin dan cout) memungkinkan program bisa berinteraksi dengan pengguna, sedangkan operator aritmatika (+, -, *, /) digunakan untuk perhitungan matematis, dan operator perbandingan (==, !=, <, >, <=, >=) digunakan untuk membandingkan dua nilai. Percabangan menggunakan if, else if, dan else memungkinkan program mengeksekusi kode tertentu berdasarkan kondisi yang diberikan, sedangkan perulangan dengan for, while, dan do-while membantu mengeksekusi perintah berulang kali sesuai kebutuhan. Array adalah struktur data yang menyimpan sekumpulan nilai sejenis dalam satu variabel sehingga memudahkan pengolahan dan pengelolaan data.
+
 
 ---
 
@@ -320,7 +320,7 @@ int main() {
 Program di atas bertujuan untuk mencetak pola segitiga angka dengan simbol bintang di tengah berdasarkan input angka n. Program meminta pengguna memasukkan sebuah angka n, kemudian menggunakan loop for untuk mencetak setiap baris dari atas ke bawah. Pada setiap baris: pertama dicetak spasi agar pola rata tengah, lalu deretan angka menurun dari i ke 1 di sebelah kiri, diikuti simbol *, lalu deretan angka menaik dari 1 ke i di sebelah kanan. Setelah semua baris dicetak, program menambahkan baris terakhir yang hanya berisi spasi dan satu simbol * di tengah.
 
 ### Full Code Screenshot:
-
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d2a1cbda-901b-47e3-b430-8d8a1cd9cffd" />
 
 
 ## Kesimpulan
