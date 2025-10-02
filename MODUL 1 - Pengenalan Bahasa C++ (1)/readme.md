@@ -1,6 +1,6 @@
-# Laporan Praktikum Modul Pengenalan Bahasa C++ (1)
+# <h1 align="center">Laporan Praktikum Modul Pengenalan Bahasa C++ (1)</h1>
+<p align="center">Syifa Kirana Putri Surya</p>
 
----
 
 ## Dasar Teori
 1. Variabel dan Tipe Data  
