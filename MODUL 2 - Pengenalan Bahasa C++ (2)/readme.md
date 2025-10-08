@@ -241,7 +241,11 @@ int main() {
 ### Output:
 <img width="513" height="306" alt="Image" src="https://github.com/user-attachments/assets/820d5bb0-69d5-4c2d-9600-63f8594d1b98" />
 
-Program di atas bertujuan untuk memperlihatkan
+Program di atas bertujuan untuk melakukan operasi penjumlahan, pengurangan, dan perkalian pada dua matriks 3x3. Matriks A dan B langsung didefinisikan di dalam program, kemudian program membuat matriks C sebagai tempat menyimpan hasil operasi.
+Penjumlahan: setiap elemen C[i][j] diisi dengan A[i][j] + B[i][j].
+Pengurangan: setiap elemen C[i][j] diisi dengan A[i][j] - B[i][j].
+Perkalian: setiap elemen C[i][j] dihitung dengan menjumlahkan hasil perkalian elemen baris A[i][k] dengan elemen kolom B[k][j] untuk k dari 0 sampai 2.
+Hasil dari setiap operasi ditampilkan ke layar menggunakan cout.
 
 ### Full Code Screenshot:
 <img width="1913" height="1028" alt="Image" src="https://github.com/user-attachments/assets/d9656c1b-a2c0-4f81-91c5-ceec7868c327" />
@@ -292,7 +296,7 @@ int main() {
 ### Output:
 <img width="506" height="330" alt="Image" src="https://github.com/user-attachments/assets/76789aec-e9bf-4cb6-a24c-ca0cdcecd4fc" />
 
-Program di atas bertujuan untuk
+Program ini bertujuan untuk menukar nilai tiga variabel (a, b, c) dengan dua cara, yaitu menggunakan pointer dan reference. Fungsi pointer memakai alamat variabel untuk mengubah nilainya, sedangkan reference langsung mengubah variabel aslinya. Di main(), program menampilkan nilai awal, menukar dengan pointer, menampilkan hasilnya, lalu menukar lagi dengan reference dan menampilkan hasil akhirnya. Program ini menunjukkan cara mengubah nilai variabel lewat fungsi dengan dua metode berbeda.
 
 ### Full Code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f1096193-6b67-4107-89cc-c71d1c0962a5" />
@@ -389,11 +393,10 @@ int main() {
 ### Output:
 <img width="580" height="447" alt="Image" src="https://github.com/user-attachments/assets/27b301a3-0129-4a4b-a5d9-e5873750104f" /> 
 
-Program di atas bertujuan untuk 
-
+Program ini bertujuan untuk melakukan beberapa operasi pada array satu dimensi arrA, yaitu menampilkan isi array, mencari nilai maksimum, minimum, dan menghitung rata-rata. Function cariMinimum() digunakan untuk menemukan nilai terkecil, cariMaksimum() untuk nilai terbesar, dan prosedur hitungRataRata() untuk menghitung dan menampilkan rata-rata. Program menampilkan menu interaktif menggunakan switch-case, sehingga pengguna dapat memilih opsi yang diinginkan, dan setiap pilihan akan dijalankan sampai pengguna memilih keluar.
 ### Full Code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d2a1cbda-901b-47e3-b430-8d8a1cd9cffd" />
 
 
 ## Kesimpulan
-Dari praktikum ini, yang saya dapatkan adalah pemahaman konsep dasar pemrograman seperti variabel, tipe data, input-output, operator aritmatika dan perbandingan, percabangan, perulangan, serta array sangat penting untuk membangun program yang efektif. Praktikum ini membantu memperkuat pemahaman teori melalui penerapan langsung, sehingga kita dapat melihat bagaimana setiap konsep bekerj. misalnya bagaimana percabangan mempengaruhi alur program, atau bagaimana loop mempermudah pengolahan data berulang.
+Dari praktikum ini, saya mendapatkan pemahaman tentang bagaimana menggunakan array, function, prosedur, pointer, reference, perulangan, dan percabangan untuk membangun program yang efektif. Praktikum ini membantu memperkuat konsep teori melalui penerapan langsung, sehingga kita bisa melihat bagaimana function dan prosedur mempermudah pengolahan data, bagaimana pointer dan reference memungkinkan pengubahan nilai variabel secara efisien, serta bagaimana switch-case dan loop mempermudah interaksi dan pengolahan data dalam program.
