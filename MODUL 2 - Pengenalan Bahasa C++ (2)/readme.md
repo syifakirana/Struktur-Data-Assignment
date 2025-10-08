@@ -299,7 +299,7 @@ int main() {
 Program ini bertujuan untuk menukar nilai tiga variabel (a, b, c) dengan dua cara, yaitu menggunakan pointer dan reference. Fungsi pointer memakai alamat variabel untuk mengubah nilainya, sedangkan reference langsung mengubah variabel aslinya. Di main(), program menampilkan nilai awal, menukar dengan pointer, menampilkan hasilnya, lalu menukar lagi dengan reference dan menampilkan hasil akhirnya. Program ini menunjukkan cara mengubah nilai variabel lewat fungsi dengan dua metode berbeda.
 
 ### Full Code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f1096193-6b67-4107-89cc-c71d1c0962a5" />
+<img width="1357" height="875" alt="Image" src="https://github.com/user-attachments/assets/0b3c558a-1808-45c1-9037-b108d8d03c39" />
 
 ### 3. Diketahui sebuah array 1 dimensi sebagai berikut : arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}
 Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini :
