@@ -35,7 +35,7 @@ Switch-case adalah bentuk percabangan yang digunakan untuk memilih jalannya prog
 
 ## Guided
 
-### 1. array
+### 1. Array
 
 ```cpp
 #include <iostream>
@@ -241,10 +241,10 @@ int main() {
 ### Output:
 <img width="585" height="344" alt="Image" src="https://github.com/user-attachments/assets/c3fe043b-1092-4dbd-b204-e94a0d1f1fa1" />
 
-Program di atas bertujuan untuk melakukan operasi penjumlahan, pengurangan, dan perkalian pada dua matriks 3x3. Matriks A dan B langsung didefinisikan di dalam program, kemudian program membuat matriks C sebagai tempat menyimpan hasil operasi.
-Penjumlahan: setiap elemen C[i][j] diisi dengan A[i][j] + B[i][j].
-Pengurangan: setiap elemen C[i][j] diisi dengan A[i][j] - B[i][j].
-Perkalian: setiap elemen C[i][j] dihitung dengan menjumlahkan hasil perkalian elemen baris A[i][k] dengan elemen kolom B[k][j] untuk k dari 0 sampai 2.
+Program di atas bertujuan untuk melakukan operasi penjumlahan, pengurangan, dan perkalian pada dua matriks 3x3. Matriks A dan B langsung didefinisikan di dalam program, kemudian program membuat matriks C sebagai tempat menyimpan hasil operasi.  
+Penjumlahan: setiap elemen C[i][j] diisi dengan A[i][j] + B[i][j].  
+Pengurangan: setiap elemen C[i][j] diisi dengan A[i][j] - B[i][j].  
+Perkalian: setiap elemen C[i][j] dihitung dengan menjumlahkan hasil perkalian elemen baris A[i][k] dengan elemen kolom B[k][j] untuk k dari 0 sampai 2.  
 Hasil dari setiap operasi ditampilkan ke layar menggunakan cout.
 
 ### Full Code Screenshot:
@@ -302,7 +302,7 @@ Program ini bertujuan untuk menukar nilai tiga variabel (a, b, c) dengan dua car
 <img width="1357" height="875" alt="Image" src="https://github.com/user-attachments/assets/0b3c558a-1808-45c1-9037-b108d8d03c39" />
 
 ### 3. Diketahui sebuah array 1 dimensi sebagai berikut : arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}
-Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini :
+Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini :  
 --- Menu Program Array ---
 1. Tampilkan isi array
 2. cari nilai maksimum
