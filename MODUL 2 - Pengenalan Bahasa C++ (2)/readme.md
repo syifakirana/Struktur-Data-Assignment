@@ -248,7 +248,7 @@ Perkalian: setiap elemen C[i][j] dihitung dengan menjumlahkan hasil perkalian el
 Hasil dari setiap operasi ditampilkan ke layar menggunakan cout.
 
 ### Full Code Screenshot:
-<img width="1913" height="1028" alt="Image" src="https://github.com/user-attachments/assets/d9656c1b-a2c0-4f81-91c5-ceec7868c327" />
+<img width="1331" height="1003" alt="Image" src="https://github.com/user-attachments/assets/962a3d8e-3679-4cf4-bfff-4e50212b5ed2" />
 
 
 ### 2. Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel
