@@ -294,7 +294,7 @@ int main() {
 
 ```
 ### Output:
-<img width="506" height="330" alt="Image" src="https://github.com/user-attachments/assets/76789aec-e9bf-4cb6-a24c-ca0cdcecd4fc" />
+<img width="513" height="300" alt="Image" src="https://github.com/user-attachments/assets/8357e0ea-2c26-4271-8c7b-97ea5fc0c9de" />
 
 Program ini bertujuan untuk menukar nilai tiga variabel (a, b, c) dengan dua cara, yaitu menggunakan pointer dan reference. Fungsi pointer memakai alamat variabel untuk mengubah nilainya, sedangkan reference langsung mengubah variabel aslinya. Di main(), program menampilkan nilai awal, menukar dengan pointer, menampilkan hasilnya, lalu menukar lagi dengan reference dan menampilkan hasil akhirnya. Program ini menunjukkan cara mengubah nilai variabel lewat fungsi dengan dua metode berbeda.
 
