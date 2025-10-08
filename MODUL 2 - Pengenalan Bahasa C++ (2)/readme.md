@@ -3,7 +3,33 @@
 
 
 ## Dasar Teori
+1. Array
 
+Array adalah kumpulan data dengan tipe yang sama yang disimpan dalam satu variabel. Setiap elemen array dapat diakses menggunakan indeks, sehingga memudahkan pengolahan dan pengelolaan data secara efisien. Array bisa berupa satu dimensi, dua dimensi, atau multidimensi, tergantung kebutuhan program. Penggunaan array sangat berguna untuk menyimpan banyak data sekaligus dan melakukan operasi seperti penjumlahan, pencarian nilai maksimum/minimum, dan perhitungan rata-rata.
+
+2. Pointer
+
+Pointer adalah variabel yang menyimpan alamat memori dari variabel lain. Dengan pointer, program dapat mengakses dan mengubah nilai variabel secara langsung melalui alamatnya. Pointer juga memungkinkan pertukaran nilai antar variabel melalui function, sehingga proses menjadi lebih efisien dan fleksibel.
+
+3. Reference
+
+Reference adalah alias dari variabel yang sudah ada, artinya reference menunjuk langsung ke variabel asli. Perubahan yang dilakukan melalui reference akan mempengaruhi variabel aslinya. Reference memudahkan pengelolaan data dan sering digunakan untuk menukar nilai antar variabel tanpa memerlukan pointer.
+
+4. Function dan Prosedur
+
+Function adalah blok kode yang melakukan tugas tertentu dan biasanya mengembalikan nilai. Function membantu membuat program lebih modular, rapi, dan mudah dipahami. Contohnya, function dapat digunakan untuk mencari nilai minimum atau maksimum dalam array. Prosedur atau void function adalah function yang tidak mengembalikan nilai, digunakan untuk menjalankan proses tertentu, seperti menghitung dan menampilkan nilai rata-rata.
+
+5. Percabangan
+
+Percabangan digunakan untuk menentukan jalannya program berdasarkan kondisi tertentu. Struktur percabangan memungkinkan program mengeksekusi kode tertentu hanya jika kondisi terpenuhi. Percabangan sangat berguna untuk membandingkan elemen array saat mencari nilai minimum atau maksimum, atau saat membuat logika menu interaktif.
+
+6. Perulangan
+
+Perulangan digunakan untuk mengeksekusi perintah secara berulang hingga kondisi tertentu terpenuhi. Dalam program array, perulangan digunakan untuk menelusuri semua elemen, menghitung jumlah total, menampilkan isi array, dan menemukan nilai minimum atau maksimum.
+
+7. Switch-Case
+
+Switch-case adalah bentuk percabangan yang digunakan untuk memilih jalannya program berdasarkan nilai variabel tertentu. Struktur ini membuat menu program menjadi interaktif dan mudah digunakan. Dalam praktikum ini, switch-case digunakan untuk memungkinkan pengguna memilih aksi seperti menampilkan array, mencari nilai maksimum/minimum, atau menghitung rata-rata.
 
 ---
 
@@ -159,21 +185,58 @@ Program di atas digunakan untuk menukar nilai dua variabel menggunakan reference
 using namespace std;
 
 int main() {
-     float a, b;
+    // Matriks A
+    int A[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
 
-    cout << "Masukkan bilangan pertama: ";
-    cin >> a;
-    cout << "Masukkan bilangan kedua: ";
-    cin >> b;
+    // Matriks B
+    int B[3][3] = {
+        {9, 8, 7},
+        {6, 5, 4},
+        {3, 2, 1}
+    };
 
-    //Operator aritmatika
-    cout << "a + b = " << (a+b) << endl;
-    cout << "a - b = " << (a-b) << endl;
-    cout << "a * b = " << (a*b) << endl;
-    cout << "a / b = " << (a/b) << endl;
+    int C[3][3]; // hasil operasi
+
+    // Penjumlahan matriks
+    cout << "=== HASIL PENJUMLAHAN (A + B) ===" << endl;
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+            cout << C[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    // Pengurangan matriks
+    cout << "\n=== HASIL PENGURANGAN (A - B) ===" << endl;
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            C[i][j] = A[i][j] - B[i][j];
+            cout << C[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    // Perkalian matriks
+    cout << "\n=== HASIL PERKALIAN (A x B) ===" << endl;
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            C[i][j] = 0;
+            for(int k = 0; k < 3; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+            cout << C[i][j] << "\t";
+        }
+        cout << endl;
+    }
 
     return 0;
 }
+
 ```
 ### Output:
 <img width="513" height="306" alt="Image" src="https://github.com/user-attachments/assets/820d5bb0-69d5-4c2d-9600-63f8594d1b98" />
@@ -190,28 +253,38 @@ Program di atas bertujuan untuk memperlihatkan
 #include <iostream>
 using namespace std;
 
+// Fungsi menukar 3 variabel menggunakan POINTER
+void tukarPointer(int *x, int *y, int *z) {
+    int temp = *x;
+    *x = *y;
+    *y = *z;
+    *z = temp;
+}
+
+// Fungsi menukar 3 variabel menggunakan REFERENCE
+void tukarReference(int &x, int &y, int &z) {
+    int temp = x;
+    x = y;
+    y = z;
+    z = temp;
+}
+
 int main() {
-    string satuan[] = {"nol","satu","dua","tiga","empat","lima",
-                       "enam","tujuh","delapan","sembilan"};
-    string belasan[] = {"sepuluh","sebelas","dua belas","tiga belas","empat belas",
-                        "lima belas","enam belas","tujuh belas","delapan belas","sembilan belas"};
-    string puluhan[] = {"","sepuluh","dua puluh","tiga puluh","empat puluh",
-                        "lima puluh","enam puluh","tujuh puluh","delapan puluh","sembilan puluh"};
+    int a = 10, b = 20, c = 30;
 
-    int n;
-    cout << "Masukkan angka (0-100): ";
-    cin >> n;
+    cout << "=== Sebelum Ditukar ===" << endl;
+    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
 
-    if (n < 10) cout << satuan[n];
-    else if (n < 20) cout << belasan[n - 10];
-    else if (n < 100) {
-        cout << puluhan[n/10];
-        if (n % 10 != 0) cout << " " << satuan[n%10];
-    }
-    else if (n == 100) cout << "seratus";
-    else cout << "di luar jangkauan";
+    // Menukar dengan POINTER
+    tukarPointer(&a, &b, &c);
+    cout << "\n=== Setelah Tukar (Pointer) ===" << endl;
+    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
 
-    cout << endl;
+    // Menukar lagi dengan REFERENCE
+    tukarReference(a, b, c);
+    cout << "\n=== Setelah Tukar (Reference) ===" << endl;
+    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
+
     return 0;
 }
 
@@ -232,43 +305,82 @@ Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata da
 3. cari nilai minimum
 4. Hitung nilai rata - rata
 
-
 ```cpp
 #include <iostream>
 using namespace std;
 
+// Function untuk mencari nilai minimum
+int cariMinimum(int arr[], int n) {
+    int min = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+
+// Function untuk mencari nilai maksimum
+int cariMaksimum(int arr[], int n) {
+    int max = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+// Prosedur untuk menghitung rata-rata
+void hitungRataRata(int arr[], int n) {
+    int total = 0;
+    for (int i = 0; i < n; i++) {
+        total += arr[i];
+    }
+    double rata = (double)total / n;
+    cout << "Nilai rata-rata dari array adalah: " << rata << endl;
+}
+
 int main() {
-    int n;
-    cout << "Masukkan angka: ";
-    cin >> n;
+    int arrA[] = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55};
+    int n = sizeof(arrA)/sizeof(arrA[0]);
+    int pilihan;
 
-    for (int i = n; i >= 1; i--) {
-        // cetak spasi di depan
-        for (int s = 0; s < (n - i); s++) {
-            cout << "  "; // 2 spasi biar rapi
+    do {
+        // Menampilkan menu
+        cout << "\n--- Menu Program Array ---\n";
+        cout << "1. Tampilkan isi array\n";
+        cout << "2. Cari nilai maksimum\n";
+        cout << "3. Cari nilai minimum\n";
+        cout << "4. Hitung nilai rata-rata\n";
+        cout << "5. Keluar\n";
+        cout << "Masukkan pilihan Anda: ";
+        cin >> pilihan;
+
+        switch(pilihan) {
+            case 1:
+                cout << "Isi array: ";
+                for (int i = 0; i < n; i++) {
+                    cout << arrA[i] << " ";
+                }
+                cout << endl;
+                break;
+            case 2:
+                cout << "Nilai maksimum dari array adalah: " << cariMaksimum(arrA, n) << endl;
+                break;
+            case 3:
+                cout << "Nilai minimum dari array adalah: " << cariMinimum(arrA, n) << endl;
+                break;
+            case 4:
+                hitungRataRata(arrA, n);
+                break;
+            case 5:
+                cout << "Program selesai. Terima kasih!\n";
+                break;
+            default:
+                cout << "Pilihan tidak valid. Silakan coba lagi.\n";
         }
-
-        // kiri menurun
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
-        }
-
-        // bintang
-        cout << "* ";
-
-        // kanan menaik
-        for (int j = 1; j <= i; j++) {
-            cout << j << " ";
-        }
-
-        cout << endl;
-    }
-
-    // baris terakhir spasi terus bintang
-    for (int s = 0; s < n; s++) {
-        cout << "  ";
-    }
-    cout << "*";
+    } while (pilihan != 5);
 
     return 0;
 }
