@@ -176,7 +176,7 @@ int main() {
 ```
 Program di atas digunakan untuk menukar nilai dua variabel menggunakan reference dan menunjukkan bahwa reference merupakan alias dari variabel asli, sehingga perubahan pada reference juga mengubah nilai variabel tersebut.
 
-## Unguided (BELUM)
+## Unguided 
 
 ### 1. Buatlah program yang dapat melakukan operasi penjumlahan, pengurangan, dan perkalian matriks 3x3
 
@@ -239,7 +239,7 @@ int main() {
 
 ```
 ### Output:
-<img width="513" height="306" alt="Image" src="https://github.com/user-attachments/assets/820d5bb0-69d5-4c2d-9600-63f8594d1b98" />
+<img width="585" height="344" alt="Image" src="https://github.com/user-attachments/assets/c3fe043b-1092-4dbd-b204-e94a0d1f1fa1" />
 
 Program di atas bertujuan untuk melakukan operasi penjumlahan, pengurangan, dan perkalian pada dua matriks 3x3. Matriks A dan B langsung didefinisikan di dalam program, kemudian program membuat matriks C sebagai tempat menyimpan hasil operasi.
 Penjumlahan: setiap elemen C[i][j] diisi dengan A[i][j] + B[i][j].
