@@ -7,17 +7,52 @@ Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri ser
 
 ## Guided 
 
-### 1. Mahasiswa
+### 1. Program Menghitung Rata-Rata Nilai Mahasiswa (menggunakan multiple file)
 
+File: mahasiswa.h
 ```C++
+#ifndef MAHASISWA H INCLUDED
+#define MAHASISWA_H_INCLUDED
+struct mahasiswa{
+char nim[10];
+int nilail, nilai2;
+};
+void inputMhs (mahasiswa &m);
+float rata2(mahasiswa m);
+#endif // MAHASISWA_H_INCLUDED
+```
+
+File: mahasiswa.cpp
+```
 #include <iostream>
 using namespace std;
-
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
-    return 0;
+#include "mahasiswa.h"
+void inputMhs (mahasiswa &m) {
+cout << "input nama = ";
+cin >> (m).nim;
+cout << "input nilai = ";
+cin >> (m).nilail;
+cout << "input nilai2 = ";
+cin >> (m).nilai2;
+}
+float rata2(mahasiswa m){
+return (m.nilail + m.nilai2) / 2.0;
 }
 ```
+
+File: main.cpp
+```
+#include <iostream>
+#include "mahasiswa.h"
+using namespace std;
+int main() {
+mahasiswa mhs;
+inputMhs (mhs);
+cout << "rata-rata = " << rata2(mhs);
+return 0;
+}
+```
+
 Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
 ## Unguided 
