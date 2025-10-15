@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Pengenalan Bahasa C++ (1)</h1>
+# <h1 align="center">Laporan Praktikum Modul Abstract Data Type (ADT)</h1>
 <p align="center">Syifa Kirana Putri Surya</p>
 
 ## Dasar Teori
@@ -77,10 +77,12 @@ Kode di atas digunakan untuk menyimpan data maksimal 10 mahasiswa yang mencakup 
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
 ### 2. Buatlah ADT pelajaran sebagai berikut di dalam file “pelajaran.h”:
-
-
+<img width="722" height="125" alt="Image" src="https://github.com/user-attachments/assets/048b2ed8-33ad-4015-bc5a-813596a7348f" />
 Buatlah implementasi ADT pelajaran pada file “pelajaran.cpp”
 Cobalah hasil implementasi ADT pada file “main.cpp”
+
+Gambar 3-1 main.cpp pelajaran
+Contoh output hasil:
 
 ```C++
 #include <iostream>
