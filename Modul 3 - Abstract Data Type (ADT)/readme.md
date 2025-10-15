@@ -80,9 +80,10 @@ Kode di atas digunakan untuk menyimpan data maksimal 10 mahasiswa yang mencakup 
 <img width="722" height="125" alt="Image" src="https://github.com/user-attachments/assets/048b2ed8-33ad-4015-bc5a-813596a7348f" />
 Buatlah implementasi ADT pelajaran pada file “pelajaran.cpp”
 Cobalah hasil implementasi ADT pada file “main.cpp”
-
+<img width="834" height="188" alt="Image" src="https://github.com/user-attachments/assets/87456f69-bd6a-4bbc-8a19-3f30f77c125b" />
 Gambar 3-1 main.cpp pelajaran
 Contoh output hasil:
+
 
 ```C++
 #include <iostream>
