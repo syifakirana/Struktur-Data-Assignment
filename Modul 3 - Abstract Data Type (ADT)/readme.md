@@ -76,14 +76,18 @@ Kode di atas digunakan untuk menyimpan data maksimal 10 mahasiswa yang mencakup 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
-### 2. Buatlah ADT pelajaran sebagai berikut di dalam file “pelajaran.h”:
-<img width="722" height="125" alt="Image" src="https://github.com/user-attachments/assets/048b2ed8-33ad-4015-bc5a-813596a7348f" />
-Buatlah implementasi ADT pelajaran pada file “pelajaran.cpp”
-Cobalah hasil implementasi ADT pada file “main.cpp”
-<img width="834" height="188" alt="Image" src="https://github.com/user-attachments/assets/87456f69-bd6a-4bbc-8a19-3f30f77c125b" />
-Gambar 3-1 main.cpp pelajaran
-Contoh output hasil:
+### 2. Buatlah ADT pelajaran sebagai berikut di dalam file “pelajaran.h”:  
 
+<img width="722" height="125" alt="Image" src="https://github.com/user-attachments/assets/048b2ed8-33ad-4015-bc5a-813596a7348f" /><br>
+Buatlah implementasi ADT pelajaran pada file “pelajaran.cpp”  
+Cobalah hasil implementasi ADT pada file “main.cpp”  
+
+<img width="834" height="188" alt="Image" src="https://github.com/user-attachments/assets/87456f69-bd6a-4bbc-8a19-3f30f77c125b" /><br>
+Gambar 3-1 main.cpp pelajaran  
+Contoh output hasil :  
+
+<img width="356" height="58" alt="Image" src="https://github.com/user-attachments/assets/532a5d94-0163-4c5b-8704-0bb673ecf832" />  <br>
+Gambar 3-2 output pelajaran
 
 ```C++
 #include <iostream>
@@ -102,8 +106,27 @@ Kode di atas digunakan untuk menyimpan data maksimal 10 mahasiswa yang mencakup 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
+### 3. Buatlah program dengan ketentuan :
+- 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer
+- fungsi/prosedur yang menampilkan isi sebuah array integer 2D
+- fungsi/prosedur yang akan menukarkan isi dari 2 array integer 2D pada posisi tertentu
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "ini adalah file code unguided praktikan" << endl;
+    return 0;
+}
+```
+#### Output:
+![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+
+Kode di atas digunakan untuk
+
+#### Full code Screenshot:
+
 ## Kesimpulan
 Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
 
-## Referensi
-[1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.
