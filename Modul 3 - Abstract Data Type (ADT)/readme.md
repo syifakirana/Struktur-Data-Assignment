@@ -53,11 +53,11 @@ return 0;
 }
 ```
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Program di atas digunakan untuk memasukkan dua nilai mahasiswa dan menampilkan hasil rata-ratanya di layar. Program dibagi menjadi tiga file agar lebih terstruktur: mahasiswa.h berisi data dan fungsi yang digunakan, mahasiswa.cpp berisi isi fungsi, dan main.cpp sebagai file utama untuk menjalankan program dan menampilkan hasilnya dengan cout.
 
 ## Unguided 
 
-### 1. [Soal]
+### 1. Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array dengan field nama, nim, uts, uas, tugas, dan nilai akhir. Nilai akhir diperoleh dari FUNGSI dengan rumus 0.3*uts+0.4*uas+0.3*tugas.
 
 ```C++
 #include <iostream>
@@ -71,11 +71,33 @@ int main() {
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk menyimpan data maksimal 10 mahasiswa yang mencakup nama, NIM, nilai UTS, UAS, dan tugas. Program menggunakan fungsi hitungNilaiAkhir() untuk menghitung nilai akhir dengan rumus 0.3 * UTS + 0.4 * UAS + 0.3 * Tugas. Data mahasiswa disimpan dalam array dan ditampilkan dengan jarak antar mahasiswa agar hasilnya lebih rapi di layar.
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
+### 2. Buatlah ADT pelajaran sebagai berikut di dalam file “pelajaran.h”:
+
+
+Buatlah implementasi ADT pelajaran pada file “pelajaran.cpp”
+Cobalah hasil implementasi ADT pada file “main.cpp”
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "ini adalah file code unguided praktikan" << endl;
+    return 0;
+}
+```
+#### Output:
+![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+
+Kode di atas digunakan untuk menyimpan data maksimal 10 mahasiswa yang mencakup nama, NIM, nilai UTS, UAS, dan tugas. Program menggunakan fungsi hitungNilaiAkhir() untuk menghitung nilai akhir dengan rumus 0.3 * UTS + 0.4 * UAS + 0.3 * Tugas. Data mahasiswa disimpan dalam array dan ditampilkan dengan jarak antar mahasiswa agar hasilnya lebih rapi di layar.
+
+#### Full code Screenshot:
+![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
 ## Kesimpulan
 Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
