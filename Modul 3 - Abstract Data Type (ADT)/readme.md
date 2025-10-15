@@ -23,7 +23,7 @@ float rata2(mahasiswa m);
 ```
 
 File: mahasiswa.cpp
-```
+```C++
 #include <iostream>
 using namespace std;
 #include "mahasiswa.h"
@@ -41,7 +41,7 @@ return (m.nilail + m.nilai2) / 2.0;
 ```
 
 File: main.cpp
-```
+```C++
 #include <iostream>
 #include "mahasiswa.h"
 using namespace std;
