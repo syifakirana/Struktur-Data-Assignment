@@ -198,7 +198,11 @@ int main() {
 Program ini terdiri dari tiga file, yaitu pelajaran.h, pelajaran.cpp, dan main2.cpp, yang digunakan untuk menyimpan dan menampilkan data mata pelajaran. Di file pelajaran.h, dibuat struktur bernama pelajaran yang berisi dua data, yaitu nama mata pelajaran dan kode pelajaran. File ini juga berisi deklarasi dua fungsi, yaitu create_pelajaran() untuk membuat data pelajaran baru dan tampil_pelajaran() untuk menampilkannya. Di file pelajaran.cpp, kedua fungsi tersebut dijelaskan cara kerjanya — create_pelajaran() mengisi nama dan kode pelajaran lalu mengembalikannya, sedangkan tampil_pelajaran() menampilkan hasilnya ke layar. Terakhir, di file main2.cpp, program utama membuat satu data pelajaran dengan nama “Struktur Data” dan kode “STD”, lalu menampilkan hasilnya dengan memanggil fungsi yang sudah dibuat.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+File : pelajaran.h
+<img width="1131" height="661" alt="Image" src="https://github.com/user-attachments/assets/a032c586-183b-4f7d-b5ae-f806106b6833" />
+
+File : pelajaran.cpp
+
 
 ### 3. Buatlah program dengan ketentuan :
 - 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer
