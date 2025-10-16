@@ -63,15 +63,63 @@ Program di atas digunakan untuk memasukkan dua nilai mahasiswa dan menampilkan h
 #include <iostream>
 using namespace std;
 
+// untuk menghitung nilai akhir
+float hitungNilaiAkhir(float uts, float uas, float tugas) {
+    return (0.3 * uts) + (0.4 * uas) + (0.3 * tugas);
+}
+
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+    const int maks = 10;
+    string nama[maks];
+    string nim[maks];
+    float uts[maks], uas[maks], tugas[maks], nilaiAkhir[maks];
+    int jumlah;
+
+    cout << "Masukkan jumlah mahasiswa (max. 10): ";
+    cin >> jumlah;
+    cout << endl;
+
+    if (jumlah > maks) {
+        cout << "Maksimal hanya bisa 10 mahasiswa!" << endl;
+        return 0;
+    }
+
+    for (int i = 0; i < jumlah; i++) {
+        cout << "Data Mahasiswa ke-" << i + 1 << endl;
+        cout << "Nama   : ";
+        cin >> nama[i];
+        cout << "NIM    : ";
+        cin >> nim[i];
+        cout << "UTS    : ";
+        cin >> uts[i];
+        cout << "UAS    : ";
+        cin >> uas[i];
+        cout << "Tugas  : ";
+        cin >> tugas[i];
+
+        nilaiAkhir[i] = hitungNilaiAkhir(uts[i], uas[i], tugas[i]);
+        cout << endl;
+    }
+
+    cout << "Daftar Nilai Mahasiswa";
+    for (int i = 0; i < jumlah; i++) {
+        cout << "\nMahasiswa ke-" << i + 1 << endl;
+        cout << "Nama        : " << nama[i] << endl;
+        cout << "NIM         : " << nim[i] << endl;
+        cout << "UTS         : " << uts[i] << endl;
+        cout << "UAS         : " << uas[i] << endl;
+        cout << "Tugas       : " << tugas[i] << endl;
+        cout << "Nilai Akhir : " << nilaiAkhir[i] << endl;
+    }
+
     return 0;
 }
+
 ```
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
 
-Kode di atas digunakan untuk menyimpan data maksimal 10 mahasiswa yang mencakup nama, NIM, nilai UTS, UAS, dan tugas. Program menggunakan fungsi hitungNilaiAkhir() untuk menghitung nilai akhir dengan rumus 0.3 * UTS + 0.4 * UAS + 0.3 * Tugas. Data mahasiswa disimpan dalam array dan ditampilkan dengan jarak antar mahasiswa agar hasilnya lebih rapi di layar.
+Kode di atas digunakan untuk menghitung dan menampilkan nilai akhir mahasiswa berdasarkan nilai UTS, UAS, dan tugas dengan bobot masing-masing 30%, 40%, dan 30%. Data setiap mahasiswa disimpan menggunakan array dengan kapasitas maksimal sepuluh data. Fungsi hitungNilaiAkhir digunakan agar proses perhitungan nilai menjadi lebih terstruktur dan mudah dibaca. Pengguna akan diminta memasukkan nama, NIM, serta nilai-nilai yang diperlukan, lalu program secara otomatis menampilkan daftar mahasiswa beserta nilai akhirnya.
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
