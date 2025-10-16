@@ -217,7 +217,7 @@ File : main2.cpp
 #include <iostream>
 using namespace std;
 
-// fungsi menampilkan isi array 3x3
+// menampilkan isi array 3x3
 void tampilArray(int arr[3][3], string nama) {
     cout << nama << ":" << endl;
     for (int i = 0; i < 3; i++) {
@@ -229,14 +229,14 @@ void tampilArray(int arr[3][3], string nama) {
     cout << endl;
 }
 
-// fungsi menukar elemen pada posisi tertentu antar dua array
+// menukar elemen pada posisi tertentu antar dua array
 void tukarElemen(int arr1[3][3], int arr2[3][3], int baris, int kolom) {
     int temp = arr1[baris][kolom];
     arr1[baris][kolom] = arr2[baris][kolom];
     arr2[baris][kolom] = temp;
 }
 
-// fungsi menukar dua variabel lewat pointer
+// menukar dua variabel lewat pointer
 void tukarPointer(int *a, int *b) {
     int temp = *a;
     *a = *b;
@@ -244,7 +244,7 @@ void tukarPointer(int *a, int *b) {
 }
 
 int main() {
-    // dua array 3x3 langsung diisi (tanpa input dari user)
+    // dua array 3x3 langsung diisi 
     int array1[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
@@ -257,12 +257,12 @@ int main() {
         {3, 2, 1}
     };
 
-    // dua variabel untuk pointer
+    // dua variabel buat pointer
     int x = 10, y = 20;
     int *p1 = &x;
     int *p2 = &y;
 
-    // tampilkan array sebelum ditukar
+    // array sebelum ditukar
     cout << "=== SEBELUM DITUKAR ===" << endl;
     tampilArray(array1, "Array 1");
     tampilArray(array2, "Array 2");
@@ -286,7 +286,7 @@ int main() {
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
 
-Kode di atas digunakan untuk
+Program di atas memakai dua array 2D berukuran 3x3 dan dua pointer integer untuk menunjukkan cara dasar mengolah data dan pointer. Nilai dalam kedua array sudah langsung ditulis di dalam kode, jadi program bisa dijalankan tanpa perlu input dari pengguna. Fungsi tampilArray() dipakai untuk menampilkan isi array, sedangkan tukarArray() berfungsi menukar elemen tertentu antara dua array. Selain itu, ada juga fungsi tukarPointer() yang menukar nilai dua variabel (x dan y) lewat pointer, supaya bisa menunjukkan cara kerja pertukaran nilai menggunakan alamat memori.
 
 #### Full code Screenshot:
 
