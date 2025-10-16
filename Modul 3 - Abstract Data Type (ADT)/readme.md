@@ -193,9 +193,9 @@ int main() {
 ```
 
 #### Output:
-<img width="503" height="236" alt="Image" src="https://github.com/user-attachments/assets/d679d261-5748-416f-889e-d4a2fcfc042c" />
+<img width="503" height="236" alt="Image" src="https://github.com/user-attachments/assets/d679d261-5748-416f-889e-d4a2fcfc042c" />  
 
-Kode di atas digunakan untuk menyimpan data maksimal 10 mahasiswa yang mencakup nama, NIM, nilai UTS, UAS, dan tugas. Program menggunakan fungsi hitungNilaiAkhir() untuk menghitung nilai akhir dengan rumus 0.3 * UTS + 0.4 * UAS + 0.3 * Tugas. Data mahasiswa disimpan dalam array dan ditampilkan dengan jarak antar mahasiswa agar hasilnya lebih rapi di layar.
+Program ini terdiri dari tiga file, yaitu pelajaran.h, pelajaran.cpp, dan main2.cpp, yang digunakan untuk menyimpan dan menampilkan data mata pelajaran. Di file pelajaran.h, dibuat struktur bernama pelajaran yang berisi dua data, yaitu nama mata pelajaran dan kode pelajaran. File ini juga berisi deklarasi dua fungsi, yaitu create_pelajaran() untuk membuat data pelajaran baru dan tampil_pelajaran() untuk menampilkannya. Di file pelajaran.cpp, kedua fungsi tersebut dijelaskan cara kerjanya — create_pelajaran() mengisi nama dan kode pelajaran lalu mengembalikannya, sedangkan tampil_pelajaran() menampilkan hasilnya ke layar. Terakhir, di file main2.cpp, program utama membuat satu data pelajaran dengan nama “Struktur Data” dan kode “STD”, lalu menampilkan hasilnya dengan memanggil fungsi yang sudah dibuat.
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
