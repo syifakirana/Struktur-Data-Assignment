@@ -284,11 +284,13 @@ int main() {
 }
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+<img width="1122" height="702" alt="Image" src="https://github.com/user-attachments/assets/715108ff-0091-4fcc-b6ab-1f0f48b52354" />
 
 Program di atas memakai dua array 2D berukuran 3x3 dan dua pointer integer untuk menunjukkan cara dasar mengolah data dan pointer. Nilai dalam kedua array sudah langsung ditulis di dalam kode, jadi program bisa dijalankan tanpa perlu input dari pengguna. Fungsi tampilArray() dipakai untuk menampilkan isi array, sedangkan tukarArray() berfungsi menukar elemen tertentu antara dua array. Selain itu, ada juga fungsi tukarPointer() yang menukar nilai dua variabel (x dan y) lewat pointer, supaya bisa menunjukkan cara kerja pertukaran nilai menggunakan alamat memori.
 
 #### Full code Screenshot:
+<img width="1919" height="1022" alt="image" src="https://github.com/user-attachments/assets/283d66f9-6230-41c4-b731-7505da5e8c4f" />
+
 
 ## Kesimpulan
 Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
