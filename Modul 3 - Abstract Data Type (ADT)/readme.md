@@ -1,9 +1,15 @@
 <h1 align="center">Laporan Praktikum Modul Abstract Data Type (ADT)</h1>
 <p align="center">Syifa Kirana Putri Surya</p>
+<p align="center">(103112400111)</p>
+
 
 ## Dasar Teori
 
-Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri serta susunan yang terstruktur per topiknya.
+Abstract Data Type (ADT) atau tipe data abstrak dipakai untuk membantu kita memahami cara menyimpan dan mengelola data dengan lebih teratur. ADT fokus pada apa yang bisa dilakukan oleh data, bukan bagaimana cara kerjanya.
+
+ADT biasanya punya dua bagian utama, yaitu type definition untuk mendefinisikan bentuk datanya, dan primitif untuk operasi dasarnya seperti membuat, menampilkan, mengubah, atau menghapus data. Dalam C++, ADT sering dibuat dengan struct dan dibagi ke beberapa file: file header (.h) untuk deklarasi, file implementasi (.cpp) untuk isi fungsi, dan file utama (main.cpp) untuk menjalankan program.
+
+Dengan menggunakan ADT, program jadi lebih rapi, mudah dibaca, dan gampang diperbaiki. Contohnya pada ADT mahasiswa yang punya data seperti nim, nilai1, dan nilai2, serta fungsi untuk mengisi dan menghitung nilai rata-rata. Konsep ADT ini juga berkaitan dengan penggunaan pointer dan array dua dimensi yang membantu kita mengelola data dengan lebih efisien, serta jadi dasar untuk memahami struktur data yang lebih lanjut seperti linked list dan stack.
 
 ## Guided 
 
@@ -53,7 +59,7 @@ return 0;
 }
 ```
 
-Program di atas digunakan untuk memasukkan dua nilai mahasiswa dan menampilkan hasil rata-ratanya di layar. Program dibagi menjadi tiga file agar lebih terstruktur: mahasiswa.h berisi data dan fungsi yang digunakan, mahasiswa.cpp berisi isi fungsi, dan main.cpp sebagai file utama untuk menjalankan program dan menampilkan hasilnya dengan cout.
+Program di atas digunakan untuk memasukkan dua nilai dari seorang mahasiswa dan menampilkan hasil rata-ratanya di layar. Program dibagi menjadi tiga file agar lebih terstruktur: mahasiswa.h berisi data dan fungsi yang digunakan, mahasiswa.cpp berisi isi fungsi, dan main.cpp sebagai file utama untuk menjalankan program dan menampilkan hasilnya dengan cout.
 
 ## Unguided 
 
@@ -195,7 +201,7 @@ int main() {
 #### Output:
 <img width="503" height="236" alt="Image" src="https://github.com/user-attachments/assets/d679d261-5748-416f-889e-d4a2fcfc042c" />  
 
-Program ini terdiri dari tiga file, yaitu pelajaran.h, pelajaran.cpp, dan main2.cpp, yang digunakan untuk menyimpan dan menampilkan data mata pelajaran. Di file pelajaran.h, dibuat struktur bernama pelajaran yang berisi dua data, yaitu nama mata pelajaran dan kode pelajaran. File ini juga berisi deklarasi dua fungsi, yaitu create_pelajaran() untuk membuat data pelajaran baru dan tampil_pelajaran() untuk menampilkannya. Di file pelajaran.cpp, kedua fungsi tersebut dijelaskan cara kerjanya — create_pelajaran() mengisi nama dan kode pelajaran lalu mengembalikannya, sedangkan tampil_pelajaran() menampilkan hasilnya ke layar. Terakhir, di file main2.cpp, program utama membuat satu data pelajaran dengan nama “Struktur Data” dan kode “STD”, lalu menampilkan hasilnya dengan memanggil fungsi yang sudah dibuat.
+Program ini terdiri dari tiga file, yaitu pelajaran.h, pelajaran.cpp, dan main2.cpp, yang digunakan untuk menyimpan dan menampilkan data mata pelajaran. Di file pelajaran.h, dibuat struktur bernama pelajaran yang berisi dua data, yaitu nama mata pelajaran dan kode pelajaran. File ini juga berisi deklarasi dua fungsi, yaitu create_pelajaran() untuk membuat data pelajaran baru dan tampil_pelajaran() untuk menampilkannya. Di file pelajaran.cpp, kedua fungsi tersebut dijelaskan cara kerjanya, create_pelajaran() mengisi nama dan kode pelajaran lalu mengembalikannya, sedangkan tampil_pelajaran() menampilkan hasilnya ke layar. Terakhir, di file main2.cpp, program utama membuat satu data pelajaran dengan nama “Struktur Data” dan kode “STD”, lalu menampilkan hasilnya dengan memanggil fungsi yang sudah dibuat.
 
 #### Full code Screenshot:
 File : pelajaran.h
@@ -212,6 +218,8 @@ File : main2.cpp
 - 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer
 - fungsi/prosedur yang menampilkan isi sebuah array integer 2D
 - fungsi/prosedur yang akan menukarkan isi dari 2 array integer 2D pada posisi tertentu
+- fungsi/prosedur yang akan menukarkan isi dari variabel yang ditunjuk oleh 2 buah
+pointer
 
 ```C++
 #include <iostream>
@@ -293,5 +301,5 @@ Program di atas memakai dua array 2D berukuran 3x3 dan dua pointer integer untuk
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Dari modul ini bisa disimpulkan bahwa konsep Abstract Data Type (ADT) membantu kita membuat program yang lebih terstruktur dan mudah dipahami. Dengan memisahkan antara definisi data dan operasi yang bisa dilakukan, program jadi lebih rapi dan mudah dikembangkan. Penerapan ADT dalam C++ lewat penggunaan struct, fungsi, dan pemisahan file juga melatih kita untuk berpikir modular.
 
