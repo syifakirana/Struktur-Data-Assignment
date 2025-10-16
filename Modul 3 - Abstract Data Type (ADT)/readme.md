@@ -1,4 +1,4 @@
-<img width="931" height="563" alt="image" src="https://github.com/user-attachments/assets/5fc50769-6547-4945-8bca-5e96b5261220" /># <h1 align="center">Laporan Praktikum Modul Abstract Data Type (ADT)</h1>
+<h1 align="center">Laporan Praktikum Modul Abstract Data Type (ADT)</h1>
 <p align="center">Syifa Kirana Putri Surya</p>
 
 ## Dasar Teori
@@ -205,6 +205,7 @@ File : pelajaran.cpp
 <img width="999" height="648" alt="Image" src="https://github.com/user-attachments/assets/c9c2076d-a55d-475d-bea4-6b0fb6bde9c0" />
 
 File : main2.cpp
+<img width="931" height="563" alt="image" src="https://github.com/user-attachments/assets/16805382-8cbf-4bb0-bf71-a3231e99e624" />
 
 
 ### 3. Buatlah program dengan ketentuan :
