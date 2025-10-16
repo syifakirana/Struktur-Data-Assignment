@@ -122,7 +122,7 @@ int main() {
 Kode di atas digunakan untuk menghitung dan menampilkan nilai akhir mahasiswa berdasarkan nilai UTS, UAS, dan tugas dengan bobot masing-masing 30%, 40%, dan 30%. Data setiap mahasiswa disimpan menggunakan array dengan kapasitas maksimal sepuluh data. Fungsi hitungNilaiAkhir digunakan agar proses perhitungan nilai menjadi lebih terstruktur dan mudah dibaca. Pengguna akan diminta memasukkan nama, NIM, serta nilai-nilai yang diperlukan, lalu program secara otomatis menampilkan daftar mahasiswa beserta nilai akhirnya.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="1919" height="1019" alt="Image" src="https://github.com/user-attachments/assets/747027a1-babb-4f62-b765-7b414b1a41b8" />
 
 ### 2. Buatlah ADT pelajaran sebagai berikut di dalam file “pelajaran.h”:  
 
