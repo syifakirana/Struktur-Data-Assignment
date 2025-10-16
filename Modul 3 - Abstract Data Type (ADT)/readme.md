@@ -137,15 +137,61 @@ Contoh output hasil :
 <img width="356" height="58" alt="Image" src="https://github.com/user-attachments/assets/532a5d94-0163-4c5b-8704-0bb673ecf832" />  <br>
 Gambar 3-2 output pelajaran
 
+File : pelajaran.h
+```C++
+#ifndef PELAJARAN_H
+#define PELAJARAN_H
+
+#include <string>
+using namespace std;
+
+struct pelajaran {
+    string namaMapel;
+    string kodeMapel;
+};
+
+pelajaran create_pelajaran(string namapel, string kodepel);
+void tampil_pelajaran(pelajaran pel);
+
+#endif
+```
+
+File : pelajaran.cpp
 ```C++
 #include <iostream>
+#include "pelajaran.h"
+using namespace std;
+
+pelajaran create_pelajaran(string namapel, string kodepel) {
+    pelajaran p;
+    p.namaMapel = namapel;
+    p.kodeMapel = kodepel;
+    return p;
+}
+
+void tampil_pelajaran(pelajaran pel) {
+    cout << "nama pelajaran : " << pel.namaMapel << endl;
+    cout << "nilai : " << pel.kodeMapel << endl;
+}
+```
+
+File : main2.cpp
+```C++
+#include <iostream>
+#include "pelajaran.h"
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+    string namapel = "Struktur Data";
+    string kodepel = "STD";
+
+    pelajaran pel = create_pelajaran(namapel, kodepel);
+    tampil_pelajaran(pel);
+
     return 0;
 }
 ```
+
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
 
