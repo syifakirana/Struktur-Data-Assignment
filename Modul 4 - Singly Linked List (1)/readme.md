@@ -805,7 +805,7 @@ int main() {
 ```
 
 #### Output:
-<img width="503" height="236" alt="Image" src="https://github.com/user-attachments/assets/d679d261-5748-416f-889e-d4a2fcfc042c" />  
+<img width="639" height="377" alt="image" src="https://github.com/user-attachments/assets/4dd65181-368c-41d5-926e-f847313c44dd" />
 
 Program ini merupakan lanjutan dari latihan pertama.
 Fungsinya untuk menghapus elemen-elemen dari Single Linked List menggunakan berbagai operasi penghapusan:
@@ -817,16 +817,9 @@ Fungsinya untuk menghapus elemen-elemen dari Single Linked List menggunakan berb
 Output akhirnya menunjukkan isi list setelah penghapusan sebagian, lalu hasil setelah seluruh list dihapus.
 
 #### Full code Screenshot:
-File : pelajaran.h
-<img width="1131" height="661" alt="Image" src="https://github.com/user-attachments/assets/a032c586-183b-4f7d-b5ae-f806106b6833" />
+<img width="1919" height="1022" alt="image" src="https://github.com/user-attachments/assets/004bd745-338f-4946-810b-9a462b7639f5" />
 
-File : pelajaran.cpp
-<img width="999" height="648" alt="Image" src="https://github.com/user-attachments/assets/c9c2076d-a55d-475d-bea4-6b0fb6bde9c0" />
-
-File : main2.cpp
-<img width="931" height="563" alt="image" src="https://github.com/user-attachments/assets/16805382-8cbf-4bb0-bf71-a3231e99e624" />
-
-
+<img width="1425" height="1014" alt="image" src="https://github.com/user-attachments/assets/fbf5ad81-f893-4191-bcd3-6268a9f073ee" />
 
 ## Kesimpulan
 Dari praktikum ini bisa disimpulkan bahwa Singly Linked List adalah struktur data yang terdiri dari beberapa node yang saling terhubung satu arah lewat pointer. Setiap node punya dua bagian, yaitu data dan alamat menuju node berikutnya. Dengan struktur ini, kita bisa menambah dan menghapus data dengan lebih mudah tanpa perlu menggeser elemen seperti pada array. Dalam percobaan guided dan unguided, kita belajar cara membuat list, menambah data (insert), menghapus data (delete), dan menampilkan isi list (printInfo). Program juga dibuat dengan tiga file terpisah supaya lebih rapi, mudah dibaca, dan gampang dikelola.
