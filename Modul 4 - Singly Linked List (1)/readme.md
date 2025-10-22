@@ -500,6 +500,8 @@ Fungsi utama dari program ini adalah menunjukkan cara kerja operasi dasar Single
 <img width="668" height="249" alt="Image" src="https://github.com/user-attachments/assets/9fb99399-ca92-43ea-979a-7afd58e8f554" />  
 Kemudian buatlah implementasi dari procedure-procedure yang digunakan didalam file “Singlylist.cpp”<br> 
 Kemudian buat program utama didalam file “main.cpp” dengan implementasi sebagai berikut :  
+<img width="900" height="506" alt="Image" src="https://github.com/user-attachments/assets/e41e3550-65c3-4dbd-a870-f0d0829f01c8" />  
+Sehingga linkedlist yang dibuat akan seperti ini :  
 
 
 file: Singlylist.h
