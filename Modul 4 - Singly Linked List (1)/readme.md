@@ -635,7 +635,7 @@ Fungsi utamanya adalah menampilkan cara kerja penambahan data di awal list (inse
 
 ### 2. Dari soal Latihan pertama, lakukan penghapusan node 9 menggunakan deleteFirst(), node 2 menggunakan deleteLast(), dan node 8 menggunakan deleteAfter(). Kemudian tampilkan jumlah node yang tersimpan menggunakan nbList() dan lakukan penghapusan seluruh node menggunakan deleteList().
 Output yang diharapkan :
-<img width="722" height="125" alt="Image" src="https://github.com/user-attachments/assets/048b2ed8-33ad-4015-bc5a-813596a7348f" /><br>
+<img width="826" height="156" alt="Image" src="https://github.com/user-attachments/assets/2332acfe-f343-411a-a5bd-9880007dd598" /><br>
 
 File : Singlylist.h
 ```C++
