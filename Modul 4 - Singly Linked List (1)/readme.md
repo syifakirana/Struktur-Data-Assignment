@@ -497,14 +497,14 @@ Fungsi utama dari program ini adalah menunjukkan cara kerja operasi dasar Single
 ## Unguided 
 
 ### 1. Buatlah ADT Singly Linked list sebagai berikut di dalam file “Singlylist.h”
-<img width="668" height="249" alt="Image" src="https://github.com/user-attachments/assets/9fb99399-ca92-43ea-979a-7afd58e8f554" />  
+<img width="668" height="249" alt="Image" src="https://github.com/user-attachments/assets/9fb99399-ca92-43ea-979a-7afd58e8f554" /><br>
 Kemudian buatlah implementasi dari procedure-procedure yang digunakan didalam file “Singlylist.cpp”<br> 
 Kemudian buat program utama didalam file “main.cpp” dengan implementasi sebagai berikut :  
-<img width="900" height="506" alt="Image" src="https://github.com/user-attachments/assets/e41e3550-65c3-4dbd-a870-f0d0829f01c8" />  
+<img width="900" height="506" alt="Image" src="https://github.com/user-attachments/assets/e41e3550-65c3-4dbd-a870-f0d0829f01c8" /><br>
 Sehingga linkedlist yang dibuat akan seperti ini :  
-<img width="904" height="131" alt="Image" src="https://github.com/user-attachments/assets/856d373e-a75a-46ac-8892-ea0d26ff55c8" />  
-Output yang diharapkan :  
-<img width="861" height="156" alt="Image" src="https://github.com/user-attachments/assets/e6fa0a81-fbfa-42f2-8cb2-784252028208" />  
+<img width="904" height="131" alt="Image" src="https://github.com/user-attachments/assets/856d373e-a75a-46ac-8892-ea0d26ff55c8" /><br>
+Output yang diharapkan :<br>
+<img width="861" height="156" alt="Image" src="https://github.com/user-attachments/assets/e6fa0a81-fbfa-42f2-8cb2-784252028208" /><br>
 
 
 file: Singlylist.h
@@ -634,7 +634,7 @@ Fungsi utamanya adalah menampilkan cara kerja penambahan data di awal list (inse
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ef7be654-ba67-4c25-ac6a-366ac7ede603" />
 
 ### 2. Dari soal Latihan pertama, lakukan penghapusan node 9 menggunakan deleteFirst(), node 2 menggunakan deleteLast(), dan node 8 menggunakan deleteAfter(). Kemudian tampilkan jumlah node yang tersimpan menggunakan nbList() dan lakukan penghapusan seluruh node menggunakan deleteList().
-Output yang diharapkan :
+Output yang diharapkan :<br>
 <img width="826" height="156" alt="Image" src="https://github.com/user-attachments/assets/2332acfe-f343-411a-a5bd-9880007dd598" /><br>
 
 File : Singlylist.h
