@@ -631,7 +631,7 @@ Program dibagi menjadi tiga file agar lebih terstruktur:
 Fungsi utamanya adalah menampilkan cara kerja penambahan data di awal list (insertFirst).
 
 #### Full code Screenshot:
-<img width="1919" height="1019" alt="Image" src="https://github.com/user-attachments/assets/747027a1-babb-4f62-b765-7b414b1a41b8" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ef7be654-ba67-4c25-ac6a-366ac7ede603" />
 
 ### 2. Dari soal Latihan pertama, lakukan penghapusan node 9 menggunakan deleteFirst(), node 2 menggunakan deleteLast(), dan node 8 menggunakan deleteAfter(). Kemudian tampilkan jumlah node yang tersimpan menggunakan nbList() dan lakukan penghapusan seluruh node menggunakan deleteList().
 Output yang diharapkan :
