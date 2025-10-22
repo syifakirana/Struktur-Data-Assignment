@@ -502,6 +502,8 @@ Kemudian buatlah implementasi dari procedure-procedure yang digunakan didalam fi
 Kemudian buat program utama didalam file “main.cpp” dengan implementasi sebagai berikut :  
 <img width="900" height="506" alt="Image" src="https://github.com/user-attachments/assets/e41e3550-65c3-4dbd-a870-f0d0829f01c8" />  
 Sehingga linkedlist yang dibuat akan seperti ini :  
+<img width="904" height="131" alt="Image" src="https://github.com/user-attachments/assets/856d373e-a75a-46ac-8892-ea0d26ff55c8" />  
+Output yang diharapkan :  
 
 
 file: Singlylist.h
