@@ -504,6 +504,7 @@ Kemudian buat program utama didalam file “main.cpp” dengan implementasi seba
 Sehingga linkedlist yang dibuat akan seperti ini :  
 <img width="904" height="131" alt="Image" src="https://github.com/user-attachments/assets/856d373e-a75a-46ac-8892-ea0d26ff55c8" />  
 Output yang diharapkan :  
+<img width="861" height="156" alt="Image" src="https://github.com/user-attachments/assets/e6fa0a81-fbfa-42f2-8cb2-784252028208" />  
 
 
 file: Singlylist.h
