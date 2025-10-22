@@ -620,7 +620,7 @@ int main() {
 ```
 
 #### Output:
-<img width="1426" height="681" alt="Image" src="https://github.com/user-attachments/assets/d985f22f-0053-4c6c-adae-297099949bb5" />
+<img width="630" height="340" alt="Image" src="https://github.com/user-attachments/assets/1c6248e0-ea82-480a-aecc-b4585fcb6fcd" />
 
 Program di atas digunakan untuk membuat dan menampilkan data dalam struktur data Single Linked List.
 Data bertipe int dan disimpan dalam node-node yang saling terhubung satu arah.
