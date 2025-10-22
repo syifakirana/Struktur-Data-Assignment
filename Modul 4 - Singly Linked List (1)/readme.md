@@ -497,6 +497,10 @@ Fungsi utama dari program ini adalah menunjukkan cara kerja operasi dasar Single
 ## Unguided 
 
 ### 1. Buatlah ADT Singly Linked list sebagai berikut di dalam file “Singlylist.h”
+<img width="668" height="249" alt="Image" src="https://github.com/user-attachments/assets/9fb99399-ca92-43ea-979a-7afd58e8f554" />  
+Kemudian buatlah implementasi dari procedure-procedure yang digunakan didalam file “Singlylist.cpp”<br> 
+Kemudian buat program utama didalam file “main.cpp” dengan implementasi sebagai berikut :  
+
 
 file: Singlylist.h
 ```C++
