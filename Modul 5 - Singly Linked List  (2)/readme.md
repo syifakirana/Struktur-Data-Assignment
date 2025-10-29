@@ -482,48 +482,200 @@ Fitur-fitur utama yang diimplementasikan:
 <img width="1913" height="1028" alt="Image" src="https://github.com/user-attachments/assets/d9656c1b-a2c0-4f81-91c5-ceec7868c327" />
 
 
-### 2. Unguided1
+### 2. Buatlah ADT Singly Linked list sebagai berikut di dalam file “Singlylist.h”
+<img width="668" height="249" alt="Image" src="https://github.com/user-attachments/assets/9fb99399-ca92-43ea-979a-7afd58e8f554" /><br>
+Kemudian buat implementasi ADT Singly Linked list pada file “Singlylist.cpp”.
+Adapun isi data <br> 
+<img width="670" height="132" alt="image" src="https://github.com/user-attachments/assets/69e24f6f-6abd-416f-822a-b9a28fde841c" /><br>
+Cobalah hasil implementasi ADT pada file “main.cpp”  
+<img width="900" height="506" alt="Image" src="https://github.com/user-attachments/assets/e41e3550-65c3-4dbd-a870-f0d0829f01c8" /><br>
+
+<img width="861" height="156" alt="Image" src="https://github.com/user-attachments/assets/e6fa0a81-fbfa-42f2-8cb2-784252028208" /><br>
+
+
+file: Singlylist.h
+```C++
+#ifndef SINGLYLIST_H_INCLUDED
+#define SINGLYLIST_H_INCLUDED
+
+#include <iostream>
+using namespace std;
+
+// Deklarasi tipe data dasar
+typedef int infotype;
+typedef struct ElmtList *address;
+
+// Struktur elemen list
+struct ElmtList {
+    infotype info;
+    address next;
+};
+
+// Struktur list
+struct List {
+    address first;
+};
+
+// Deklarasi function dan procedure
+void createList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void insertFirst(List &L, address P);
+void printInfo(List L);
+
+#endif // SINGLYLIST_H_INCLUDED
+```
+
+file: Singlylist.cpp
+```C++
+#include "SinglyList.h"
+
+// Membuat list kosong
+void createList(List &L) {
+    L.first = NULL;
+}
+
+// Mengalokasikan node baru
+address alokasi(infotype x) {
+    address P = new ElmtList;
+    P->info = x;
+    P->next = NULL;
+    return P;
+}
+
+// Menghapus alokasi node dari memori
+void dealokasi(address &P) {
+    delete P;
+    P = NULL;
+}
+
+// nambah elemen di awal list
+void insertFirst(List &L, address P) {
+    if (L.first == NULL) {
+        L.first = P;
+    } else {
+        P->next = L.first;
+        L.first = P;
+    }
+}
+
+// Menampilkan semua isi list
+void printInfo(List L) {
+    address P = L.first;
+    while (P != NULL) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+```
+
+file: main.cpp
+```C++
+#include "SinglyList.h"
+
+int main() {
+    List L;
+    address P1, P2, P3, P4, P5;
+
+    // Inisialisasi list kosong
+    createList(L);
+
+    // Menambahkan elemen ke list
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    // Menampilkan isi list
+    cout << "Isi Linked List: ";
+    printInfo(L);
+
+    return 0;
+}
+```
+
+#### Output:
+<img width="630" height="340" alt="Image" src="https://github.com/user-attachments/assets/1c6248e0-ea82-480a-aecc-b4585fcb6fcd" />
+
+Program di atas digunakan untuk membuat dan menampilkan data dalam struktur data Single Linked List.
+Data bertipe int dan disimpan dalam node-node yang saling terhubung satu arah.
+Program dibagi menjadi tiga file agar lebih terstruktur:
+- Singlylist.h berisi deklarasi struct dan fungsi.
+- Singlylist.cpp berisi implementasi fungsi seperti membuat list, menambah node, dan menampilkan isi list.
+- main.cpp berisi program utama untuk menjalankan operasi insert dan menampilkan isi list ke layar.
+Fungsi utamanya adalah menampilkan cara kerja penambahan data di awal list (insertFirst).
+
+#### Full code Screenshot:
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ef7be654-ba67-4c25-ac6a-366ac7ede603" />
+
+
+### 3. Carilah elemen dengan info 8 dengan membuat fungsi baru.<br>
+fungsi findElm( L : List, x : infotype ) : address<br>
+<img width="602" height="70" alt="image" src="https://github.com/user-attachments/assets/f3193ac1-62e1-4d57-aeb4-2ddb5462e8eb" />
 
 ```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-    string satuan[] = {"nol","satu","dua","tiga","empat","lima",
-                       "enam","tujuh","delapan","sembilan"};
-    string belasan[] = {"sepuluh","sebelas","dua belas","tiga belas","empat belas",
-                        "lima belas","enam belas","tujuh belas","delapan belas","sembilan belas"};
-    string puluhan[] = {"","sepuluh","dua puluh","tiga puluh","empat puluh",
-                        "lima puluh","enam puluh","tujuh puluh","delapan puluh","sembilan puluh"};
-
     int n;
-    cout << "Masukkan angka (0-100): ";
+    cout << "Masukkan angka: ";
     cin >> n;
 
-    if (n < 10) cout << satuan[n];
-    else if (n < 20) cout << belasan[n - 10];
-    else if (n < 100) {
-        cout << puluhan[n/10];
-        if (n % 10 != 0) cout << " " << satuan[n%10];
-    }
-    else if (n == 100) cout << "seratus";
-    else cout << "di luar jangkauan";
+    for (int i = n; i >= 1; i--) {
+        // cetak spasi di depan
+        for (int s = 0; s < (n - i); s++) {
+            cout << "  "; // 2 spasi biar rapi
+        }
 
-    cout << endl;
+        // kiri menurun
+        for (int j = i; j >= 1; j--) {
+            cout << j << " ";
+        }
+
+        // bintang
+        cout << "* ";
+
+        // kanan menaik
+        for (int j = 1; j <= i; j++) {
+            cout << j << " ";
+        }
+
+        cout << endl;
+    }
+
+    // baris terakhir spasi terus bintang
+    for (int s = 0; s < n; s++) {
+        cout << "  ";
+    }
+    cout << "*";
+
     return 0;
 }
 
 ```
 ### Output:
-<img width="506" height="330" alt="Image" src="https://github.com/user-attachments/assets/76789aec-e9bf-4cb6-a24c-ca0cdcecd4fc" />
+<img width="580" height="447" alt="Image" src="https://github.com/user-attachments/assets/27b301a3-0129-4a4b-a5d9-e5873750104f" />
 
-Program di atas bertujuan untuk mengubah angka dari 0 hingga 100 menjadi kata dalam bahasa Indonesia. Program ini menggunakan tiga array satuan, belasan, dan puluhan untuk menyimpan representasi kata dari angka 0–9, 10–19, dan kelipatan puluhan. Pengguna diminta memasukkan sebuah angka n, lalu program memeriksa nilainya: jika kurang dari 10, ditampilkan dari array satuan; jika antara 10–19, ditampilkan dari array belasan; jika 20–99, ditampilkan dari array puluhan dan, jika ada sisa, ditambahkan kata dari array satuan; jika 100, ditampilkan "seratus"; selain itu, program menampilkan pesan "di luar jangkauan".
+Program di atas bertujuan untuk mencetak pola segitiga angka dengan simbol bintang di tengah berdasarkan input angka n. Program meminta pengguna memasukkan sebuah angka n, kemudian menggunakan loop for untuk mencetak setiap baris dari atas ke bawah. Pada setiap baris: pertama dicetak spasi agar pola rata tengah, lalu deretan angka menurun dari i ke 1 di sebelah kiri, diikuti simbol *, lalu deretan angka menaik dari 1 ke i di sebelah kanan. Setelah semua baris dicetak, program menambahkan baris terakhir yang hanya berisi spasi dan satu simbol * di tengah.
 
 ### Full Code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f1096193-6b67-4107-89cc-c71d1c0962a5" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d2a1cbda-901b-47e3-b430-8d8a1cd9cffd" />
 
-### 3. Unguided2
-<img width="116" height="138" alt="Image" src="https://github.com/user-attachments/assets/e0581782-5025-4c82-84b3-aaf78da073c9" />
+
+### 4. Hitunglah jumlah total info seluruh elemen (9+12+8+0+2=31).<br>
+<img width="609" height="73" alt="image" src="https://github.com/user-attachments/assets/5833d2c2-fdd0-410e-aad2-0150ad68df76" />
 
 
 ```cpp
@@ -578,5 +730,3 @@ Program di atas bertujuan untuk mencetak pola segitiga angka dengan simbol binta
 
 ## Kesimpulan
 Dari praktikum ini, yang saya dapatkan adalah pemahaman konsep dasar pemrograman seperti variabel, tipe data, input-output, operator aritmatika dan perbandingan, percabangan, perulangan, serta array sangat penting untuk membangun program yang efektif. Praktikum ini membantu memperkuat pemahaman teori melalui penerapan langsung, sehingga kita dapat melihat bagaimana setiap konsep bekerj. misalnya bagaimana percabangan mempengaruhi alur program, atau bagaimana loop mempermudah pengolahan data berulang.
-
-
