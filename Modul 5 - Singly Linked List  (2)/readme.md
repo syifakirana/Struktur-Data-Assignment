@@ -3,11 +3,11 @@
 <p align="center">103112400111</p>
 
 ## Dasar Teori
-Materi lanjutan dari Singly Linked List membahas operasi yang lebih kompleks, yaitu update (perubahan data) dan searching (pencarian data). Jika pada pertemuan sebelumnya list hanya digunakan untuk menambah, menghapus, dan menampilkan data, maka pada bagian ini list akan dikembangkan.
+Ini adalah lanjutan dari Singly Linked List. Membahas operasi yang lebih kompleks, yaitu update (perubahan data) dan searching (pencarian data). Jika pada pertemuan sebelumnya list hanya digunakan untuk menambah, menghapus, dan menampilkan data, maka pada bagian ini list akan dikembangkan.
 
 Operasi update membuat pengguna bisa mengubah isi data pada node tertentu tanpa harus menghapusnya terlebih dahulu. Perubahan dapat dilakukan pada node pertama (updateFirst), node terakhir (updateLast), maupun node setelah node tertentu (updateAfter).
 
-Selain itu, terdapat operasi searching, yaitu proses pencarian data dalam list. Pencarian dapat dilakukan berdasarkan isi data (FindNodeByData), alamat node (FindNodeByAddress), atau range nilai tertentu (FindNodeByRange). Dengan cara ini, pengguna dapat menemukan dan menampilkan data yang spesifik sesuai kebutuhan program.
+Operasi searching, yaitu proses pencarian data dalam list. Pencarian dapat dilakukan berdasarkan isi data (FindNodeByData), alamat node (FindNodeByAddress), atau range nilai tertentu (FindNodeByRange). Dengan cara ini, pengguna dapat menemukan dan menampilkan data yang spesifik sesuai kebutuhan program.
 
 Secara umum, konsep dasar Singly Linked List tetap sama setiap node memiliki dua bagian, yaitu info dan pointer next, dan seluruh node saling terhubung satu arah. Perbedaan utamanya adalah pada kemampuan program dalam memperbarui dan mencari data secara lebih efisien, tanpa harus membuat atau menghapus node baru.
 
@@ -434,29 +434,33 @@ Setiap node pada list menyimpan informasi nama buah, jumlah, dan harga, serta po
 Program dibagi menjadi tiga file agar lebih terstruktur:
 - listBuah.h berisi deklarasi struct, tipe data, dan prototype fungsi/prosedur,
 - listBuah.cpp berisi implementasi fungsi dan prosedur seperti insert, delete, update, dan searching,
-- main.cpp sebagai file utama untuk menjalankan semua proses.
+- main.cpp sebagai file utama untuk menjalankan semua proses.<br>
 Fungsi utama yang digunakan dalam program ini antara lain:
 - insertFirst, insertAfter, insertLast untuk menambahkan data buah di awal, tengah, dan akhir list,
 - delFirst, delAfter, delLast untuk menghapus node dari berbagai posisi,
 - updateFirst, updateAfter, updateLast untuk memperbarui isi data buah tanpa membuat node baru,
 - FindNodeByData, FindNodeByAddress, FindNodeByRange untuk melakukan pencarian data berdasarkan nama, alamat node, dan range harga,
 - deleteList untuk menghapus seluruh isi list dari memori sepenuhnya.
-Program ini menunjukkan bagaimana operasi dasar dan tambahan pada linked list saling terhubung membentuk satu sistem yang efisien.
 
 ## Unguided
 
-### 1. Program Manajemen Menu Minuman Menggunakan Single Linked List
+### 1. Modifikasi dari soal guided dengan tema yang berbeda (list minuman di cafe)
 
 File: listMinuman.h
-```cpp
+```C++
 #include <iostream>
 using namespace std;
 
 
 ```
 File: listMinuman.cpp
+```C++
 
+```
 File: main.cpp
+```C++
+
+```
 
 ### Output:
 <img width="513" height="306" alt="Image" src="https://github.com/user-attachments/assets/820d5bb0-69d5-4c2d-9600-63f8594d1b98" />
@@ -467,7 +471,7 @@ Program ini juga dibagi menjadi tiga file:
 Program dibagi menjadi tiga file agar lebih rapi:
 - listMinuman.h berisi deklarasi struktur data dan fungsi.
 - listMinuman.cpp berisi implementasi operasi seperti insert, delete, update, dan searching.
-- main.cpp menjalankan operasi seperti menambah, memperbarui, mencari, dan menghapus data menu.
+- main.cpp menjalankan operasi seperti menambah, memperbarui, mencari, dan menghapus data menu.<br>
 Fitur-fitur utama yang diimplementasikan:
 - Insert (insertFirst, insertAfter, insertLast) untuk menambah menu,
 - Update (updateFirst, updateAfter, updateLast) untuk mengubah data minuman tertentu,
