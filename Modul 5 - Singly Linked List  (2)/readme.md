@@ -435,6 +435,7 @@ Program dibagi menjadi tiga file agar lebih terstruktur:
 - listBuah.h berisi deklarasi struct, tipe data, dan prototype fungsi/prosedur,
 - listBuah.cpp berisi implementasi fungsi dan prosedur seperti insert, delete, update, dan searching,
 - main.cpp sebagai file utama untuk menjalankan semua proses.<br>
+
 Fungsi utama yang digunakan dalam program ini antara lain:
 - insertFirst, insertAfter, insertLast untuk menambahkan data buah di awal, tengah, dan akhir list,
 - delFirst, delAfter, delLast untuk menghapus node dari berbagai posisi,
@@ -606,7 +607,7 @@ int main() {
 ```
 
 #### Output:
-<img width="630" height="340" alt="Image" src="https://github.com/user-attachments/assets/1c6248e0-ea82-480a-aecc-b4585fcb6fcd" />
+<img width="687" height="118" alt="image" src="https://github.com/user-attachments/assets/5319e3b1-a70a-4217-af67-00621f86eb12" />
 
 Program di atas digunakan untuk membuat dan menampilkan data dalam struktur data Single Linked List.
 Data bertipe int dan disimpan dalam node-node yang saling terhubung satu arah.
@@ -666,9 +667,9 @@ int main() {
 
 ```
 ### Output:
-<img width="580" height="447" alt="Image" src="https://github.com/user-attachments/assets/27b301a3-0129-4a4b-a5d9-e5873750104f" />
+<img width="733" height="340" alt="image" src="https://github.com/user-attachments/assets/f9f8f7a5-34aa-4a08-a028-be52fc6cb79c" />
 
-Program di atas bertujuan untuk mencetak pola segitiga angka dengan simbol bintang di tengah berdasarkan input angka n. Program meminta pengguna memasukkan sebuah angka n, kemudian menggunakan loop for untuk mencetak setiap baris dari atas ke bawah. Pada setiap baris: pertama dicetak spasi agar pola rata tengah, lalu deretan angka menurun dari i ke 1 di sebelah kiri, diikuti simbol *, lalu deretan angka menaik dari 1 ke i di sebelah kanan. Setelah semua baris dicetak, program menambahkan baris terakhir yang hanya berisi spasi dan satu simbol * di tengah.
+Program di atas menambahkan fungsi findElm() untuk mencari elemen tertentu dalam Single Linked List berdasarkan nilai datanya. Jika data ditemukan, program akan menampilkan bahwa elemen tersebut ada dalam list. 
 
 ### Full Code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d2a1cbda-901b-47e3-b430-8d8a1cd9cffd" />
@@ -720,13 +721,15 @@ int main() {
 
 ```
 ### Output:
-<img width="580" height="447" alt="Image" src="https://github.com/user-attachments/assets/27b301a3-0129-4a4b-a5d9-e5873750104f" />
+<img width="691" height="154" alt="image" src="https://github.com/user-attachments/assets/41a17050-bc74-41fa-b533-7c84dd835cad" />
 
-Program di atas bertujuan untuk mencetak pola segitiga angka dengan simbol bintang di tengah berdasarkan input angka n. Program meminta pengguna memasukkan sebuah angka n, kemudian menggunakan loop for untuk mencetak setiap baris dari atas ke bawah. Pada setiap baris: pertama dicetak spasi agar pola rata tengah, lalu deretan angka menurun dari i ke 1 di sebelah kiri, diikuti simbol *, lalu deretan angka menaik dari 1 ke i di sebelah kanan. Setelah semua baris dicetak, program menambahkan baris terakhir yang hanya berisi spasi dan satu simbol * di tengah.
+Program di atas menambahkan fungsi sumElm() untuk menghitung jumlah total seluruh data pada Single Linked List. Fungsi ini menelusuri setiap node dan menjumlahkan nilai info pada tiap elemen, lalu menampilkan hasil totalnya ke layar
 
 ### Full Code Screenshot:
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d2a1cbda-901b-47e3-b430-8d8a1cd9cffd" />
 
 
 ## Kesimpulan
-Dari praktikum ini, yang saya dapatkan adalah pemahaman konsep dasar pemrograman seperti variabel, tipe data, input-output, operator aritmatika dan perbandingan, percabangan, perulangan, serta array sangat penting untuk membangun program yang efektif. Praktikum ini membantu memperkuat pemahaman teori melalui penerapan langsung, sehingga kita dapat melihat bagaimana setiap konsep bekerj. misalnya bagaimana percabangan mempengaruhi alur program, atau bagaimana loop mempermudah pengolahan data berulang.
+Dari praktikum ini dapat disimpulkan bahwa Singly Linked List tidak hanya digunakan untuk menambah dan menghapus data, tetapi juga dapat dikembangkan untuk melakukan proses update dan searching.
+Operasi update memungkinkan pengguna mengubah isi node tertentu tanpa perlu membuat node baru, sedangkan operasi searching membantu menemukan data berdasarkan nama, alamat node, atau rentang nilai tertentu.
+Konsep pointer menjadi bagian penting, karena semua proses seperti penelusuran, pengubahan, maupun pencarian data dilakukan melalui hubungan antar-node yang dibentuk oleh pointer tersebut.
