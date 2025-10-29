@@ -3,7 +3,7 @@
 <p align="center">103112400111</p>
 
 ## Dasar Teori
-Ini adalah lanjutan dari Singly Linked List. Membahas operasi yang lebih kompleks, yaitu update (perubahan data) dan searching (pencarian data). Jika pada pertemuan sebelumnya list hanya digunakan untuk menambah, menghapus, dan menampilkan data, maka pada bagian ini list akan dikembangkan.
+Materi ini merupakan lanjutan dari Singly Linked List. Membahas operasi yang lebih kompleks, yaitu update (perubahan data) dan searching (pencarian data). Jika pada pertemuan sebelumnya list hanya digunakan untuk menambah, menghapus, dan menampilkan data, maka pada bagian ini list akan dikembangkan.
 
 Operasi update membuat pengguna bisa mengubah isi data pada node tertentu tanpa harus menghapusnya terlebih dahulu. Perubahan dapat dilakukan pada node pertama (updateFirst), node terakhir (updateLast), maupun node setelah node tertentu (updateAfter).
 
