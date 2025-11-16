@@ -642,152 +642,8 @@ Program ini menambahkan fitur pushAscending, yaitu proses memasukkan data ke dal
 #### Full code Screenshot:
 <img width="1913" height="1020" alt="Image" src="https://github.com/user-attachments/assets/87bbe506-ea09-4bea-8740-c3e1c45ade28" />
 
-### 3. Carilah elemen dengan info 8 dengan membuat fungsi baru.<br>
-fungsi findElm( L : List, x : infotype ) : address<br>
-<img width="602" height="70" alt="image" src="https://github.com/user-attachments/assets/f3193ac1-62e1-4d57-aeb4-2ddb5462e8eb" />
-
-File: Singlylist.h
-```C++
-#ifndef SINGLYLIST_H_INCLUDED
-#define SINGLYLIST_H_INCLUDED
-
-#include <iostream>
-using namespace std;
-
-// deklarasi tipe data dasar
-typedef int infotype;
-typedef struct ElmtList *address;
-
-// struktur elemen list
-struct ElmtList {
-    infotype info;
-    address next;
-};
-
-// struktur list
-struct List {
-    address first;
-};
-
-// deklarasi function dan procedure
-void createList(List &L);
-address alokasi(infotype x);
-void dealokasi(address &P);
-void insertFirst(List &L, address P);
-void printInfo(List L);
-
-address findElm(List L, infotype x); //tambahan
-
-#endif // SINGLYLIST_H_INCLUDED
-```
-File: Singlylist.CPP
-```C++
-#include "SinglyList.h"
-
-// buat list kosong
-void createList(List &L) {
-    L.first = NULL;
-}
-
-// alokasikan node baru
-address alokasi(infotype x) {
-    address P = new ElmtList;
-    P->info = x;
-    P->next = NULL;
-    return P;
-}
-
-// hapus alokasi node dari memori
-void dealokasi(address &P) {
-    delete P;
-    P = NULL;
-}
-
-// nambah elemen di awal list
-void insertFirst(List &L, address P) {
-    if (L.first == NULL) {
-        L.first = P;
-    } else {
-        P->next = L.first;
-        L.first = P;
-    }
-}
-
-// menampilkan semua isi list
-void printInfo(List L) {
-    address P = L.first;
-    while (P != NULL) {
-        cout << P->info << " ";
-        P = P->next;
-    }
-    cout << endl;
-}
-
-//tambahan
-address findElm(List L, infotype x) {
-    address P = L.first;
-    while (P != NULL) {
-        if (P->info == x) {
-            return P; // kalau ketemu, balikin alamat node
-        }
-        P = P->next;
-    }
-    return NULL; // kalau gak ketemu
-}
-```
-
-File: main.cpp
-```C++
-#include "SinglyList.h"
-
-int main() {
-    List L;
-    address P1, P2, P3, P4, P5;
-
-    // inisialisasi list kosong
-    createList(L);
-
-    // menambahkan elemen ke list
-    P1 = alokasi(2);
-    insertFirst(L, P1);
-
-    P2 = alokasi(0);
-    insertFirst(L, P2);
-
-    P3 = alokasi(8);
-    insertFirst(L, P3);
-
-    P4 = alokasi(12);
-    insertFirst(L, P4);
-
-    P5 = alokasi(9);
-    insertFirst(L, P5);
-
-    // menampilkan isi list
-    cout << "Isi Linked List: ";
-    printInfo(L);
-
-    address hasil = findElm(L, 8); //tambahan
-    if (hasil != NULL) {
-        cout << hasil->info << " ditemukan dalam list" << endl;
-    } else {
-        cout << "Elemen tidak ditemukan dalam list" << endl;
-    }
-
-
-    return 0;
-}
-```
-### Output:
-<img width="733" height="340" alt="image" src="https://github.com/user-attachments/assets/f9f8f7a5-34aa-4a08-a028-be52fc6cb79c" />
-
-Program di atas menambahkan fungsi findElm() untuk mencari elemen tertentu dalam Single Linked List berdasarkan nilai datanya. Jika data ditemukan, program akan menampilkan bahwa elemen tersebut ada dalam list. 
-
-### Full Code Screenshot:
-<img width="1919" height="1023" alt="image" src="https://github.com/user-attachments/assets/ae9a8c8a-0694-43d7-a026-e527c200bdc4" />
-
-### 4. Hitunglah jumlah total info seluruh elemen (9+12+8+0+2=31).<br>
-<img width="609" height="73" alt="image" src="https://github.com/user-attachments/assets/5833d2c2-fdd0-410e-aad2-0150ad68df76" /><br>  
+### 3. Tambahkan prosedur getInputStream(in/out S : Stack). Prosedur akan terus membaca dan menerima input user dan memasukkan setiap input ke dalam stack hingga user menekan tombol enter. Contoh: gunakan cin.get() untuk mendapatkan inputan user.
+<img width="681" height="277" alt="image" src="https://github.com/user-attachments/assets/309812a5-c75b-4c57-be61-97ba04f8f312" />
 
 File: stack.h
 ```C++
@@ -896,12 +752,12 @@ int main() {
 }
 ```
 ### Output:
-<img width="691" height="154" alt="image" src="https://github.com/user-attachments/assets/41a17050-bc74-41fa-b533-7c84dd835cad" />
+<img width="508" height="180" alt="Image" src="https://github.com/user-attachments/assets/ece3f1ca-f3df-4831-9508-a93f4e6cba9b" />
 
-Program di atas menambahkan fungsi sumElm() untuk menghitung jumlah total seluruh data pada Single Linked List. Fungsi ini menelusuri setiap node dan menjumlahkan nilai info pada tiap elemen, lalu menampilkan hasil totalnya ke layar
+Program ini menambahkan fitur getInputStream, yaitu proses membaca input pengguna satu demi satu menggunakan cin.get(). Setiap karakter digit yang dimasukkan akan langsung dimasukkan ke dalam stack sampai pengguna menekan tombol ENTER. Data yang masuk akan tersimpan mengikuti aturan stack, yaitu elemen yang terakhir dimasukkan berada di posisi paling atas. Setelah input selesai, isi stack ditampilkan menggunakan printInfo, lalu dibalik dengan balikStack untuk menunjukkan perubahan urutan datanya.
 
 ### Full Code Screenshot:
-<img width="1919" height="1023" alt="image" src="https://github.com/user-attachments/assets/ec0b7fff-f3ec-4b33-a4d5-b329f8247f25" />
+<img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/c285516c-1c0e-4728-bc50-8af04c0360bd" />
 
 ## Kesimpulan
 Dari praktikum ini dapat disimpulkan bahwa struktur data Stack tidak hanya digunakan untuk menambah dan mengambil data secara LIFO, tetapi juga bisa dikembangkan untuk berbagai operasi tambahan seperti membalik urutan data, menjaga data tetap terurut, dan membaca input karakter satu per satu. Operasi dasar Push dan Pop menjadi inti dari semua proses, karena setiap pengolahan data selalu dilakukan melalui elemen teratas stack.
