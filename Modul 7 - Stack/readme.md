@@ -510,123 +510,132 @@ Program ini membuat struktur data Stack menggunakan array berkapasitas 20 elemen
 <img width="1919" height="1021" alt="image" src="https://github.com/user-attachments/assets/c64f0d62-57be-48f7-831a-df98b07686aa" />
 
 ### 2. Tambahkan prosedur pushAscending(in/out S: Stack, in x: integer)
-<img width="648" height="44" alt="Image" src="https://github.com/user-attachments/assets/05dfeddb-c82b-4a66-b0d3-24a4321c01f5" />
+<img width="648" height="44" alt="Image" src="https://github.com/user-attachments/assets/05dfeddb-c82b-4a66-b0d3-24a4321c01f5" /><br>
+<img width="647" height="315" alt="Image" src="https://github.com/user-attachments/assets/833ca5de-f5e2-4813-b9f3-439ff5285951" /><br>
 
-
-file: Singlylist.h
+file: stack.h
 ```C++
-#ifndef SINGLYLIST_H_INCLUDED
-#define SINGLYLIST_H_INCLUDED
+#ifndef STACK_H_INCLUDED
+#define STACK_H_INCLUDED
 
 #include <iostream>
 using namespace std;
 
-// deklarasi tipe data dasar
 typedef int infotype;
-typedef struct ElmtList *address;
 
-//struktur elemen list
-struct ElmtList {
-    infotype info;
-    address next;
+struct Stack {
+    infotype info[20];
+    int top;
 };
 
-// struktur list
-struct List {
-    address first;
-};
+void CreateStack(Stack &S);
+void Push(Stack &S, infotype x);
+infotype Pop(Stack &S);
+void printInfo(Stack S);
+void balikStack(Stack &S);
 
-// deklarasi function dan procedure
-void createList(List &L);
-address alokasi(infotype x);
-void dealokasi(address &P);
-void insertFirst(List &L, address P);
-void printInfo(List L);
+void pushAscending(Stack &S, infotype x); //tambahan
 
-#endif // SINGLYLIST_H_INCLUDED
+
+#endif
 ```
 
-file: Singlylist.cpp
+file: stack.cpp
 ```C++
-#include "SinglyList.h"
+#include <iostream>
+#include "stack.h"
+using namespace std;
 
-// buat list kosong
-void createList(List &L) {
-    L.first = NULL;
+void CreateStack(Stack &S) {
+    S.top = -1;
 }
 
-// alokasi node baru
-address alokasi(infotype x) {
-    address P = new ElmtList;
-    P->info = x;
-    P->next = NULL;
-    return P;
-}
-
-// hapus alokasi node dari memori
-void dealokasi(address &P) {
-    delete P;
-    P = NULL;
-}
-
-// nambah elemen di awal list
-void insertFirst(List &L, address P) {
-    if (L.first == NULL) {
-        L.first = P;
-    } else {
-        P->next = L.first;
-        L.first = P;
+void Push(Stack &S, infotype x) {
+    if (S.top < 19) {
+        S.top++;
+        S.info[S.top] = x;
     }
 }
 
-// menampilkan semua isi list
-void printInfo(List L) {
-    address P = L.first;
-    while (P != NULL) {
-        cout << P->info << " ";
-        P = P->next;
+infotype Pop(Stack &S) {
+    if (S.top >= 0) {
+        infotype x = S.info[S.top];
+        S.top--;
+        return x;
+    }
+    return -1;
+}
+
+void printInfo(Stack S) {
+    cout << "[TOP] ";
+    for (int i = S.top; i >= 0; i--) {
+        cout << S.info[i] << " ";
     }
     cout << endl;
+}
+
+void balikStack(Stack &S) {
+    Stack temp;
+    CreateStack(temp);
+
+    while (S.top >= 0) {
+        Push(temp, Pop(S));
+    }
+
+    S = temp; // hanya 1 kali pembalikan
+}
+
+//tambahan
+void pushAscending(Stack &S, infotype x) {
+    Stack temp;
+    CreateStack(temp);
+
+    // pindahkan elemen yang lebih besar ke temp
+    while (S.top >= 0 && S.info[S.top] > x) {
+        Push(temp, Pop(S));
+    }
+
+    // push elemen baru
+    Push(S, x);
+
+    // kembalikan elemen dari temp
+    while (temp.top >= 0) {
+        Push(S, Pop(temp));
+    }
 }
 ```
 
 file: main.cpp
 ```C++
-#include "SinglyList.h"
+#include "stack.h"
+#include <iostream>
+using namespace std;
 
 int main() {
-    List L;
-    address P1, P2, P3, P4, P5;
+    cout << "Hello world!" << endl;
 
-    // inisialisasi list kosong
-    createList(L);
+    Stack S;
+    CreateStack(S);
 
-    // menambahkan elemen ke list
-    P1 = alokasi(2);
-    insertFirst(L, P1);
+    pushAscending(S,3);
+    pushAscending(S,4);
+    pushAscending(S,8);
+    pushAscending(S,2);
+    pushAscending(S,3);
+    pushAscending(S,9);
 
-    P2 = alokasi(0);
-    insertFirst(L, P2);
+    printInfo(S);
+    cout << "balik stack" << endl;
 
-    P3 = alokasi(8);
-    insertFirst(L, P3);
-
-    P4 = alokasi(12);
-    insertFirst(L, P4);
-
-    P5 = alokasi(9);
-    insertFirst(L, P5);
-
-    // menampilkan isi list
-    cout << "Isi Linked List: ";
-    printInfo(L);
+    balikStack(S);
+    printInfo(S);
 
     return 0;
 }
 ```
 
 #### Output:
-<img width="687" height="118" alt="image" src="https://github.com/user-attachments/assets/5319e3b1-a70a-4217-af67-00621f86eb12" />
+
 
 Program di atas digunakan untuk membuat dan menampilkan data dalam struktur data Single Linked List.
 Data bertipe int dan disimpan dalam node-node yang saling terhubung satu arah.
