@@ -509,15 +509,9 @@ Program ini membuat struktur data Stack menggunakan array berkapasitas 20 elemen
 ### Full Code Screenshot:
 <img width="1919" height="1021" alt="image" src="https://github.com/user-attachments/assets/c64f0d62-57be-48f7-831a-df98b07686aa" />
 
-### 2. Buatlah ADT Singly Linked list sebagai berikut di dalam file “Singlylist.h”
-<img width="668" height="249" alt="Image" src="https://github.com/user-attachments/assets/9fb99399-ca92-43ea-979a-7afd58e8f554" /><br>
-Kemudian buat implementasi ADT Singly Linked list pada file “Singlylist.cpp”.
-Adapun isi data <br> 
-<img width="670" height="132" alt="image" src="https://github.com/user-attachments/assets/69e24f6f-6abd-416f-822a-b9a28fde841c" /><br>
-Cobalah hasil implementasi ADT pada file “main.cpp”  
-<img width="900" height="506" alt="Image" src="https://github.com/user-attachments/assets/e41e3550-65c3-4dbd-a870-f0d0829f01c8" /><br>
+### 2. Tambahkan prosedur pushAscending(in/out S: Stack, in x: integer)
 
-<img width="861" height="156" alt="Image" src="https://github.com/user-attachments/assets/e6fa0a81-fbfa-42f2-8cb2-784252028208" /><br>
+
 
 file: Singlylist.h
 ```C++
