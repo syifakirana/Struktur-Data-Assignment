@@ -3,13 +3,9 @@
 <p align="center">103112400111</p>
 
 ## Dasar Teori
-Materi ini merupakan lanjutan dari Singly Linked List. Membahas operasi yang lebih kompleks, yaitu update (perubahan data) dan searching (pencarian data). Jika pada pertemuan sebelumnya list hanya digunakan untuk menambah, menghapus, dan menampilkan data, maka pada bagian ini list akan dikembangkan.
+Stack adalah struktur data yang cara kerjanya seperti menyusun barang bertumpuk. Data yang terakhir dimasukkan akan menjadi data yang pertama diambil (LIFO – Last In, First Out). Stack disimpan menggunakan array, dan posisi data paling atas ditandai oleh variabel top. Jika stack masih kosong, nilai top adalah -1. Operasi Push digunakan untuk menambah data ke atas stack, sedangkan Pop digunakan untuk mengambil dan menghapus data teratas.
 
-Operasi update membuat pengguna bisa mengubah isi data pada node tertentu tanpa harus menghapusnya terlebih dahulu. Perubahan dapat dilakukan pada node pertama (updateFirst), node terakhir (updateLast), maupun node setelah node tertentu (updateAfter).
-
-Operasi searching, yaitu proses pencarian data dalam list. Pencarian dapat dilakukan berdasarkan isi data (FindNodeByData), alamat node (FindNodeByAddress), atau range nilai tertentu (FindNodeByRange). Dengan cara ini, pengguna dapat menemukan dan menampilkan data yang spesifik sesuai kebutuhan program.
-
-Secara umum, konsep dasar Singly Linked List tetap sama setiap node memiliki dua bagian, yaitu info dan pointer next, dan seluruh node saling terhubung satu arah. Perbedaan utamanya adalah pada kemampuan program dalam memperbarui dan mencari data secara lebih efisien, tanpa harus membuat atau menghapus node baru.
+Ada juga beberapa fungsi tambahan seperti Fungsi balikStack digunakan untuk membalik urutan isi stack. Fungsi pushAscending digunakan untuk menambah data ke stack tetapi tetap menjaga agar data di dalamnya tersusun secara urut dari kecil ke besar. Lalu ada getInputStream, yang membaca input dari pengguna satu karakter demi satu dan memasukkannya ke dalam stack sampai pengguna menekan ENTER.
 
 ---
 
@@ -1227,7 +1223,4 @@ Program di atas menambahkan fungsi sumElm() untuk menghitung jumlah total seluru
 <img width="1919" height="1023" alt="image" src="https://github.com/user-attachments/assets/ec0b7fff-f3ec-4b33-a4d5-b329f8247f25" />
 
 ## Kesimpulan
-Dari praktikum ini dapat disimpulkan bahwa Singly Linked List tidak hanya digunakan untuk menambah dan menghapus data, tetapi juga dapat dikembangkan untuk melakukan proses update dan searching.
-Operasi update memungkinkan pengguna mengubah isi node tertentu tanpa perlu membuat node baru, sedangkan operasi searching membantu menemukan data berdasarkan nama, alamat node, atau rentang nilai tertentu.
-Konsep pointer menjadi bagian penting, karena semua proses seperti penelusuran, pengubahan, maupun pencarian data dilakukan melalui hubungan antar-node yang dibentuk oleh pointer tersebut.
-
+Dari praktikum ini dapat disimpulkan bahwa struktur data Stack tidak hanya digunakan untuk menambah dan mengambil data secara LIFO, tetapi juga bisa dikembangkan untuk berbagai operasi tambahan seperti membalik urutan data, menjaga data tetap terurut, dan membaca input karakter satu per satu. Operasi dasar Push dan Pop menjadi inti dari semua proses, karena setiap pengolahan data selalu dilakukan melalui elemen teratas stack.
