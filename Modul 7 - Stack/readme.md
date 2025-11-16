@@ -637,16 +637,10 @@ int main() {
 #### Output:
 <img width="429" height="123" alt="Image" src="https://github.com/user-attachments/assets/8031cf8a-b874-40f4-b742-5f7eee0ee077" />
 
-Program di atas digunakan untuk membuat dan menampilkan data dalam struktur data Single Linked List.
-Data bertipe int dan disimpan dalam node-node yang saling terhubung satu arah.
-Program dibagi menjadi tiga file agar lebih terstruktur:
-- Singlylist.h berisi deklarasi struct dan fungsi.
-- Singlylist.cpp berisi implementasi fungsi seperti membuat list, menambah node, dan menampilkan isi list.
-- main.cpp berisi program utama untuk menjalankan operasi insert dan menampilkan isi list ke layar.
-Fungsi utamanya adalah menampilkan cara kerja penambahan data di awal list (insertFirst).
+Program ini menambahkan fitur pushAscending, yaitu proses memasukkan data ke dalam stack sambil menjaga agar isinya tetap tersusun secara ascending. Prosesnya dilakukan dengan memindahkan sementara elemen-elemen yang lebih besar ke stack bantuan, lalu memasukkan data baru ke stack utama, dan akhirnya mengembalikan elemen bantuan tersebut. Operasi lainnya tetap sama seperti sebelumnya, yaitu CreateStack, Push, Pop, printInfo, dan balikStack. Pada main, beberapa angka dimasukkan menggunakan pushAscending sehingga urutan stack otomatis terjaga, lalu isi stack ditampilkan sebelum dan sesudah dibalik. Program ini menunjukkan cara menggabungkan operasi stack biasa dengan aturan penyisipan terurut menggunakan struktur array.
 
 #### Full code Screenshot:
-<img width="1915" height="1026" alt="image" src="https://github.com/user-attachments/assets/8d726cec-2496-43ef-b684-f8f6285dee7d" />
+<img width="1913" height="1020" alt="Image" src="https://github.com/user-attachments/assets/87bbe506-ea09-4bea-8740-c3e1c45ade28" />
 
 ### 3. Carilah elemen dengan info 8 dengan membuat fungsi baru.<br>
 fungsi findElm( L : List, x : infotype ) : address<br>
