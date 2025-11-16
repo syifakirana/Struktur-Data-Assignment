@@ -510,7 +510,7 @@ Program ini membuat struktur data Stack menggunakan array berkapasitas 20 elemen
 <img width="1919" height="1021" alt="image" src="https://github.com/user-attachments/assets/c64f0d62-57be-48f7-831a-df98b07686aa" />
 
 ### 2. Tambahkan prosedur pushAscending(in/out S: Stack, in x: integer)
-
+<img width="648" height="44" alt="Image" src="https://github.com/user-attachments/assets/05dfeddb-c82b-4a66-b0d3-24a4321c01f5" />
 
 
 file: Singlylist.h
