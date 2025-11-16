@@ -789,128 +789,109 @@ Program di atas menambahkan fungsi findElm() untuk mencari elemen tertentu dalam
 ### 4. Hitunglah jumlah total info seluruh elemen (9+12+8+0+2=31).<br>
 <img width="609" height="73" alt="image" src="https://github.com/user-attachments/assets/5833d2c2-fdd0-410e-aad2-0150ad68df76" /><br>  
 
-File: Singlylist.h
+File: stack.h
 ```C++
-#ifndef SINGLYLIST_H_INCLUDED
-#define SINGLYLIST_H_INCLUDED
+#ifndef STACK_H_INCLUDED
+#define STACK_H_INCLUDED
 
 #include <iostream>
 using namespace std;
 
-// deklarasi tipe data dasar
 typedef int infotype;
-typedef struct ElmtList *address;
 
-// struktur elemen list
-struct ElmtList {
-    infotype info;
-    address next;
+struct Stack {
+    infotype info[20];
+    int top;
 };
 
-// struktur list
-struct List {
-    address first;
-};
+void CreateStack(Stack &S);
+void Push(Stack &S, infotype x);
+infotype Pop(Stack &S);
+void printInfo(Stack S);
+void balikStack(Stack &S);
 
-// deklarasi function dan procedure
-void createList(List &L);
-address alokasi(infotype x);
-void dealokasi(address &P);
-void insertFirst(List &L, address P);
-void printInfo(List L);
+void getInputStream(Stack &S); //tambahan
 
-int sumElm(List L); //tambahan
-
-#endif // SINGLYLIST_H_INCLUDED
+#endif
 ```
 
-File: Singlylist.cpp
+File: stack.cpp
 ```C++
-#include "SinglyList.h"
+#include <iostream>
+#include "stack.h"
+using namespace std;
 
-// buat list kosong
-void createList(List &L) {
-    L.first = NULL;
+void CreateStack(Stack &S) {
+    S.top = -1;
 }
 
-// alokasi node baru
-address alokasi(infotype x) {
-    address P = new ElmtList;
-    P->info = x;
-    P->next = NULL;
-    return P;
-}
-
-// hapus alokasi node dari memori
-void dealokasi(address &P) {
-    delete P;
-    P = NULL;
-}
-
-// nambah elemen di awal list
-void insertFirst(List &L, address P) {
-    if (L.first == NULL) {
-        L.first = P;
-    } else {
-        P->next = L.first;
-        L.first = P;
+void Push(Stack &S, infotype x) {
+    if (S.top < 19) {
+        S.top++;
+        S.info[S.top] = x;
     }
 }
 
-// menampilkan semua isi list
-void printInfo(List L) {
-    address P = L.first;
-    while (P != NULL) {
-        cout << P->info << " ";
-        P = P->next;
+infotype Pop(Stack &S) {
+    if (S.top >= 0) {
+        infotype x = S.info[S.top];
+        S.top--;
+        return x;
+    }
+    return -1;
+}
+
+void printInfo(Stack S) {
+    cout << "[TOP] ";
+    for (int i = S.top; i >= 0; i--) {
+        cout << S.info[i] << " ";
     }
     cout << endl;
 }
 
-int sumElm(List L) { //tambahan
-    int total = 0;
-    address P = L.first;
-    while (P != NULL) {
-        total += P->info;
-        P = P->next;
+void balikStack(Stack &S) {
+    Stack temp;
+    CreateStack(temp);
+
+    while (S.top >= 0) {
+        Push(temp, Pop(S));
     }
-    return total;
+
+    S = temp; // hanya 1 kali pembalikan
+}
+
+//tambahan
+void getInputStream(Stack &S) {
+    char c;
+    while (true) {
+        cin.get(c);       // baca 1 karakter dari input
+        if (c == '\n')    // ENTER -> selesai
+            break;
+        Push(S, c - '0'); // asumsikan input digit
+    }
 }
 ```
 
 File: main.cpp
 ```C++
-#include "SinglyList.h"
+#include "stack.h"
+#include <iostream>
+using namespace std;
 
 int main() {
-    List L;
-    address P1, P2, P3, P4, P5;
+    cout << "Hello world!" << endl;
 
-    // inisialisasi list kosong
-    createList(L);
+    Stack S;
+    CreateStack(S);
 
-    // menambahkan elemen ke list
-    P1 = alokasi(2);
-    insertFirst(L, P1);
+    getInputStream(S);
 
-    P2 = alokasi(0);
-    insertFirst(L, P2);
+    printInfo(S);
 
-    P3 = alokasi(8);
-    insertFirst(L, P3);
+    cout << "balik stack" << endl;
+    balikStack(S);
+    printInfo(S);
 
-    P4 = alokasi(12);
-    insertFirst(L, P4);
-
-    P5 = alokasi(9);
-    insertFirst(L, P5);
-
-    // menampilkan isi list
-    cout << "Isi Linked List: ";
-    printInfo(L);
-
-    int total = sumElm(L); //tambahan
-    cout << "Total info dari kelima elemen adalah " << total << endl;
     return 0;
 }
 ```
