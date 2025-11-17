@@ -219,7 +219,8 @@ int main(){
 ```
 Program ini membuat stack menggunakan linked list, di mana setiap node menyimpan angka dan pointer ke node berikutnya. Fungsi push menambah node baru ke bagian atas stack, sedangkan pop menghapus node teratas. Program juga menyediakan fungsi update untuk mengubah data pada posisi tertentu, searchData untuk mencari angka dalam stack, dan view untuk menampilkan isi stack dari atas ke bawah. Di fungsi main, beberapa node dibuat, dimasukkan ke stack, kemudian diuji dengan operasi pop, update, dan pencarian. Program ini menunjukkan cara kerja stack dengan aturan LIFO secara sederhana.
 
-2. program implementasi stack menggunakan array (Guided2)
+### 2. program implementasi stack menggunakan array (Guided2)
+
 File: stack.h
 ```cpp
 #ifndef STACK_TABLE
