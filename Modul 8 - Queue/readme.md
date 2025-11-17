@@ -142,6 +142,7 @@ Program ini digunakan untuk membuat dan menjalankan antrian (queue) menggunakan 
 
 ### 2. Implementasi Circular Queue Menggunakan Array (Guided2)
 
+Folder Guided2
 File: queue.h
 ```C++
 // guided2 queue.h
