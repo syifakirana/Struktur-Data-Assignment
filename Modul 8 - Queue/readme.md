@@ -7,7 +7,7 @@
 
 ## Guided 
 
-### 1. 
+### 1. Implementasi Queue Menggunakan Linked List
 
 Folder Guided1  
 File: queue.h
@@ -138,9 +138,9 @@ int main() {
     return 0;
 }
 ```
-Program di atas digunakan untuk 
+Program ini digunakan untuk membuat dan menjalankan antrian (queue) menggunakan linked list. Antrian bekerja dengan aturan FIFO, yaitu data yang masuk pertama akan keluar terlebih dahulu. Fungsi enQueue menambah data baru di bagian belakang antrian, sedangkan deQueue menghapus data yang berada di bagian depan. Fungsi viewQueue dipakai untuk menampilkan seluruh isi antrian, dan clearQueue digunakan untuk menghapus semua data sampai antrian benar-benar kosong. Pada fungsi main, program menambahkan beberapa nama ke dalam antrian, lalu menghapus beberapa di antaranya. Setelah itu, isi queue ditampilkan sebelum dan sesudah proses penghapusan. Program ini menunjukkan cara kerja antrian sederhana dengan operasi dasar tambah, hapus, lihat, dan mengosongkan antrian menggunakan linked list.
 
-### 2. 
+### 2. Implementasi Circular Queue Menggunakan Array
 
 Folder Guided2  
 File: queue.h
@@ -358,15 +358,19 @@ int main(){
     return 0;
 }
 ```
+Program ini membuat queue menggunakan array dengan teknik circular queue, di mana posisi head dan tail bisa kembali ke indeks awal ketika sudah mencapai batas array. Dengan cara ini, ruang yang sudah kosong dapat digunakan lagi sehingga lebih efisien dibanding queue linear biasa.
 
-Program di atas digunakan untuk 
+Fungsi enQueue digunakan untuk menambah data di bagian belakang antrian. Jika queue masih kosong, head dan tail berada di indeks 0. Jika sudah ada isi, tail digeser ke indeks berikutnya secara melingkar dengan rumus (tail + 1) % MAKSIMAL. Fungsi deQueue menghapus data dari bagian depan. Jika hanya ada satu data, head dan tail di-reset menjadi -1. Jika masih ada elemen lain, head cukup digeser satu langkah secara melingkar.
+
+Fungsi viewQueue menampilkan seluruh isi antrian dari head sampai tail dengan mengikuti pola circular. Pada fungsi main, program menambahkan beberapa nama ke queue, menghapus beberapa di antaranya, lalu menampilkan isi antrian sebelum dan sesudah penghapusan. Program ini menunjukkan cara kerja circular queue yang memanfaatkan array secara lebih efisien.
 
 ## Unguided 
 
-### 1. Buatlah ADT menggunakan ARRAY sebagai berikut di dalam file “queue.h”
-<img width="703" height="231" alt="image" src="https://github.com/user-attachments/assets/97395e65-5ea5-45c8-a27c-29b5c80a4c82" /><br>
-Buatlah implementasi ADT Queue pada file "queue.cpp" dengan menerapkan mekanisme queue Alternatif 1 (head diam, tail bergerak).
-<img width="569" height="291" alt="image" src="https://github.com/user-attachments/assets/67a47c6b-3f0b-43a4-ba9a-dfd0dfb3ea2e" /><br>
+### 1. Buatlah ADT Queue menggunakan ARRAY sebagai berikut di dalam file “queue.h”:
+<img width="491" height="161" alt="image" src="https://github.com/user-attachments/assets/d2620aa6-c82c-4aa4-b0ce-c1912581e1e0" /><br>
+Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekanisme
+queue Alternatif 1 (head diam, tail bergerak).
+<img width="570" height="289" alt="image" src="https://github.com/user-attachments/assets/29d13277-8d93-4adf-94b5-753e5a269e51" /><br>
 
 file: Singlylist.h
 ```C++
