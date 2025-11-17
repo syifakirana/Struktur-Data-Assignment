@@ -167,6 +167,9 @@ Program ini digunakan untuk
 ## Unguided
 
 ### 1. Buatlah ADT Doubly Linked list sebagai berikut di dalam file “Doublylist.h”:
+<img width="546" height="285" alt="Image" src="https://github.com/user-attachments/assets/0b38ba77-f770-4c5a-bfae-bcb60abd7446" /><br>
+Buatlah implementasi ADT Doubly Linked list pada file “Doublylist.cpp” dan coba hasil
+implementasi ADT pada file “main.cpp”.
 
 ### Output:
 
