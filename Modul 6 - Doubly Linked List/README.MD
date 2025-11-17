@@ -181,7 +181,7 @@ Program ini merupakan
 
 ### 2. Carilah elemen dengan nomor polisi D001 dengan membuat fungsi baru.
 fungsi findElm( L : List, x : infotype ) : address<br>
-<img width="246" height="103" alt="Image" src="https://github.com/user-attachments/assets/e179be6b-286c-4e87-9e4a-59d2fa53bd31" /><br>
+<img width="524" height="222" alt="Image" src="https://github.com/user-attachments/assets/ce6315ea-cc33-492a-b687-63f8f57c81b3" /><br>
 
 #### Output:
 
