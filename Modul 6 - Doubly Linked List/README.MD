@@ -180,8 +180,8 @@ Program ini merupakan
 ### Full Code Screenshot:
 
 ### 2. Carilah elemen dengan nomor polisi D001 dengan membuat fungsi baru.
-fungsi findElm( L : List, x : infotype ) : address
-
+fungsi findElm( L : List, x : infotype ) : address<br>
+<img width="246" height="103" alt="Image" src="https://github.com/user-attachments/assets/e179be6b-286c-4e87-9e4a-59d2fa53bd31" /><br>
 
 #### Output:
 
@@ -195,6 +195,7 @@ Program di atas digunakan untuk
 - procedure deleteFirst( input/output L : List, P : address )
 - procedure deleteLast( input/output L : List, P : address )
 - procedure deleteAfter( input Prec : address, input/output P : address )
+
 
 ### Output:
 
