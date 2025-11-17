@@ -181,6 +181,7 @@ Program ini merupakan
 
 ### 2. Carilah elemen dengan nomor polisi D001 dengan membuat fungsi baru.
 fungsi findElm( L : List, x : infotype ) : address<br>
+
 <img width="524" height="222" alt="Image" src="https://github.com/user-attachments/assets/ce6315ea-cc33-492a-b687-63f8f57c81b3" /><br>
 
 #### Output:
@@ -194,7 +195,8 @@ Program di atas digunakan untuk
 ### 3. Hapus elemen dengan nomor polisi D003 dengan procedure delete.
 - procedure deleteFirst( input/output L : List, P : address )
 - procedure deleteLast( input/output L : List, P : address )
-- procedure deleteAfter( input Prec : address, input/output P : address )
+- procedure deleteAfter( input Prec : address, input/output P : address )  <br>
+
 <img width="665" height="313" alt="Image" src="https://github.com/user-attachments/assets/af7786d5-a12d-4b99-b3c7-b84dc2b33a13" /><br>
 
 ### Output:
