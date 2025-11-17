@@ -195,7 +195,7 @@ Program di atas digunakan untuk
 - procedure deleteFirst( input/output L : List, P : address )
 - procedure deleteLast( input/output L : List, P : address )
 - procedure deleteAfter( input Prec : address, input/output P : address )
-
+<img width="665" height="313" alt="Image" src="https://github.com/user-attachments/assets/af7786d5-a12d-4b99-b3c7-b84dc2b33a13" /><br>
 
 ### Output:
 
