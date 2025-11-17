@@ -11,133 +11,157 @@ Materi ini merupakan
 
 ### 1. 
 
-File: listBuah.h
+File: dii_hapus.cpp
 ```cpp
-//Header guard digunakan untuk mencegah file header yg sama
-// di-include lebih dari sekali dalam satu program 
-#ifndef LISTBUAH_H
-#define LISTBUAH_H
+// dll_hapus.cpp
+#include <iostream> 
+using namespace std; 
 #define Nil NULL 
 
-#include <iostream>
-using namespace std;
+typedef int infotype; // Definisikan tipe data infotype sebagai integer untuk menyimpan informasi elemen
+typedef struct elmlist *address; // Definisikan tipe address sebagai pointer ke struct elmlist
 
-struct buah{
-    string nama;
-    int jumlah;
-    float harga;
-};
+struct elmlist { 
+    infotype info; // Deklarasikan field info untuk menyimpan data elemen
+    address next;   
+    address prev; 
+}; 
 
-typedef buah dataBuah; //memberikan nama alias dataBuah untuk struct buah
+struct List { 
+    address first; 
+    address last;
+}; 
 
-typedef struct node *address; //mendefinisikan alias address sebagai pointer ke struct node
+address alokasi(infotype x) { // Definisikan fungsi alokasi untuk membuat elemen baru
+    address P = new elmlist; // Alokasikan memori baru untuk elemen
+    P->info = x; P->next = Nil; P->prev = Nil; return P; // Set nilai info, next, prev, dan kembalikan pointer
+} 
+void dealokasi(address &P) { delete P; P = Nil; } // Definisikan fungsi dealokasi untuk mengosongkan memori elemen
+void insertFirst(List &L, address P) { 
+    P->next = L.first; P->prev = Nil; // Set pointer next P ke first saat ini dan prev ke Nil
+    if (L.first != Nil) L.first->prev = P; else L.last = P; // Jika list tidak kosong, update prev first; jika kosong, set last ke P
+    L.first = P; // Update first list menjadi P
+}
 
-struct node{ //node untuk isi linked listnya, isi setiap node adalah data & pointer next
-    dataBuah isidata;
-    address next;
-};
+void printInfo(List L) { 
+    address P = L.first; while (P != Nil) { cout << P->info << " "; P = P->next; } cout << endl; // Loop melalui list dan cetak info setiap elemen
+} 
+void deleteFirst(List &L, address &P) { 
+    P = L.first; L.first = L.first->next; // Set P ke first dan update first ke next-nya
+    if (L.first != Nil) L.first->prev = Nil; else L.last = Nil; // Jika list tidak kosong, set prev first baru ke Nil; jika kosong, set last ke Nil
+    P->next = Nil; P->prev = Nil; // Kosongkan pointer next dan prev P
+}
 
-struct linkedlist{//ini linked listnya 
-    address first;
-};
+void deleteLast(List &L, address &P) { 
+    P = L.last; L.last = L.last->prev; // Set P ke last dan update last ke prev-nya
+    if (L.last != Nil) L.last->next = Nil; else L.first = Nil; // Jika list tidak kosong, set next last baru ke Nil; jika kosong, set first ke Nil
+    P->prev = Nil; P->next = Nil; // Kosongkan pointer prev dan next P
+} 
+    
+void deleteAfter(List &L, address &P, address R) { 
+    P = R->next; R->next = P->next; // Set P ke next R dan update next R ke next P
+    if (P->next != Nil) P->next->prev = R; else L.last = R; // Jika ada next P, update prev-nya ke R; jika tidak, set last ke R
+    P->prev = Nil; P->next = Nil; // Kosongkan pointer prev dan next P
+} 
 
-//semua function &prosedur yg akan dipakai 
-bool isEmpty(linkedlist List);
-void createList(linkedlist &List);
-address alokasi(string nama, int jumlah, float harga);
-void dealokasi(address &node);
-void printList(linkedlist List);
-void insertFirst(linkedlist &List, address nodebaru);
-void insertAfter(linkedlist &List, address nodebaru, address prev);
-void insertLast(linkedlist &List, address nodebaru);
-
-void delFirst(linkedlist &List);
-void delLast(linkedlist &List);
-void delAfter(linkedlist &list, address nodeHapus, address nodePrev);
-int nbList(linkedlist List);
-void deleteList(linkedlist &List);
-
-//materi modul 5 (part 1 - update)
-void updateFirst(linkedlist List);
-void updateLast(linkedlist List);
-void updateAfter(linkedlist List, address prev);
-
-//materi modul 5 (part 2 - searching)
-void FindNodeByData(linkedlist List, string data);
-void FindNodeByAddress(linkedlist List, address node);
-void FindNodeByRange(linkedlist List, float hargaAwal, float HargaAkhir);
-
-#endif
-```
-File: listBuah.cpp
-```C++
-
-```
-File: main.cpp
-```C++
-#include "listBuah.h"
-
-#include<iostream>
-using namespace std;
-
-int main(){
-    linkedlist List;
-    address nodeA, nodeB, nodeC, nodeD, nodeE = Nil;
-    createList(List);
-
-    dataBuah dtBuah;
-
-    nodeA = alokasi("Jeruk", 100, 3000);
-    nodeB = alokasi("Apel", 75, 4000);
-    nodeC = alokasi("Pir", 87, 5000);
-    nodeD = alokasi("Semangka", 43, 11500);
-    nodeE = alokasi("Durian", 15, 31450);
-
-    insertFirst(List, nodeA);
-    insertLast(List, nodeB);
-    insertAfter(List, nodeC, nodeA);
-    insertAfter(List, nodeD, nodeC);
-    insertLast(List, nodeE);
-
-    cout << "--- ISI LIST SETELAH DILAKUKAN INSERT ---" << endl;
-    printList(List);
-    cout << "Jumlah node : " << nbList(List) << endl;
-    cout << endl;
-
-   updateFirst(List);
-   updateLast(List);
-   updateAfter(List, nodeD);
-
-    cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE ---" << endl;
-    printList(List);
-    cout << "Jumlah node : " << nbList(List) << endl;
-    cout << endl;
-
-    FindNodeByData (List, "Kelapa");
-    FindNodeByAddress(List, nodeC);
-    FindNodeByRange(List, 5000, 10000);
-
-    delFirst(List);
-    delLast(List);
-    delAfter(List, nodeD, nodeC);
-
-    cout << "--- ISI LIST SETELAH DILAKUKAN DELETE ---" << endl;
-    printList(List);
-    cout << "Jumlah node : " << nbList(List) << endl;
-    cout << endl;
-
-    deleteList(List);
-    cout << "--- ISI LIST SETELAH DILAKUKAN HAPUS LIST ---" << endl;
-    printList(List);
-    cout << "Jumlah node : " << nbList(List) << endl;
-    cout << endl;
-
-    return 0;
+int main() { 
+    List L; L.first = Nil; L.last = Nil; 
+    insertFirst(L, alokasi(1)); insertFirst(L, alokasi(2)); insertFirst(L, alokasi(3)); // Sisipkan elemen 1, 2, 3 di awal list
+    printInfo(L);
+    address P; deleteFirst(L, P); dealokasi(P); // Deklarasikan P, hapus first, dealokasi P
+    deleteAfter(L, P, L.first); dealokasi(P); // Hapus setelah first, dealokasi P
+    printInfo(L); 
+    return 0; 
 }
 ```
 Program ini digunakan untuk 
 
+### 2.
+File: dll_insert.cpp
+```cpp
+// dll_insert.cpp
+#include <iostream>
+#define Nil NULL
+using namespace std;
 
+typedef int infotype; // Definisikan tipe data infotype sebagai integer untuk menyimpan informasi elemen
+typedef struct elmlist *address; // Definisikan tipe address sebagai pointer ke struct elmlist
+
+
+struct elmlist {
+    infotype info; // Deklarasikan field info untuk menyimpan data elemen
+    address next;
+    address prev;
+};
+
+
+struct List { 
+    address first; 
+    address last; 
+}; 
+
+
+void insertFirst(List &L, address P) { 
+    P->next = L.first; // Set pointer next dari P ke elemen pertama saat ini
+    P->prev = Nil; // Set pointer prev dari P ke Nil karena menjadi elemen pertama
+    if (L.first != Nil) L.first->prev = P; // Jika list tidak kosong, set prev elemen pertama lama ke P
+    else L.last = P; // Jika list kosong, set last juga ke P
+    L.first = P; // Update first list menjadi P
+} 
+
+
+void insertLast(List &L, address P) { 
+    P->prev = L.last; // Set pointer prev dari P ke elemen terakhir saat ini
+    P->next = Nil; // Set pointer next dari P ke Nil karena menjadi elemen terakhir
+    if (L.last != Nil) L.last->next = P; // Jika list tidak kosong, set next elemen terakhir lama ke P
+    else L.first = P; // Jika list kosong, set first juga ke P
+    L.last = P; // Update last list menjadi P
+} 
+
+
+void insertAfter(List &L, address P, address R) { // Definisikan fungsi insertAfter untuk menyisipkan elemen setelah R
+    P->next = R->next; // Set pointer next dari P ke elemen setelah R
+    P->prev = R; // Set pointer prev dari P ke R
+    if (R->next != Nil) R->next->prev = P; // Jika ada elemen setelah R, set prev elemen tersebut ke P
+    else L.last = P; // Jika R adalah terakhir, update last menjadi P
+    R->next = P; // Set next dari R ke P
+}
+
+
+address alokasi(infotype x) { // Definisikan fungsi alokasi untuk membuat elemen baru
+    address P = new elmlist; // Alokasikan memori baru untuk elemen
+    P->info = x; // Set info elemen dengan nilai x
+    P->next = Nil; // Set next elemen ke Nil
+    P->prev = Nil; // Set prev elemen ke Nil
+    return P; 
+} 
+
+
+void printInfo(List L) { // Definisikan fungsi printInfo untuk mencetak isi list
+    address P = L.first; // Set P ke elemen pertama list
+    while (P != Nil) { // Loop selama P tidak Nil
+        cout << P->info << " "; // Cetak info dari P 
+        P = P->next; // Pindah ke elemen berikutnya
+    } 
+    cout << endl; 
+}
+
+
+int main() { 
+    List L; 
+    L.first = Nil; 
+    L.last = Nil;
+    address P1 = alokasi(1); 
+    insertFirst(L, P1); 
+    address P2 = alokasi(2); 
+    insertLast(L, P2); 
+    address P3 = alokasi(3); 
+    insertAfter(L, P3, P1); 
+    printInfo(L); 
+    return 0; 
+}
+```
+Program ini digunakan untuk 
 
 ## Unguided
 
