@@ -7,7 +7,7 @@
 
 ## Guided 
 
-### 1. Implementasi Queue Menggunakan Linked List
+### 1. Implementasi Queue Menggunakan Linked List (Guided1)
 
 Folder Guided1  
 File: queue.h
@@ -140,9 +140,8 @@ int main() {
 ```
 Program ini digunakan untuk membuat dan menjalankan antrian (queue) menggunakan linked list. Antrian bekerja dengan aturan FIFO, yaitu data yang masuk pertama akan keluar terlebih dahulu. Fungsi enQueue menambah data baru di bagian belakang antrian, sedangkan deQueue menghapus data yang berada di bagian depan. Fungsi viewQueue dipakai untuk menampilkan seluruh isi antrian, dan clearQueue digunakan untuk menghapus semua data sampai antrian benar-benar kosong. Pada fungsi main, program menambahkan beberapa nama ke dalam antrian, lalu menghapus beberapa di antaranya. Setelah itu, isi queue ditampilkan sebelum dan sesudah proses penghapusan. Program ini menunjukkan cara kerja antrian sederhana dengan operasi dasar tambah, hapus, lihat, dan mengosongkan antrian menggunakan linked list.
 
-### 2. Implementasi Circular Queue Menggunakan Array
+### 2. Implementasi Circular Queue Menggunakan Array (Guided2)
 
-Folder Guided2  
 File: queue.h
 ```C++
 // guided2 queue.h
@@ -359,9 +358,7 @@ int main(){
 }
 ```
 Program ini membuat queue menggunakan array dengan teknik circular queue, di mana posisi head dan tail bisa kembali ke indeks awal ketika sudah mencapai batas array. Dengan cara ini, ruang yang sudah kosong dapat digunakan lagi sehingga lebih efisien dibanding queue linear biasa.
-
 Fungsi enQueue digunakan untuk menambah data di bagian belakang antrian. Jika queue masih kosong, head dan tail berada di indeks 0. Jika sudah ada isi, tail digeser ke indeks berikutnya secara melingkar dengan rumus (tail + 1) % MAKSIMAL. Fungsi deQueue menghapus data dari bagian depan. Jika hanya ada satu data, head dan tail di-reset menjadi -1. Jika masih ada elemen lain, head cukup digeser satu langkah secara melingkar.
-
 Fungsi viewQueue menampilkan seluruh isi antrian dari head sampai tail dengan mengikuti pola circular. Pada fungsi main, program menambahkan beberapa nama ke queue, menghapus beberapa di antaranya, lalu menampilkan isi antrian sebelum dan sesudah penghapusan. Program ini menunjukkan cara kerja circular queue yang memanfaatkan array secara lebih efisien.
 
 ## Unguided 
@@ -372,317 +369,31 @@ Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekan
 queue Alternatif 1 (head diam, tail bergerak).
 <img width="570" height="289" alt="image" src="https://github.com/user-attachments/assets/29d13277-8d93-4adf-94b5-753e5a269e51" /><br>
 
-file: Singlylist.h
-```C++
-#ifndef SINGLYLIST_H_INCLUDED
-#define SINGLYLIST_H_INCLUDED
-
-#include <iostream>
-using namespace std;
-
-// Deklarasi tipe data dasar
-typedef int infotype;
-typedef struct ElmtList *address;
-
-// Struktur elemen list
-struct ElmtList {
-    infotype info;
-    address next;
-};
-
-// Struktur list
-struct List {
-    address first;
-};
-
-// Deklarasi function dan procedure
-void createList(List &L);
-address alokasi(infotype x);
-void dealokasi(address &P);
-void insertFirst(List &L, address P);
-void printInfo(List L);
-
-#endif // SINGLYLIST_H_INCLUDED
-```
-
-file: Singlylist.cpp
-```C++
-#include "SinglyList.h"
-
-// Membuat list kosong
-void createList(List &L) {
-    L.first = NULL;
-}
-
-// Mengalokasikan node baru
-address alokasi(infotype x) {
-    address P = new ElmtList;
-    P->info = x;
-    P->next = NULL;
-    return P;
-}
-
-// Menghapus alokasi node dari memori
-void dealokasi(address &P) {
-    delete P;
-    P = NULL;
-}
-
-// nambah elemen di awal list
-void insertFirst(List &L, address P) {
-    if (L.first == NULL) {
-        L.first = P;
-    } else {
-        P->next = L.first;
-        L.first = P;
-    }
-}
-
-// Menampilkan semua isi list
-void printInfo(List L) {
-    address P = L.first;
-    while (P != NULL) {
-        cout << P->info << " ";
-        P = P->next;
-    }
-    cout << endl;
-}
-```
-
-file: main.cpp
-```C++
-#include "SinglyList.h"
-
-int main() {
-    List L;
-    address P1, P2, P3, P4, P5;
-
-    // Inisialisasi list kosong
-    createList(L);
-
-    // Menambahkan elemen ke list
-    P1 = alokasi(2);
-    insertFirst(L, P1);
-
-    P2 = alokasi(0);
-    insertFirst(L, P2);
-
-    P3 = alokasi(8);
-    insertFirst(L, P3);
-
-    P4 = alokasi(12);
-    insertFirst(L, P4);
-
-    P5 = alokasi(9);
-    insertFirst(L, P5);
-
-    // Menampilkan isi list
-    cout << "Isi Linked List: ";
-    printInfo(L);
-
-    return 0;
-}
-```
+File: 
+File:
+File:
 
 #### Output:
-<img width="630" height="340" alt="Image" src="https://github.com/user-attachments/assets/1c6248e0-ea82-480a-aecc-b4585fcb6fcd" />
 
-Program di atas digunakan untuk membuat dan menampilkan data dalam struktur data Single Linked List.
-Data bertipe int dan disimpan dalam node-node yang saling terhubung satu arah.
-Program dibagi menjadi tiga file agar lebih terstruktur:
-- Singlylist.h berisi deklarasi struct dan fungsi.
-- Singlylist.cpp berisi implementasi fungsi seperti membuat list, menambah node, dan menampilkan isi list.
-- main.cpp berisi program utama untuk menjalankan operasi insert dan menampilkan isi list ke layar.
-Fungsi utamanya adalah menampilkan cara kerja penambahan data di awal list (insertFirst).
+
+Program di atas digunakan untuk
 
 #### Full code Screenshot:
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ef7be654-ba67-4c25-ac6a-366ac7ede603" />
+
 
 ### 2. Buatlah implementasi ADT Queue pada file "queue.cpp" dengan menerapkan mekanisme queue Alternatif 2 (head bergerak, tail bergerak).
 
-File : Singlylist.h
-```C++
-#ifndef SINGLYLIST_H_INCLUDED
-#define SINGLYLIST_H_INCLUDED
-
-#include <iostream>
-using namespace std;
-
-typedef int infotype;
-typedef struct ElmtList *address;
-
-struct ElmtList {
-    infotype info;
-    address next;
-};
-
-struct List {
-    address first;
-};
-
-void createList(List &L);
-address alokasi(infotype x);
-void dealokasi(address &P);
-void insertFirst(List &L, address P);
-void printInfo(List L);
-
-// tambahan
-void deleteFirst(List &L, address &P);
-void deleteLast(List &L, address &P);
-void deleteAfter(List &L, address Prec, address &P);
-int nbList(List L);
-void deleteList(List &L);
-
-#endif
-```
-
-File : Singlylist.cpp
-```C++
-#include "SinglyList.h"
-
-void createList(List &L) {
-    L.first = NULL;
-}
-
-address alokasi(infotype x) {
-    address P = new ElmtList;
-    P->info = x;
-    P->next = NULL;
-    return P;
-}
-
-void dealokasi(address &P) {
-    delete P;
-    P = NULL;
-}
-
-void insertFirst(List &L, address P) {
-    P->next = L.first;
-    L.first = P;
-}
-
-void printInfo(List L) {
-    address P = L.first;
-    while (P != NULL) {
-        cout << P->info << " ";
-        P = P->next;
-    }
-    cout << endl;
-}
-
-// tambahan
-// Menghapus elemen pertama
-void deleteFirst(List &L, address &P) {
-    if (L.first != NULL) {
-        P = L.first;
-        L.first = P->next;
-        dealokasi(P);
-    }
-}
-
-// Menghapus elemen terakhir
-void deleteLast(List &L, address &P) {
-    if (L.first != NULL) {
-        if (L.first->next == NULL) {
-            P = L.first;
-            L.first = NULL;
-            dealokasi(P);
-        } else {
-            address Q = L.first;
-            while (Q->next->next != NULL) {
-                Q = Q->next;
-            }
-            P = Q->next;
-            Q->next = NULL;
-            dealokasi(P);
-        }
-    }
-}
-
-// Menghapus setelah node tertentu
-void deleteAfter(List &L, address Prec, address &P) {
-    if (Prec != NULL && Prec->next != NULL) {
-        P = Prec->next;
-        Prec->next = P->next;
-        dealokasi(P);
-    }
-}
-
-// Menghitung jumlah node
-int nbList(List L) {
-    int n = 0;
-    address P = L.first;
-    while (P != NULL) {
-        n++;
-        P = P->next;
-    }
-    return n;
-}
-
-// Menghapus seluruh list
-void deleteList(List &L) {
-    address P;
-    while (L.first != NULL) {
-        deleteFirst(L, P);
-    }
-}
-```
-
-File : main.cpp
-```C++
-#include "SinglyList.h"
-
-int main() {
-    List L;
-    address P, Prec;
-
-    createList(L);
-
-    insertFirst(L, alokasi(2));
-    insertFirst(L, alokasi(0));
-    insertFirst(L, alokasi(8));
-    insertFirst(L, alokasi(12));
-    insertFirst(L, alokasi(9));
-
-    // Hapus node 9 
-    deleteFirst(L, P);
-
-    // Hapus node 2 
-    deleteLast(L, P);
-
-    // Cari node sebelum 8 (yaitu 12), lalu hapus setelahnya (node 8)
-    Prec = L.first; // 12
-    deleteAfter(L, Prec, P);
-
-    // Tampilkan hasil
-    printInfo(L);
-    cout << "Jumlah node : " << nbList(L) << endl;
-
-    // Hapus seluruh list
-    deleteList(L);
-    cout << endl << "- List Berhasil Terhapus -" << endl;
-    cout << "Jumlah node : " << nbList(L) << endl;
-
-    return 0;
-}
-```
+File:
+File:
+File:
 
 #### Output:
-<img width="639" height="377" alt="image" src="https://github.com/user-attachments/assets/4dd65181-368c-41d5-926e-f847313c44dd" />
 
-Program ini merupakan lanjutan dari latihan pertama.
-Fungsinya untuk menghapus elemen-elemen dari Single Linked List menggunakan berbagai operasi penghapusan:
-- deleteFirst() menghapus node pertama.
-- deleteLast() menghapus node terakhir.
-- deleteAfter() menghapus node setelah node tertentu.
-- nbList() menghitung jumlah node di list.
-- deleteList() menghapus seluruh isi list.<br>
-Output akhirnya menunjukkan isi list setelah penghapusan sebagian, lalu hasil setelah seluruh list dihapus.
+
+Program ini merupakan 
 
 #### Full code Screenshot:
-<img width="1919" height="1022" alt="image" src="https://github.com/user-attachments/assets/004bd745-338f-4946-810b-9a462b7639f5" />
 
-<img width="1425" height="1014" alt="image" src="https://github.com/user-attachments/assets/fbf5ad81-f893-4191-bcd3-6268a9f073ee" />
 
 
 ### 3. Buatlah implementasi ADT Queue pada file "queue.cpp" dengan menerapkan mekanisme queue Alternatif 3 (head dan tail berputar).
@@ -690,6 +401,5 @@ Output akhirnya menunjukkan isi list setelah penghapusan sebagian, lalu hasil se
 
 
 ## Kesimpulan
-Dari praktikum ini bisa disimpulkan bahwa Singly Linked List adalah struktur data yang terdiri dari beberapa node yang saling terhubung satu arah lewat pointer. Setiap node punya dua bagian, yaitu data dan alamat menuju node berikutnya. Dengan struktur ini, kita bisa menambah dan menghapus data dengan lebih mudah tanpa perlu menggeser elemen seperti pada array. Dalam percobaan guided dan unguided, kita belajar cara membuat list, menambah data (insert), menghapus data (delete), dan menampilkan isi list (printInfo). Program juga dibuat dengan tiga file terpisah supaya lebih rapi, mudah dibaca, dan gampang dikelola.
-
+Dari praktikum ini bisa disimpulkan bahwa .............
 
