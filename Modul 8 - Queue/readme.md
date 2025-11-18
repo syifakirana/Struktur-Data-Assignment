@@ -370,10 +370,135 @@ Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekan
 queue Alternatif 1 (head diam, tail bergerak).
 <img width="570" height="289" alt="image" src="https://github.com/user-attachments/assets/29d13277-8d93-4adf-94b5-753e5a269e51" /><br>
 
-File: 
-File:
-File:
+File: queue.h  
+```cpp
+#ifndef QUEUE_H
+#define QUEUE_H
 
+const int MAKSIMAL = 5;
+
+struct Queue {
+    int info[MAKSIMAL];
+    int head;
+    int tail;
+};
+
+void createQueue(Queue &Q);
+bool isEmpty(Queue Q);
+bool isFull(Queue Q);
+void enqueue(Queue &Q, int x);
+int dequeue(Queue &Q);
+void printInfo(Queue Q);
+
+#endif
+```
+File: queue.cpp  
+```cpp
+#include "queue.h"
+#include <iostream>
+using namespace std;
+
+void createQueue(Queue &Q) {
+    Q.head = -1;
+    Q.tail = -1;
+}
+
+bool isEmpty(Queue Q) {
+    return (Q.head == -1 && Q.tail == -1);
+}
+
+bool isFull(Queue Q) {
+    return (Q.tail == MAKSIMAL - 1);
+}
+
+void enqueue(Queue &Q, int x) {
+    if (isFull(Q)) {
+        cout << "Queue penuh!" << endl;
+        return;
+    }
+    if (isEmpty(Q)) {
+        Q.head = 0;
+        Q.tail = 0;
+    } else {
+        Q.tail++;
+    }
+    Q.info[Q.tail] = x;
+}
+
+int dequeue(Queue &Q) {
+    if (isEmpty(Q)) {
+        cout << "Queue kosong!" << endl;
+        return -1;
+    }
+
+    int nilai = Q.info[Q.head];
+
+    // geser semua elemen ke kiri
+    for (int i = 0; i < Q.tail; i++) {
+        Q.info[i] = Q.info[i + 1];
+    }
+
+    Q.tail--;
+
+    // jika kosong reset
+    if (Q.tail < 0) {
+        Q.head = -1;
+        Q.tail = -1;
+    }
+
+    return nilai;
+}
+
+void printInfo(Queue Q) {
+    if (isEmpty(Q)) {
+        cout << Q.head << "  -  " << Q.tail << "    | empty queue" << endl;
+        return;
+    }
+
+    cout << Q.head << "  -  " << Q.tail << "    | ";
+
+    for (int i = Q.head; i <= Q.tail; i++) {
+        cout << Q.info[i];
+        if (i < Q.tail) cout << " ";
+    }
+
+    cout << endl;
+}
+
+```
+File: main.cpp  
+```cpp
+#include <iostream>
+#include "queue.h"
+using namespace std;
+
+int main() {
+    cout << "Hello World!" << endl;
+
+    Queue Q;
+    createQueue(Q);
+
+    cout << "----------------------------" << endl;
+    cout << "H  -  T    | Queue Info" << endl;
+    cout << "----------------------------" << endl;
+
+    printInfo(Q);
+
+    enqueue(Q, 5); printInfo(Q);
+    enqueue(Q, 2); printInfo(Q);
+    enqueue(Q, 7); printInfo(Q);
+
+    dequeue(Q); printInfo(Q);   
+    dequeue(Q); printInfo(Q);   
+
+    enqueue(Q, 4); printInfo(Q); 
+
+    dequeue(Q); printInfo(Q);   
+    dequeue(Q); printInfo(Q);   
+
+    return 0;
+}
+```
 #### Output:
 
 
