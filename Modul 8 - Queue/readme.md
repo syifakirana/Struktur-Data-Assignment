@@ -4,6 +4,16 @@
 
 
 ## Dasar Teori
+Queue adalah struktur data yang cara kerjanya seperti antrian. Data yang masuk duluan akan keluar duluan (FIFO – First In First Out). Di dalam queue ada dua posisi penting:<br>
+Head : menunjuk ke data paling depan (yang akan keluar dulu).<br>
+Tail : menunjuk ke data paling belakang (tempat data baru masuk).<br>
+Queue bisa dibuat dengan array, dan biasanya ada beberapa cara untuk menggerakkan head dan tail:
+1. Queue Linear (head diam, tail bergerak)
+Tail bergerak maju setiap kali ada data baru, sedangkan head tetap di posisi awal. Kalau dequeue, semua elemen digeser ke kiri supaya head tetap di depan. Cara ini masih jalan, tapi kurang efisien karena harus menggeser data.
+2. Queue Linear (head bergerak, tail bergerak)
+Pada cara ini, head dan tail sama-sama bergerak sesuai operasi yang dilakukan. Tidak ada proses menggeser elemen, sehingga lebih cepat dibanding cara pertama.
+3. Circular Queue (head dan tail berputar)
+Circular queue membuat head dan tail bisa “muter” kembali ke indeks awal kalau sudah mencapai batas array. Dengan begitu, ruang kosong bisa dipakai lagi tanpa menggeser elemen. Ini cara yang paling efisien untuk queue berbasis array.
 
 ## Guided 
 
@@ -792,5 +802,4 @@ Fungsi printInfo digunakan untuk menampilkan isi antrian dengan membaca elemen s
 
 
 ## Kesimpulan
-Dari praktikum ini bisa disimpulkan bahwa .............
-
+Dari praktikum ini bisa disimpulkan bahwa struktur data queue dapat diimplementasikan dengan beberapa cara, dan setiap pendekatan memiliki cara kerja yang berbeda. Pada queue linear dengan head tetap, proses penghapusan membutuhkan penggeseran elemen sehingga kurang efisien. Pada model head dan tail bergerak, operasi menjadi lebih sederhana karena elemen tidak perlu dipindahkan. Sedangkan circular queue menawarkan penggunaan memori yang lebih optimal karena head dan tail bisa berputar kembali ke awal array. Melalui ketiga percobaan ini, kita dapat memahami bagaimana prinsip FIFO diterapkan.
