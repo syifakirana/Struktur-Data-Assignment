@@ -9,7 +9,7 @@ Materi ini merupakan
 
 ## Guided
 
-### 1. 
+### 1. Implementasi Operasi Penghapusan pada Doubly Linked List
 
 File: dll_hapus.cpp
 ```cpp
