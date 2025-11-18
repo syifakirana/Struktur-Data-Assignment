@@ -9,7 +9,7 @@ Materi ini merupakan
 
 ## Guided
 
-### 1. Implementasi Operasi Penghapusan pada Doubly Linked List
+### 1. Implementasi Operasi Penghapusan pada Doubly Linked List (Guided1)
 
 File: dll_hapus.cpp
 ```cpp
@@ -74,9 +74,14 @@ int main() {
     return 0; 
 }
 ```
-Program ini digunakan untuk 
+Program ini digunakan untuk mempraktikkan operasi penghapusan elemen pada Doubly Linked List (DLL). Pada DLL, setiap node memiliki dua pointer, yaitu next (menuju elemen berikutnya) dan prev (menuju elemen sebelumnya), sehingga pergerakan data dapat dilakukan dua arah.  
+Program ini menyediakan tiga jenis operasi hapus:  
+deleteFirst: menghapus node pertama  
+deleteLast: menghapus node terakhir  
+deleteAfter: menghapus node setelah node tertentu  
+Sebelumnya, program juga memuat operasi alokasi untuk membuat node baru dan insertFirst untuk menambahkan data di awal list. Pada fungsi main, program memasukkan tiga elemen (3, 2, 1), lalu melakukan penghapusan node pertama dan penghapusan node setelah head. Setelah setiap proses, pointer prev dan next diperbarui agar struktur list tetap konsisten. Hasil akhirnya ditampilkan dengan fungsi printInfo.
 
-### 2.
+### 2. Implementasi Operasi Penyisipan pada Doubly Linked List (Guided 2)
 
 File: dll_insert.cpp
 ```cpp
@@ -162,7 +167,11 @@ int main() {
     return 0; 
 }
 ```
-Program ini digunakan untuk 
+Program ini digunakan untuk menyisipkan data ke dalam Doubly Linked List menggunakan tiga operasi utama, yaitu insertFirst, insertLast, dan insertAfter. Doubly linked list memungkinkan setiap node terhubung ke node sebelum dan sesudahnya melalui pointer prev dan next.
+insertFirst menambah node baru di bagian paling depan list. Jika list kosong, node tersebut akan langsung menjadi elemen pertama sekaligus terakhir.
+insertLast menambah node baru di bagian paling belakang list. Jika sebelumnya list kosong, node akan menjadi elemen pertama dan terakhir.
+insertAfter digunakan untuk menyisipkan node di tengah list, yaitu setelah node tertentu (node R). Jika node R adalah node terakhir, maka node baru akan menjadi elemen terakhir list.
+Di fungsi main, program membuat list kosong, lalu menambahkan tiga elemen: elemen pertama dimasukkan ke depan, elemen kedua dimasukkan ke belakang, dan elemen ketiga dimasukkan di tengah (setelah node pertama). Terakhir, printInfo digunakan untuk menampilkan seluruh isi list.
 
 ## Unguided
 
@@ -205,6 +214,8 @@ Program di atas digunakan untuk
 Program di atas 
 
 ### Full Code Screenshot:
+
+## Kesimpulan
 
 
 ## Kesimpulan
