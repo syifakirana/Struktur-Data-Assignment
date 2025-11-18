@@ -500,7 +500,7 @@ int main() {
 }
 ```
 #### Output:
-
+<img width="533" height="298" alt="Image" src="https://github.com/user-attachments/assets/e2262dd5-dc76-4cf6-a180-99b9ff2bb61b" /><br>
 
 Program di atas digunakan untuk
 
