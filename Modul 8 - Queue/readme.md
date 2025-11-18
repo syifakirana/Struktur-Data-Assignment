@@ -8,12 +8,19 @@ Queue adalah struktur data yang cara kerjanya seperti antrian. Data yang masuk d
 Head : menunjuk ke data paling depan (yang akan keluar dulu).<br>
 Tail : menunjuk ke data paling belakang (tempat data baru masuk).<br>
 Queue bisa dibuat dengan array, dan biasanya ada beberapa cara untuk menggerakkan head dan tail:
-1. Queue Linear (head diam, tail bergerak)
+1. Queue Linear Alternatif 1(head diam, tail bergerak)
 Tail bergerak maju setiap kali ada data baru, sedangkan head tetap di posisi awal. Kalau dequeue, semua elemen digeser ke kiri supaya head tetap di depan. Cara ini masih jalan, tapi kurang efisien karena harus menggeser data.
-2. Queue Linear (head bergerak, tail bergerak)
+2. Queue Linear Alternatif 2 (head bergerak, tail bergerak)
 Pada cara ini, head dan tail sama-sama bergerak sesuai operasi yang dilakukan. Tidak ada proses menggeser elemen, sehingga lebih cepat dibanding cara pertama.
 3. Circular Queue (head dan tail berputar)
-Circular queue membuat head dan tail bisa “muter” kembali ke indeks awal kalau sudah mencapai batas array. Dengan begitu, ruang kosong bisa dipakai lagi tanpa menggeser elemen. Ini cara yang paling efisien untuk queue berbasis array.
+Circular queue membuat head dan tail bisa “muter” kembali ke indeks awal kalau sudah mencapai batas array. Dengan begitu, ruang kosong bisa dipakai lagi tanpa menggeser elemen. Ini cara yang paling efisien untuk queue berbasis array. <br>
+
+Operasi dasar pada queue :<br>
+enqueue() menambah data pada posisi tail  
+dequeue() menghapus data dari posisi head  
+isEmpty() mengecek apakah queue kosong  
+isFull() mengecek apakah queue penuh  
+print/view menampilkan isi queue  
 
 ## Guided 
 
@@ -148,7 +155,7 @@ int main() {
     return 0;
 }
 ```
-Program ini digunakan untuk membuat dan menjalankan antrian (queue) menggunakan linked list. Antrian bekerja dengan aturan FIFO, yaitu data yang masuk pertama akan keluar terlebih dahulu. Fungsi enQueue menambah data baru di bagian belakang antrian, sedangkan deQueue menghapus data yang berada di bagian depan. Fungsi viewQueue dipakai untuk menampilkan seluruh isi antrian, dan clearQueue digunakan untuk menghapus semua data sampai antrian benar-benar kosong. Pada fungsi main, program menambahkan beberapa nama ke dalam antrian, lalu menghapus beberapa di antaranya. Setelah itu, isi queue ditampilkan sebelum dan sesudah proses penghapusan. Program ini menunjukkan cara kerja antrian sederhana dengan operasi dasar tambah, hapus, lihat, dan mengosongkan antrian menggunakan linked list.
+Program ini digunakan untuk membuat dan menjalankan antrian (queue) menggunakan linked list. Queue bekerja dengan aturan FIFO, yaitu data yang pertama masuk akan menjadi data pertama yang keluar. Fungsi enQueue menambah data baru di bagian belakang antrian, sementara deQueue menghapus data paling depan. Untuk melihat seluruh isi antrian, program menggunakan fungsi viewQueue, dan fungsi clearQueue dipakai untuk menghapus semua data hingga antrian benar-benar kosong. Pada fungsi main, beberapa nama dimasukkan ke dalam antrian lalu sebagian dihapus, sehingga terlihat perubahan isi queue sebelum dan sesudah proses tersebut. Secara keseluruhan, program ini menunjukkan cara kerja queue sederhana dengan operasi dasar tambah, hapus, tampilkan, dan kosongkan antrian menggunakan linked list.
 
 ### 2. Implementasi Circular Queue Menggunakan Array (Guided2)
 
@@ -368,8 +375,7 @@ int main(){
     return 0;
 }
 ```
-Program ini membuat queue menggunakan array dengan teknik circular queue, di mana posisi head dan tail bisa kembali ke indeks awal ketika sudah mencapai batas array. Dengan cara ini, ruang yang sudah kosong dapat digunakan lagi sehingga lebih efisien dibanding queue linear biasa.
-Fungsi enQueue digunakan untuk menambah data di bagian belakang antrian. Jika queue masih kosong, head dan tail berada di indeks 0. Jika sudah ada isi, tail digeser ke indeks berikutnya secara melingkar dengan rumus (tail + 1) % MAKSIMAL. Fungsi deQueue menghapus data dari bagian depan. Jika hanya ada satu data, head dan tail di-reset menjadi -1. Jika masih ada elemen lain, head cukup digeser satu langkah secara melingkar.
+Program ini membuat queue menggunakan array dengan teknik circular queue, di mana posisi head dan tail bisa kembali ke indeks awal ketika sudah mencapai batas array. Dengan cara ini, ruang yang sudah kosong dapat digunakan lagi sehingga lebih efisien dibanding queue linear biasa. Fungsi enQueue digunakan untuk menambah data di bagian belakang antrian. Jika queue masih kosong, head dan tail berada di indeks 0. Jika sudah ada isi, tail digeser ke indeks berikutnya secara melingkar dengan rumus (tail + 1) % MAKSIMAL. Fungsi deQueue menghapus data dari bagian depan. Jika hanya ada satu data, head dan tail direset menjadi -1. Jika masih ada elemen lain, head cukup digeser satu langkah secara melingkar.
 Fungsi viewQueue menampilkan seluruh isi antrian dari head sampai tail dengan mengikuti pola circular. Pada fungsi main, program menambahkan beberapa nama ke queue, menghapus beberapa di antaranya, lalu menampilkan isi antrian sebelum dan sesudah penghapusan. Program ini menunjukkan cara kerja circular queue yang memanfaatkan array secara lebih efisien.
 
 ## Unguided 
@@ -512,7 +518,7 @@ int main() {
 #### Output:
 <img width="533" height="298" alt="Image" src="https://github.com/user-attachments/assets/e2262dd5-dc76-4cf6-a180-99b9ff2bb61b" /><br>
 
-Program ini membuat sebuah queue menggunakan array berukuran 5. Queue yang dipakai adalah tipe head tetap, jadi head selalu berada di indeks 0, sementara tail bertambah setiap kali ada data baru. Operasi enqueue digunakan untuk menambah data ke bagian belakang queue. Jika queue masih kosong, head dan tail di-set ke 0. Kalau sudah ada isi, tail cukup ditambah satu lalu data dimasukkan. Operasi dequeue menghapus data paling depan. Karena head tidak bergerak, setelah data pertama dihapus semua elemen di dalam array digeser satu posisi ke kiri supaya urutannya tetap benar. Setelah itu tail dikurangi satu, dan kalau elemen habis head dan tail dikembalikan ke -1. Fungsi printInfo digunakan untuk menampilkan posisi head, tail, dan isi queue setiap kali terjadi perubahan. Di bagian main, program melakukan beberapa kali enqueue dan dequeue sesuai langkah pada soal. Dari hasil outputnya bisa dilihat bagaimana queue bekerja dengan prinsip FIFO, yaitu data yang masuk duluan akan keluar lebih dulu.
+Program ini membuat sebuah queue menggunakan array berisi 5 elemen. Queue yang dipakai adalah queue dengan head tetap, jadi posisi head selalu di indeks 0, sedangkan tail bergerak setiap kali ada data baru masuk. Saat melakukan enqueue, data ditambahkan di bagian belakang. Jika queue masih kosong, head dan tail dibuat menjadi 0, dan kalau sudah ada isinya, tail cukup dinaikkan satu lalu data dimasukkan. Saat dequeue, data paling depan diambil. Karena head tidak pindah, semua elemen di dalam array digeser satu posisi ke kiri supaya urutannya tetap benar. Setelah itu tail dikurangi satu, dan jika queue sudah kosong maka head dan tail direset kembali menjadi -1. Fungsi printInfo menampilkan posisi head, tail, dan isi queue setelah setiap operasi. Di bagian main, program melakukan beberapa kali enqueue dan dequeue sesuai langkah pada soal.
 
 #### Full code Screenshot:
 <img width="1919" height="1022" alt="Image" src="https://github.com/user-attachments/assets/690c8d28-ecb1-4c66-b06e-9445ed83216d" />
@@ -651,8 +657,7 @@ int main() {
 #### Output:
 <img width="1071" height="444" alt="image" src="https://github.com/user-attachments/assets/ee83270c-f3b7-4419-9e1e-2c1566717e4c" />
 
-Program ini menggunakan queue berbasis array dengan mekanisme linear, di mana baik head maupun tail akan bergerak sesuai operasi yang dilakukan. Pada model ini, setiap kali enqueue dijalankan, data baru dimasukkan ke posisi tail dan tail akan maju satu langkah. Jika queue sebelumnya kosong, head dan tail sama-sama berada pada indeks 0. Berbeda dengan Alternatif 1, pada mekanisme ini tidak ada proses menggeser elemen ketika terjadi dequeue. Saat dequeue dijalankan, data yang berada di posisi head diambil, lalu head cukup digeser ke indeks berikutnya. Queue akan kembali dianggap kosong ketika head sudah melewati posisi tail, sehingga head dan tail di-reset menjadi -1.
-Fungsi enqueue bertugas menambah data ke bagian belakang antrian selama queue belum penuh. Fungsi dequeue mengambil data paling depan sesuai prinsip FIFO dan hanya menggerakkan head tanpa memindahkan elemen di dalam array. Fungsi printInfo menampilkan posisi head, tail, serta isi queue berdasarkan rentang indeks head hingga tail. Pada fungsi main, beberapa operasi enqueue dan dequeue dijalankan secara berurutan untuk memperlihatkan perubahan isi queue sekaligus pergerakan head dan tail. Melalui mekanisme ini terlihat bahwa model linear dengan head dan tail bergerak dapat menjalankan operasi antrian tanpa perlu melakukan shifting elemen, sehingga proses dequeue menjadi lebih sederhana.
+Program ini menggunakan queue berbasis array dengan mekanisme linear, di mana baik head maupun tail akan bergerak mengikuti operasi yang dijalankan. Pada model ini, setiap kali enqueue dilakukan, data baru dimasukkan ke posisi tail, lalu tail maju satu langkah. Jika queue sebelumnya kosong, maka head dan tail sama-sama berada di indeks 0. Berbeda dengan Alternatif 1, pada mekanisme ini tidak ada penggeseran elemen saat dequeue. Saat dequeue dijalankan, data yang berada pada posisi head diambil, kemudian head cukup digeser ke indeks berikutnya. Queue akan kembali dianggap kosong ketika head sudah melewati tail, sehingga head dan tail di-reset menjadi -1. Fungsi enqueue bertugas menambah data ke bagian belakang antrian selama queue belum penuh, sedangkan dequeue mengambil data paling depan sesuai prinsip FIFO dan hanya menggerakkan head tanpa memindahkan elemen apa pun. Fungsi printInfo menampilkan nilai head, tail, serta isi queue berdasarkan rentang indeks head sampai tail. Pada fungsi main, beberapa operasi enqueue dan dequeue dijalankan secara berurutan untuk memperlihatkan perubahan isi queue sekaligus pergerakan head dan tail. Mekanisme ini menunjukkan bagaimana queue linear dengan head dan tail bergerak dapat bekerja lebih sederhana tanpa proses shifting seperti pada alternatif sebelumnya.
 
 #### Full code Screenshot:
 <img width="1919" height="1001" alt="image" src="https://github.com/user-attachments/assets/e5e648ad-1a33-46a2-8391-0e29a4893bd4" />
@@ -792,14 +797,10 @@ int main() {
 #### Output:
 <img width="539" height="314" alt="image" src="https://github.com/user-attachments/assets/b95d8544-eccc-4710-aa65-29c5ab0fe219" />
 
-Pada program ini digunakan struktur circular queue, yaitu antrian yang posisi head dan tail-nya dapat kembali ke awal array ketika sudah mencapai indeks terakhir. Mekanisme ini membuat pemakaian memori lebih efisien, karena ruang kosong yang ada di depan bisa dipakai lagi tanpa perlu menggeser elemen.
-Fungsi enqueue menambahkan data di posisi tail. Jika tail sudah berada di indeks terakhir, nilai tail akan kembali ke 0 menggunakan operasi (tail + 1) % MAKSIMAL. Saat queue kosong, head dan tail sama-sama diatur menjadi 0. Sementara itu, fungsi dequeue menghapus data dari posisi head, lalu head digeser ke indeks berikutnya secara melingkar dengan rumus yang sama. Bila setelah penghapusan head melewati tail, berarti queue kosong dan kedua indeks di-reset ke -1.
-Fungsi printInfo digunakan untuk menampilkan isi antrian dengan membaca elemen secara berurutan mulai dari head sampai tail, mengikuti pola circular. Dalam main, program mengisi queue hingga penuh, menghapus beberapa data, lalu menambah data baru sehingga tail berputar ke awal array. Dari hasil output terlihat bahwa head dan tail bergerak melingkar sesuai konsep circular queue.
-
+Program ini menggunakan circular queue, yaitu antrian yang posisi head dan tail-nya bisa berputar kembali ke awal ketika sudah mencapai indeks terakhir. Cara ini membuat ruang array dapat dipakai kembali tanpa perlu menggeser data. Pada operasi enqueue, data baru dimasukkan ke posisi tail. Jika queue masih kosong, head dan tail berada di indeks 0. Jika sudah terisi, tail digeser ke indeks berikutnya dengan rumus (tail + 1) % MAKSIMAL sehingga bisa kembali ke awal array. Pada operasi dequeue, data yang diambil selalu data paling depan pada posisi head, lalu head juga digeser dengan cara yang sama. Jika setelah penghapusan head dan tail berada pada posisi yang sama, queue dianggap kosong dan kedua indeks di-reset ke -1. Fungsi printInfo menampilkan posisi head, tail, serta isi queue sesuai urutan dari head sampai tail mengikuti pola circular. Di fungsi main, program memasukkan data hingga penuh, menghapus beberapa elemen, lalu menambahkan data baru sehingga tail berputar ke awal. Dari proses tersebut dapat terlihat bagaimana circular queue bekerja sambil tetap mengikuti prinsip FIFO dengan penggunaan memori yang lebih efisien.
 
 #### Full code Screenshot:
 <img width="1919" height="978" alt="image" src="https://github.com/user-attachments/assets/586a23a6-9018-4d62-9c8f-14674971ee1f" />
-
 
 ## Kesimpulan
 Dari praktikum ini bisa disimpulkan bahwa struktur data queue dapat diimplementasikan dengan beberapa cara, dan setiap pendekatan memiliki cara kerja yang berbeda. Pada queue linear dengan head tetap, proses penghapusan membutuhkan penggeseran elemen sehingga kurang efisien. Pada model head dan tail bergerak, operasi menjadi lebih sederhana karena elemen tidak perlu dipindahkan. Sedangkan circular queue menawarkan penggunaan memori yang lebih optimal karena head dan tail bisa berputar kembali ke awal array. Melalui ketiga percobaan ini, kita dapat memahami bagaimana prinsip FIFO diterapkan.
