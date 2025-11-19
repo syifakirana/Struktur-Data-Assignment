@@ -181,10 +181,21 @@ Buatlah implementasi ADT Doubly Linked list pada file “Doublylist.cpp” dan c
 implementasi ADT pada file “main.cpp”.<br>
 <img width="505" height="354" alt="Image" src="https://github.com/user-attachments/assets/18393c6e-357e-46f6-bac0-e696f4adb33e" /><br>
 
+File: doublylist.h
+```cpp
 
+```
+File: doublylist.cpp
+```cpp
+
+```
+File: main.cpp
+```cpp
+
+```
 ### Output:
 
-Program ini merupakan 
+Program ini mengimplementasikan struktur data Doubly Linked List untuk menyimpan data kendaraan berupa nomor polisi, warna, dan tahun pembuatan. Setiap data yang dimasukkan akan dicek apakah nomor polisinya sudah pernah terdaftar; jika duplikat, program menampilkan pesan peringatan dan tidak menambahkannya ke list. Data yang valid dimasukkan ke bagian belakang list (insertLast) sehingga urutan penyimpanan mengikuti urutan input. Setelah empat kali input seperti pada contoh soal, program menampilkan seluruh isi list dari node terakhir ke node pertama (traversal mundur menggunakan pointer prev), sehingga outputnya sesuai dengan format yang dicontohkan pada soal praktikum.
 
 ### Full Code Screenshot:
 
