@@ -508,7 +508,7 @@ int main() {
 Program di atas digunakan untuk 
 
 #### Full code Screenshot:
-
+<img width="1919" height="894" alt="Image" src="https://github.com/user-attachments/assets/65353859-0d01-4427-8e58-9020d2e6008c" />  
 
 ### 3. Hapus elemen dengan nomor polisi D003 dengan procedure delete.
 - procedure deleteFirst( input/output L : List, P : address )
