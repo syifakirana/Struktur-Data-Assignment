@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Pengenalan Bahasa C++ (1)</h1>
+# <h1 align="center">ASSASMENT CLO 1</h1>
 <p align="center">Syifa Kirana Putri Surya</p>
 
 ## SOAL NO 1  
@@ -1104,140 +1104,187 @@ int main(){
 }
 ```
 ### Output: 
-
+<img width="772" height="454" alt="Image" src="https://github.com/user-attachments/assets/cf117a17-ef1f-425b-9f6e-23c4ad4378b9" />
 
 ### bagian B  
-File: SLLInventory.h
+File: QueuePengiriman.h
 ```cpp
-#ifndef SLLINVENTORY_H
-#define SLLINVENTORY_H
+#ifndef QUEUEPENGIRIMAN_H
+#define QUEUEPENGIRIMAN_H
 #include <iostream>
 using namespace std;
 
-typedef struct Product {
-    string Nama;
-    string SKU;
-    int Jumlah;
-    float HargaSatuan;
-    float DiskonPersen;
-} Product;
+const int MAX = 5;
 
-typedef struct Node *address;
+struct Paket {
+    string KodeResi;
+    string NamaPengirim;
+    int BeratBarang;
+    string Tujuan;
+};
 
-typedef struct Node {
-    Product info;
-    address next;
-} Node;
-
-typedef struct {
-    address head;
-} List;
-
-bool isEmpty(List L);
-void createList(List &L);
-address allocate(Product P);
-void deallocate(address p);
-void insertLast(List &L, Product P);
-float finalPrice(Product P);
-
-void MaxHargaAkhir(List L); //tambahan
-void viewList(List L);
+struct QueueEkspedisi {
+    Paket dataPaket[MAX];
+    int head;
+    int tail;
+};
+void createQueue(QueueEkspedisi &Q);
+bool isEmpty(QueueEkspedisi Q);
+bool isFull(QueueEkspedisi Q);
+void enQueue(QueueEkspedisi &Q, Paket P);
+void deQueue(QueueEkspedisi &Q, Paket &P);
+void viewQueue(QueueEkspedisi Q);
+int TotalBiayaPengiriman(QueueEkspedisi Q);//tambahan
 
 #endif
 ```
-File: SLLInventory.cpp
+File: QueuePengiriman.cpp
 ```cpp
-#include "SLLInventory.h"
+#include "QueuePengiriman.h"
 
-bool isEmpty(List L){
-    return L.head==NULL;
+void createQueue(QueueEkspedisi &Q){
+    Q.head = -1;
+    Q.tail = -1;
 }
 
-void createList(List &L){
-    L.head=NULL;
+bool isEmpty(QueueEkspedisi Q){
+    return Q.tail == -1;
 }
 
-address allocate(Product P){
-    address p=new Node;
-    p->info=P;
-    p->next=NULL;
-    return p;
+bool isFull(QueueEkspedisi Q){
+    return Q.tail == MAX - 1;
 }
 
-void deallocate(address p){
-    delete p;
-}
-
-void insertLast(List &L, Product P){
-    address p=allocate(P);
-    if(L.head==NULL){
-        L.head=p;
-    } else {
-        address q=L.head;
-        while(q->next!=NULL) q=q->next;
-        q->next=p;
-    }
-}
-
-float finalPrice(Product P){
-    return P.HargaSatuan * (1 - P.DiskonPersen/100);
-}
-
-void viewList(List L){
-    address p=L.head;
-    int i=1;
-    while(p!=NULL){
-        cout<<i<<". "<<p->info.Nama<<"  "<<finalPrice(p->info)<<endl;
-        p=p->next;
-        i++;
-    }
-}
-
-void MaxHargaAkhir(List L){//tambahan
-    if(L.head==NULL) return;
-
-    float MAX=-1;
-    address p=L.head;
-    while(p!=NULL){
-        float h=finalPrice(p->info);
-        if(h>MAX) MAX=h;
-        p=p->next;
-    }
-
-    cout<<"Harga Akhir terbesar: "<<MAX<<endl;
-
-    p=L.head;
-    int i=1;
-    while(p!=NULL){
-        if(finalPrice(p->info)==MAX){
-            cout<<i<<". "<<p->info.Nama<<"  "<<MAX<<endl;
+void enQueue(QueueEkspedisi &Q, Paket P){
+    if(!isFull(Q)){
+        if(isEmpty(Q)){
+            Q.head = 0;
+            Q.tail = 0;
+        } else {
+            Q.tail++;
         }
-        p=p->next;
-        i++;
+        Q.dataPaket[Q.tail] = P;
     }
+}
+
+void deQueue(QueueEkspedisi &Q, Paket &P){
+    if(!isEmpty(Q)){
+        P = Q.dataPaket[Q.head];
+
+        if(Q.head == Q.tail){
+            Q.head = -1;
+            Q.tail = -1;
+        } else {
+            Q.head++;
+        }
+    }
+}
+
+void viewQueue(QueueEkspedisi Q){
+    if(isEmpty(Q)){
+        cout<<"Queue kosong"<<endl;
+        return;
+    }
+
+    for(int i = Q.head; i <= Q.tail; i++){
+        cout << i+1 << ". "
+             << Q.dataPaket[i].KodeResi << "  "
+             << Q.dataPaket[i].NamaPengirim << "  "
+             << Q.dataPaket[i].BeratBarang << "kg  "
+             << Q.dataPaket[i].Tujuan << endl;
+    }
+}
+
+int TotalBiayaPengiriman(QueueEkspedisi Q){//tambahan
+    int total = 0;
+
+    if(!isEmpty(Q)){
+        for(int i = Q.head; i <= Q.tail; i++){
+            total += Q.dataPaket[i].BeratBarang * 8250;
+        }
+    }
+    return total;
 }
 
 ```
 File: main.cpp
 ```cpp
-#include "SLLInventory.h"
-
+#include "QueuePengiriman.h"
+using namespace std;
 
 int main(){
-    List L;
-    createList(L);
-    Product P;
-    P={"Pulpen","A001",20,2500,0};
-    insertLast(L,P);
+    QueueEkspedisi Q;
+    createQueue(Q);
 
-    P={"Buku Tulis","A002",15,5000,10};
-    insertLast(L,P);
+    int pil;
+    Paket P, del;
 
-    P={"Penghapus","A003",30,1500,0};
-    insertLast(L,P);
+    do{
+        cout << "--- Komania Express ---" << endl;
+        cout << "1. Input Data Paket" << endl;
+        cout << "2. Hapus Data Paket" << endl;
+        cout << "3. Tampilkan Queue Paket" << endl;
+        cout << "4. Hitung Total Biaya Pengiriman" << endl;//tambahan
+        cout << "Pilihan anda : ";
+        cin >> pil;
+        cout << endl;
 
-    viewList(L);
-    MaxHargaAkhir(L);//tambahan
+        switch(pil){
+            case 1:
+                cout << "KodeResi : ";
+                cin >> P.KodeResi;
+                cout << "NamaPengirim : ";
+                cin >> P.NamaPengirim;
+                cout << "BeratBarang : ";
+                cin >> P.BeratBarang;
+                cout << "Tujuan : ";
+                cin >> P.Tujuan;
+                enQueue(Q,P);
+                break;
+
+            case 2:
+                deQueue(Q,del);
+                break;
+
+            case 3:
+                viewQueue(Q);
+                break;
+
+            case 4:
+                cout<<"Total biaya pengiriman: Rp "
+                    << TotalBiayaPengiriman(Q) << endl;//tambahan
+                break;
+        }
+        cout << endl;
+    }
+    while(false);  
+
+    P={"123456","Hutao",14,"Sumeru"};
+    enQueue(Q,P);
+
+    P={"234567","Ayaka",10,"Fontaine"};
+    enQueue(Q,P);
+
+    P={"345678","Bennet",7,"Natlan"};
+    enQueue(Q,P);
+
+    P={"456789","Furina",16,"Liyue"};
+    enQueue(Q,P);
+
+    P={"567890","Nefer",6,"Inazuma"};
+    enQueue(Q,P);
+
+    viewQueue(Q);
+    cout<<endl;
+
+    deQueue(Q,del);
+
+    viewQueue(Q);
+    cout<<endl;
+
+    cout<<"Total biaya pengiriman: Rp "
+        << TotalBiayaPengiriman(Q) << endl;//tambahan
+
     return 0;
 }
 ```
