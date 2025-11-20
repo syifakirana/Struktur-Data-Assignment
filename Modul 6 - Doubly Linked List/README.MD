@@ -321,7 +321,7 @@ int main() {
 }
 ```
 ### Output:
-
+<img width="1019" height="759" alt="Image" src="https://github.com/user-attachments/assets/3bcaa261-439e-45c6-923c-032fde9acb90" />  
 
 Program ini mengimplementasikan struktur data Doubly Linked List untuk menyimpan data kendaraan berupa nomor polisi, warna, dan tahun pembuatan. Setiap data yang dimasukkan akan dicek apakah nomor polisinya sudah pernah terdaftar; jika duplikat, program menampilkan pesan peringatan dan tidak menambahkannya ke list. Data yang valid dimasukkan ke bagian belakang list (insertLast) sehingga urutan penyimpanan mengikuti urutan input. Setelah empat kali input seperti pada contoh soal, program menampilkan seluruh isi list dari node terakhir ke node pertama (traversal mundur menggunakan pointer prev), sehingga outputnya sesuai dengan format yang dicontohkan pada soal praktikum.
 
