@@ -1289,3 +1289,4 @@ int main(){
 }
 ```
 ### Output: 
+<img width="901" height="520" alt="Image" src="https://github.com/user-attachments/assets/370a2b15-2906-463f-8c4f-8c50983995bf" />
