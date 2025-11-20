@@ -183,26 +183,324 @@ implementasi ADT pada file “main.cpp”.<br>
 
 File: doublylist.h
 ```cpp
+#ifndef DOUBLYLIST_H
+#define DOUBLYLIST_H
 
+#include <string>
+using namespace std;
+
+struct infotipe {
+    string nopol;
+    string warna;
+    int thnBuat;
+};
+
+struct ElmList;
+typedef ElmList* address;
+
+struct ElmList {
+    infotipe info;
+    address next;
+    address prev;
+};
+
+struct List {
+    address First;
+    address Last;
+};
+
+void CreateList(List &L);
+address alokasi(infotipe x);
+void dealokasi(address P);
+void insertLast(List &L, address P);
+void printInfo(List L);
+
+#endif
 ```
 File: doublylist.cpp
 ```cpp
+#include "Doublylist.h"
+#include <iostream>
+using namespace std;
 
+void CreateList(List &L) {
+    L.First = nullptr;
+    L.Last = nullptr;
+}
+
+address alokasi(infotipe x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = nullptr;
+    P->prev = nullptr;
+    return P;
+}
+
+void dealokasi(address P) {
+    delete P;
+}
+
+void insertLast(List &L, address P) {
+    if (L.First == nullptr) {
+        L.First = P;
+        L.Last = P;
+    } else {
+        L.Last->next = P;
+        P->prev = L.Last;
+        L.Last = P;
+    }
+}
+
+void printInfo(List L) {
+    cout << "DATA LIST 1\n\n";
+
+    address Q = L.Last; 
+    while (Q != nullptr) {
+        cout << "no polisi : " << Q->info.nopol << endl;
+        cout << "warna     : " << Q->info.warna << endl;
+        cout << "tahun     : " << Q->info.thnBuat << endl;
+        cout << endl;
+        Q = Q->prev;
+    }
+}
 ```
 File: main.cpp
 ```cpp
+#include <iostream>
+#include "Doublylist.h"
+using namespace std;
 
+int main() {
+    List L;
+    CreateList(L);
+
+    const int JUMLAH_INPUT = 4; 
+    for (int i = 0; i < JUMLAH_INPUT; ++i) {
+        infotipe x;
+
+        cout << "masukkan nomor polisi: ";
+        cin >> x.nopol;
+
+        cout << "masukkan warna kendaraan: ";
+        cin >> x.warna;
+
+        cout << "masukkan tahun kendaraan: ";
+        cin >> x.thnBuat;
+
+        cout << endl;
+
+        // cek duplikat
+        bool exists = false;
+        for (address Q = L.First; Q != nullptr; Q = Q->next) {
+            if (Q->info.nopol == x.nopol) {
+                exists = true;
+                break;
+            }
+        }
+
+        if (exists) {
+            cout << "nomor polisi sudah terdaftar" << endl;
+            cout << endl;
+        } else {
+            address P = alokasi(x);
+            insertLast(L, P);
+        }
+    }
+
+    printInfo(L);
+
+    address curr = L.First;
+    while (curr != nullptr) {
+        address toDel = curr;
+        curr = curr->next;
+        dealokasi(toDel);
+    }
+    L.First = L.Last = nullptr;
+
+    return 0;
+}
 ```
 ### Output:
+
 
 Program ini mengimplementasikan struktur data Doubly Linked List untuk menyimpan data kendaraan berupa nomor polisi, warna, dan tahun pembuatan. Setiap data yang dimasukkan akan dicek apakah nomor polisinya sudah pernah terdaftar; jika duplikat, program menampilkan pesan peringatan dan tidak menambahkannya ke list. Data yang valid dimasukkan ke bagian belakang list (insertLast) sehingga urutan penyimpanan mengikuti urutan input. Setelah empat kali input seperti pada contoh soal, program menampilkan seluruh isi list dari node terakhir ke node pertama (traversal mundur menggunakan pointer prev), sehingga outputnya sesuai dengan format yang dicontohkan pada soal praktikum.
 
 ### Full Code Screenshot:
 
+
 ### 2. Carilah elemen dengan nomor polisi D001 dengan membuat fungsi baru.
 fungsi findElm( L : List, x : infotype ) : address<br>
 
 <img width="524" height="222" alt="Image" src="https://github.com/user-attachments/assets/ce6315ea-cc33-492a-b687-63f8f57c81b3" /><br>
+
+File: doublylist.h
+```cpp
+#ifndef DOUBLYLIST_H
+#define DOUBLYLIST_H
+
+#include <string>
+using namespace std;
+
+struct infotipe {
+    string nopol;
+    string warna;
+    int thnBuat;
+};
+
+struct ElmList;
+typedef ElmList* address;
+
+struct ElmList {
+    infotipe info;
+    address next;
+    address prev;
+};
+
+struct List {
+    address First;
+    address Last;
+};
+
+void CreateList(List &L);
+address alokasi(infotipe x);
+void dealokasi(address P);
+void insertLast(List &L, address P);
+void printInfo(List L);
+
+address findElm(List L, string nopol); //tambahan
+
+#endif
+```
+File: doublylist.cpp
+```cpp
+#include "Doublylist.h"
+#include <iostream>
+using namespace std;
+
+void CreateList(List &L) {
+    L.First = nullptr;
+    L.Last = nullptr;
+}
+
+address alokasi(infotipe x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = nullptr;
+    P->prev = nullptr;
+    return P;
+}
+
+void dealokasi(address P) {
+    delete P;
+}
+
+void insertLast(List &L, address P) {
+    if (L.First == nullptr) {
+        L.First = P;
+        L.Last = P;
+    } else {
+        L.Last->next = P;
+        P->prev = L.Last;
+        L.Last = P;
+    }
+}
+
+void printInfo(List L) {
+    cout << "DATA LIST 1\n\n";
+
+    address Q = L.Last; 
+    while (Q != nullptr) {
+        cout << "no polisi : " << Q->info.nopol << endl;
+        cout << "warna     : " << Q->info.warna << endl;
+        cout << "tahun     : " << Q->info.thnBuat << endl;
+        cout << endl;
+        Q = Q->prev;
+    }
+}
+
+address findElm(List L, string nopol) { //tambahan
+    address P = L.First;
+    while (P != nullptr) {
+        if (P->info.nopol == nopol) {
+            return P;       
+        P = P->next;
+    }
+    return nullptr;         
+}
+```
+File: main.cpp
+```cpp
+#include <iostream>
+#include "Doublylist.h"
+using namespace std;
+
+int main() {
+    List L;
+    CreateList(L);
+
+    const int JUMLAH_INPUT = 4;
+    for (int i = 0; i < JUMLAH_INPUT; ++i) {
+        infotipe x;
+
+        cout << "masukkan nomor polisi: ";
+        cin >> x.nopol;
+
+        cout << "masukkan warna kendaraan: ";
+        cin >> x.warna;
+
+        cout << "masukkan tahun kendaraan: ";
+        cin >> x.thnBuat;
+
+        cout << endl;
+
+        // cek duplikat
+        bool exists = false;
+        for (address Q = L.First; Q != nullptr; Q = Q->next) {
+            if (Q->info.nopol == x.nopol) {
+                exists = true;
+                break;
+            }
+        }
+
+        if (exists) {
+            cout << "nomor polisi sudah terdaftar" << endl;
+            cout << endl;
+        } else {
+            address P = alokasi(x);
+            insertLast(L, P);
+        }
+    }
+
+    // Tampilkan isi list
+    printInfo(L);
+    
+    //tambahan
+    string cari;
+    cout << "Masukkan Nomor Polisi yang dicari : ";
+    cin >> cari;
+
+    address hasil = findElm(L, cari);
+    cout << endl;
+
+    if (hasil != nullptr) {
+        cout << "Nomor Polisi : " << hasil->info.nopol << endl;
+        cout << "Warna        : " << hasil->info.warna << endl;
+        cout << "Tahun        : " << hasil->info.thnBuat << endl;
+    } else {
+        cout << "Data tidak ditemukan!" << endl;
+    }
+
+    address curr = L.First;
+    while (curr != nullptr) {
+        address toDel = curr;
+        curr = curr->next;
+        dealokasi(toDel);
+    }
+    L.First = L.Last = nullptr;
+
+    return 0;
+}
+```
 
 #### Output:
 
@@ -219,14 +517,250 @@ Program di atas digunakan untuk
 
 <img width="665" height="313" alt="Image" src="https://github.com/user-attachments/assets/af7786d5-a12d-4b99-b3c7-b84dc2b33a13" /><br>
 
+File: doublylist.h
+```cpp
+#ifndef DOUBLYLIST_H
+#define DOUBLYLIST_H
+
+#include <string>
+using namespace std;
+
+struct infotipe {
+    string nopol;
+    string warna;
+    int thnBuat;
+};
+
+struct ElmList;
+typedef ElmList* address;
+
+struct ElmList {
+    infotipe info;
+    address next;
+    address prev;
+};
+
+struct List {
+    address First;
+    address Last;
+};
+
+void CreateList(List &L);
+address alokasi(infotipe x);
+void dealokasi(address P);
+void insertLast(List &L, address P);
+void printInfo(List L);
+
+// soal 2
+address findElm(List L, string nopol);
+
+// tambahan soal 3
+void deleteFirst(List &L, address &P);
+void deleteLast(List &L, address &P);
+void deleteAfter(address Prec, address &P);
+
+#endif
+```
+File: doublylist.cpp
+```cpp
+#include "Doublylist.h"
+#include <iostream>
+using namespace std;
+
+void CreateList(List &L) {
+    L.First = nullptr;
+    L.Last = nullptr;
+}
+
+address alokasi(infotipe x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = nullptr;
+    P->prev = nullptr;
+    return P;
+}
+
+void dealokasi(address P) {
+    delete P;
+}
+
+void insertLast(List &L, address P) {
+    if (L.First == nullptr) {
+        L.First = P;
+        L.Last = P;
+    } else {
+        L.Last->next = P;
+        P->prev = L.Last;
+        L.Last = P;
+    }
+}
+
+void printInfo(List L) {
+    cout << "DATA LIST 1\n\n";
+    address Q = L.Last;
+    while (Q != nullptr) {
+        cout << "no polisi : " << Q->info.nopol << endl;
+        cout << "warna     : " << Q->info.warna << endl;
+        cout << "tahun     : " << Q->info.thnBuat << endl;
+        cout << endl;
+        Q = Q->prev;
+    }
+}
+
+address findElm(List L, string nopol) {
+    address Q = L.First;
+    while (Q != nullptr) {
+        if (Q->info.nopol == nopol) return Q;
+        Q = Q->next;
+    }
+    return nullptr;
+}
+
+// deleteFirst (soal 3)
+void deleteFirst(List &L, address &P) {
+    if (L.First == nullptr) {
+        P = nullptr;
+        return;
+    }
+
+    P = L.First;
+    if (L.First == L.Last) {
+        // only one node
+        L.First = nullptr;
+        L.Last = nullptr;
+    } else {
+        L.First = P->next;
+        L.First->prev = nullptr;
+        P->next = nullptr;
+    }
+}
+
+// deleteLast (soal 3)
+void deleteLast(List &L, address &P) {
+    if (L.Last == nullptr) {
+        P = nullptr;
+        return;
+    }
+
+    P = L.Last;
+    if (L.First == L.Last) {
+        // only one node
+        L.First = nullptr;
+        L.Last = nullptr;
+    } else {
+        L.Last = P->prev;
+        L.Last->next = nullptr;
+        P->prev = nullptr;
+    }
+}
+//deleteAfter 
+void deleteAfter(address Prec, address &P) {
+    if (Prec == nullptr || Prec->next == nullptr) {
+        P = nullptr;
+        return;
+    }
+    P = Prec->next;
+    Prec->next = P->next;
+    if (P->next != nullptr) {
+        P->next->prev = Prec;
+    }
+    P->next = nullptr;
+    P->prev = nullptr;
+}
+```
+File: main.cpp
+```cpp
+#include <iostream>
+#include "Doublylist.h"
+using namespace std;
+
+int main() {
+    List L;
+    CreateList(L);
+
+    const int JUMLAH_INPUT = 4;
+
+    for (int i = 0; i < JUMLAH_INPUT; ++i) {
+        infotipe x;
+
+        cout << "masukkan nomor polisi: ";
+        cin >> x.nopol;
+
+        cout << "masukkan warna kendaraan: ";
+        cin >> x.warna;
+
+        cout << "masukkan tahun kendaraan: ";
+        cin >> x.thnBuat;
+
+        cout << endl;
+
+        bool exists = false;
+        for (address Q = L.First; Q != nullptr; Q = Q->next) {
+            if (Q->info.nopol == x.nopol) {
+                exists = true;
+                break;
+            }
+        }
+
+        if (exists) {
+            cout << "nomor polisi sudah terdaftar" << endl << endl;
+        } else {
+            insertLast(L, alokasi(x));
+        }
+    }
+
+    printInfo(L);
+
+    string key;
+    cout << "Masukkan Nomor Polisi yang akan dihapus : ";
+    cin >> key;
+    cout << endl;
+
+    address target = findElm(L, key);
+
+    if (target == nullptr) {
+        cout << "Data dengan nomor polisi " << key << " tidak ditemukan" << endl;
+    } else {
+        address P = nullptr;
+
+        if (target == L.First) {
+            deleteFirst(L, P);
+        } else if (target == L.Last) {
+            deleteLast(L, P);
+        } else {
+            deleteAfter(target->prev, P);
+            if (target->prev->next == nullptr) {
+                L.Last = target->prev;
+            }
+        }
+
+        if (P != nullptr) {
+            cout << "Data dengan nomor polisi " << key << " berhasil dihapus." << endl << endl;
+            dealokasi(P);
+        } else {
+            cout << "Gagal menghapus data." << endl << endl;
+        }
+
+        printInfo(L);
+    }
+
+    address cur = L.First;
+    while (cur != nullptr) {
+        address toDel = cur;
+        cur = cur->next;
+        dealokasi(toDel);
+    }
+
+    return 0;
+}
+```
+
 ### Output:
 
 
 Program di atas 
 
 ### Full Code Screenshot:
-
-## Kesimpulan
 
 
 ## Kesimpulan
