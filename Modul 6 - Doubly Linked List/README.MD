@@ -761,6 +761,7 @@ int main() {
 Program di atas 
 
 ### Full Code Screenshot:
+<img width="1919" height="932" alt="Image" src="https://github.com/user-attachments/assets/ec903dc6-306c-490e-a26d-3966f036d297" />
 
 
 ## Kesimpulan
