@@ -770,140 +770,177 @@ int main(){
 }
 ```
 ### Output: 
-
+<img width="1009" height="545" alt="Image" src="https://github.com/user-attachments/assets/455bf3ef-7b9c-489f-962f-605bae5043d6" />
 
 ### bagian B  
-File: SLLInventory.h
+File: StackMahasiswa.h
 ```cpp
-#ifndef SLLINVENTORY_H
-#define SLLINVENTORY_H
+#ifndef STACKMAHASISWA_H
+#define STACKMAHASISWA_H
 #include <iostream>
 using namespace std;
 
-typedef struct Product {
+const int MAX = 6;
+
+struct Mahasiswa {
     string Nama;
-    string SKU;
-    int Jumlah;
-    float HargaSatuan;
-    float DiskonPersen;
-} Product;
+    string NIM;
+    float NilaiTugas;
+    float NilaiUTS;
+    float NilaiUAS;
+};
 
-typedef struct Node *address;
+struct stackMahasiswa {
+    Mahasiswa dataMahasiswa[MAX];
+    int top;
+};
 
-typedef struct Node {
-    Product info;
-    address next;
-} Node;
+void createStack(stackMahasiswa &S);
+bool isEmpty(stackMahasiswa S);
+bool isFull(stackMahasiswa S);
+void Push(stackMahasiswa &S, Mahasiswa M);
+void Pop(stackMahasiswa &S, Mahasiswa &M);
+void Update(stackMahasiswa &S, int pos, Mahasiswa M);
+void View(stackMahasiswa S);
+float nilaiAkhir(Mahasiswa M);
+void SearchNilaiAkhir(stackMahasiswa S, float minA, float maxA);
 
-typedef struct {
-    address head;
-} List;
-
-bool isEmpty(List L);
-void createList(List &L);
-address allocate(Product P);
-void deallocate(address p);
-void insertLast(List &L, Product P);
-float finalPrice(Product P);
-
-void MaxHargaAkhir(List L); //tambahan
-void viewList(List L);
+void MaxNilaiAkhir(stackMahasiswa S); //tambahan
 
 #endif
 ```
-File: SLLInventory.cpp
+File: StackMahasiswa.cpp
 ```cpp
-#include "SLLInventory.h"
+#include "stackMahasiswa.h"
 
-bool isEmpty(List L){
-    return L.head==NULL;
+void createStack(stackMahasiswa &S){
+    S.top = -1;
 }
 
-void createList(List &L){
-    L.head=NULL;
+bool isEmpty(stackMahasiswa S){
+    return S.top == -1;
 }
 
-address allocate(Product P){
-    address p=new Node;
-    p->info=P;
-    p->next=NULL;
-    return p;
+bool isFull(stackMahasiswa S){
+    return S.top == MAX - 1;
 }
 
-void deallocate(address p){
-    delete p;
-}
-
-void insertLast(List &L, Product P){
-    address p=allocate(P);
-    if(L.head==NULL){
-        L.head=p;
-    } else {
-        address q=L.head;
-        while(q->next!=NULL) q=q->next;
-        q->next=p;
+void Push(stackMahasiswa &S, Mahasiswa M){
+    if(!isFull(S)){
+        S.top++;
+        S.dataMahasiswa[S.top] = M;
     }
 }
 
-float finalPrice(Product P){
-    return P.HargaSatuan * (1 - P.DiskonPersen/100);
-}
-
-void viewList(List L){
-    address p=L.head;
-    int i=1;
-    while(p!=NULL){
-        cout<<i<<". "<<p->info.Nama<<"  "<<finalPrice(p->info)<<endl;
-        p=p->next;
-        i++;
+void Pop(stackMahasiswa &S, Mahasiswa &M){
+    if(!isEmpty(S)){
+        M = S.dataMahasiswa[S.top];
+        S.top--;
     }
 }
 
-void MaxHargaAkhir(List L){//tambahan
-    if(L.head==NULL) return;
-
-    float MAX=-1;
-    address p=L.head;
-    while(p!=NULL){
-        float h=finalPrice(p->info);
-        if(h>MAX) MAX=h;
-        p=p->next;
+void Update(stackMahasiswa &S, int pos, Mahasiswa M){
+    int idx = pos - 1;
+    if(idx >= 0 && idx <= S.top){
+        S.dataMahasiswa[idx] = M;
     }
+}
 
-    cout<<"Harga Akhir terbesar: "<<MAX<<endl;
+float nilaiAkhir(Mahasiswa M){
+    return 0.2*M.NilaiTugas + 0.4*M.NilaiUTS + 0.4*M.NilaiUAS;
+}
 
-    p=L.head;
-    int i=1;
-    while(p!=NULL){
-        if(finalPrice(p->info)==MAX){
-            cout<<i<<". "<<p->info.Nama<<"  "<<MAX<<endl;
+void View(stackMahasiswa S){
+    for(int i=S.top; i>=0; i--){
+        cout << (i+1) << ". "
+             << S.dataMahasiswa[i].Nama << "  "
+             << S.dataMahasiswa[i].NIM << "  "
+             << S.dataMahasiswa[i].NilaiTugas << "  "
+             << S.dataMahasiswa[i].NilaiUTS << "  "
+             << S.dataMahasiswa[i].NilaiUAS << "  "
+             << nilaiAkhir(S.dataMahasiswa[i])
+             << endl;
+    }
+}
+
+void SearchNilaiAkhir(stackMahasiswa S, float minA, float maxA){
+    for(int i=S.top; i>=0; i--){
+        float NA = nilaiAkhir(S.dataMahasiswa[i]);
+        if(NA >= minA && NA <= maxA){
+            cout << (i+1) << ". " 
+                 << S.dataMahasiswa[i].Nama << "  "
+                 << NA << endl;
         }
-        p=p->next;
-        i++;
     }
 }
 
+void MaxNilaiAkhir(stackMahasiswa S){
+    if(isEmpty(S)){
+        cout<<"Stack kosong"<<endl;
+        return;
+    }
+
+    float maxA = -1;
+    for(int i=S.top; i>=0; i--){
+        float NA = nilaiAkhir(S.dataMahasiswa[i]);
+        if(NA > maxA){
+            maxA = NA;
+        }
+    }
+
+    cout<<"NilaiAkhir terbesar: "<<maxA<<endl;
+
+    for(int i=S.top; i>=0; i--){
+        float NA = nilaiAkhir(S.dataMahasiswa[i]);
+        if(NA == maxA){
+            cout<<(i+1)<<". "<<S.dataMahasiswa[i].Nama
+                <<"  "<<S.dataMahasiswa[i].NIM
+                <<"  "<<NA<<endl;
+        }
+    }
+}
 ```
 File: main.cpp
 ```cpp
-#include "SLLInventory.h"
-
+#include "stackMahasiswa.h"
 
 int main(){
-    List L;
-    createList(L);
-    Product P;
-    P={"Pulpen","A001",20,2500,0};
-    insertLast(L,P);
+    stackMahasiswa S;
+    createStack(S);
+    Mahasiswa M, del;
 
-    P={"Buku Tulis","A002",15,5000,10};
-    insertLast(L,P);
+    M={"Venti","11111",75.7,82.1,65.5};
+    Push(S,M);
 
-    P={"Penghapus","A003",30,1500,0};
-    insertLast(L,P);
+    M={"Xiao","22222",87.4,88.9,81.9};
+    Push(S,M);
 
-    viewList(L);
-    MaxHargaAkhir(L);//tambahan
+    M={"Kazuha","33333",92.3,88.8,82.4};
+    Push(S,M);
+
+    M={"Wanderer","44444",95.5,85.5,90.5};
+    Push(S,M);
+
+    M={"Lynette","55555",77.7,65.4,79.9};
+    Push(S,M);
+
+    M={"Chasca","66666",99.9,93.6,87.3};
+    Push(S,M);
+
+    View(S);
+    cout << endl;
+    Pop(S, del);
+
+    View(S);
+    cout << endl;
+
+    M = {"Heizou","77777",99.9,88.8,77.7};
+    Update(S, 3, M);
+
+    View(S);
+    cout << endl;
+    SearchNilaiAkhir(S, 85.5, 95.5);
+    MaxNilaiAkhir(S);//tambahan
     return 0;
 }
 ```
