@@ -326,7 +326,7 @@ int main() {
 Program ini mengimplementasikan struktur data Doubly Linked List untuk menyimpan data kendaraan berupa nomor polisi, warna, dan tahun pembuatan. Setiap data yang dimasukkan akan dicek apakah nomor polisinya sudah pernah terdaftar; jika duplikat, program menampilkan pesan peringatan dan tidak menambahkannya ke list. Data yang valid dimasukkan ke bagian belakang list (insertLast) sehingga urutan penyimpanan mengikuti urutan input. Setelah empat kali input seperti pada contoh soal, program menampilkan seluruh isi list dari node terakhir ke node pertama (traversal mundur menggunakan pointer prev), sehingga outputnya sesuai dengan format yang dicontohkan pada soal praktikum.
 
 ### Full Code Screenshot:
-
+<img width="1919" height="989" alt="Image" src="https://github.com/user-attachments/assets/981ab268-e96d-4d4f-bea4-562e1a6d5828" />  
 
 ### 2. Carilah elemen dengan nomor polisi D001 dengan membuat fungsi baru.
 fungsi findElm( L : List, x : infotype ) : address<br>
