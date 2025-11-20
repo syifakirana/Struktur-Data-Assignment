@@ -756,7 +756,7 @@ int main() {
 ```
 
 ### Output:
-
+<img width="1204" height="675" alt="Image" src="https://github.com/user-attachments/assets/61b014e3-512a-46c9-b215-c9bd892a2926" />
 
 Program di atas 
 
