@@ -342,4 +342,277 @@ int main(){
 }
 ```
 ### Output: 
+<img width="542" height="175" alt="Image" src="https://github.com/user-attachments/assets/cc8199f1-c905-4d90-9c04-192f501b2342" />
+
+## SOAL NO 2  
+
+File: DLLPlaylist.h
+```cpp
+#ifndef DLLPLAYLIST_H
+#define DLLPLAYLIST_H
+#include <iostream>
+using namespace std;
+
+struct Song {
+    string Title;
+    string Artist;
+    int DurationSec;
+    int PlayCount;
+    float Rating;
+};
+
+struct Node {
+    Song info;
+    Node *prev;
+    Node *next;
+};
+
+struct List {
+    Node *head;
+    Node *tail;
+};
+
+void createList(List &L);
+bool isEmpty(List L);
+
+Node* allocate(Song S);
+void deallocate(Node *p);
+
+void insertFirst(List &L, Song S);
+void insertLast(List &L, Song S);
+void insertAfter(List &L, Node *Q, Song S);
+void insertBefore(List &L, Node *Q, Song S);
+
+void deleteFirst(List &L, Song &S);
+void deleteLast(List &L, Song &S);
+void deleteAfter(List &L, Node *Q, Song &S);
+void deleteBefore(List &L, Node *Q, Song &S);
+
+void updateAtPosition(List &L, int pos, Song S);
+void updateBefore(List &L, Node *Q, Song S);
+
+float popScore(Song S);
+void viewList(List L);
+
+void searchByPopularityRange(List L, float minS, float maxS);
+
+Node* nodeAt(List L, int pos);
+
+#endif
+```
+File: DLLPlaylist.cpp
+```cpp
+#include "DLLPlaylist.h"
+
+void createList(List &L){
+    L.head = NULL;
+    L.tail = NULL;
+}
+
+bool isEmpty(List L){
+    return L.head==NULL;
+}
+
+Node* allocate(Song S){
+    Node *p = new Node;
+    p->info = S;
+    p->prev = NULL;
+    p->next = NULL;
+    return p;
+}
+
+void deallocate(Node *p){
+    delete p;
+}
+
+void insertFirst(List &L, Song S){
+    Node *p = allocate(S);
+    if(isEmpty(L)){
+        L.head = p; L.tail = p;
+    } else {
+        p->next = L.head;
+        L.head->prev = p;
+        L.head = p;
+    }
+}
+
+void insertLast(List &L, Song S){
+    Node *p = allocate(S);
+    if(isEmpty(L)){
+        L.head = p; L.tail = p;
+    } else {
+        p->prev = L.tail;
+        L.tail->next = p;
+        L.tail = p;
+    }
+}
+
+void insertAfter(List &L, Node *Q, Song S){
+    if(Q==NULL) return;
+    Node *p = allocate(S);
+    p->next = Q->next;
+    p->prev = Q;
+    if(Q->next!=NULL) Q->next->prev = p;
+    else L.tail = p;
+    Q->next = p;
+}
+
+void insertBefore(List &L, Node *Q, Song S){
+    if(Q==NULL) return;
+    Node *p = allocate(S);
+    p->prev = Q->prev;
+    p->next = Q;
+    if(Q->prev!=NULL) Q->prev->next = p;
+    else L.head = p;
+    Q->prev = p;
+}
+
+void deleteFirst(List &L, Song &S){
+    if(isEmpty(L)) return;
+    Node *p = L.head;
+    S = p->info;
+    if(L.head==L.tail){
+        L.head=L.tail=NULL;
+    } else {
+        L.head = p->next;
+        L.head->prev = NULL;
+    }
+    deallocate(p);
+}
+
+void deleteLast(List &L, Song &S){
+    if(isEmpty(L)) return;
+    Node *p = L.tail;
+    S = p->info;
+    if(L.head==L.tail){
+        L.head=L.tail=NULL;
+    } else {
+        L.tail = p->prev;
+        L.tail->next = NULL;
+    }
+    deallocate(p);
+}
+
+void deleteAfter(List &L, Node *Q, Song &S){
+    if(Q==NULL || Q->next==NULL) return;
+    Node *p = Q->next;
+    S = p->info;
+    Q->next = p->next;
+    if(p->next!=NULL) p->next->prev = Q;
+    else L.tail = Q;
+    deallocate(p);
+}
+
+void deleteBefore(List &L, Node *Q, Song &S){
+    if(Q==NULL || Q->prev==NULL) return;
+    Node *p = Q->prev;
+    S = p->info;
+    Q->prev = p->prev;
+    if(p->prev!=NULL) p->prev->next = Q;
+    else L.head = Q;
+    deallocate(p);
+}
+
+Node* nodeAt(List L, int pos){
+    Node *p=L.head;
+    int i=1;
+    while(p!=NULL && i<pos){
+        p=p->next;
+        i++;
+    }
+    return p;
+}
+
+void updateAtPosition(List &L, int pos, Song S){
+    Node *p=nodeAt(L,pos);
+    if(p!=NULL) p->info=S;
+}
+
+void updateBefore(List &L, Node *Q, Song S){
+    if(Q==NULL || Q->prev==NULL) return;
+    Q->prev->info = S;
+}
+
+float popScore(Song S){
+    return 0.8 * S.PlayCount + 20.0 * S.Rating;
+}
+
+void viewList(List L){
+    Node *p = L.head;
+    int i = 1;
+    while(p!=NULL){
+        cout << i << ". "
+             << p->info.Title << "  "
+             << p->info.Artist << "  "
+             << p->info.DurationSec << "  "
+             << p->info.PlayCount << "  "
+             << p->info.Rating << "  "
+             << popScore(p->info)
+             << endl;
+        p = p->next;
+        i++;
+    }
+}
+
+void searchByPopularityRange(List L, float minS, float maxS){
+    Node *p=L.head;
+    int i=1;
+    while(p!=NULL){
+        float sc = popScore(p->info);
+        if(sc>=minS && sc<=maxS){
+            cout<<i<<". "<<p->info.Title<<"  "<<sc<<endl;
+        }
+        p=p->next;
+        i++;
+    }
+}
+```
+File: main.cpp
+```cpp
+#include "DLLPlaylist.h"
+using namespace std;
+
+int main(){
+    List L;
+    createList(L);
+
+    Song S, del;
+
+    S = {"Senja di Kota", "Nona Band", 210, 150, 4.2};
+    insertLast(L, S);
+
+    S = {"Langkahmu", "Delta", 185, 320, 4.8};
+    insertLast(L, S);
+
+    S = {"Hujan Minggu", "Arka", 240, 90, 3.9};
+    insertLast(L, S);
+
+    viewList(L);
+    cout << endl;
+    deleteLast(L, del);
+    S = {"Pelita", "Luna", 200, 260, 4.5};
+    updateAtPosition(L, 2, S);
+    viewList(L);
+    cout << endl;
+    Node *pos2 = nodeAt(L, 2);
+    S = {"Senandung", "Mira", 175, 120, 4.0};
+    insertBefore(L, pos2, S);
+
+    viewList(L);
+    cout << endl;
+
+    S = {"Update Lagu", "ZZZ", 100, 222, 3.5};
+    updateBefore(L, pos2, S);
+
+    viewList(L);
+    cout << endl;
+    deleteBefore(L, nodeAt(L,3), del);
+    viewList(L);
+    cout << endl;
+    searchByPopularityRange(L, 150.0, 300.0);
+
+    return 0;
+}
+```
+### Output: 
 
