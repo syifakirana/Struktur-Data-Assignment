@@ -503,7 +503,7 @@ int main() {
 ```
 
 #### Output:
-
+<img width="1310" height="731" alt="Image" src="https://github.com/user-attachments/assets/c7f85c5f-7a5c-4510-8f81-ad4c37dd45dc" />  
 
 Program di atas digunakan untuk 
 
