@@ -505,7 +505,8 @@ int main() {
 #### Output:
 <img width="1310" height="731" alt="Image" src="https://github.com/user-attachments/assets/c7f85c5f-7a5c-4510-8f81-ad4c37dd45dc" />  
 
-Program di atas digunakan untuk 
+Program masih menggunakan Doubly Linked List yang sama seperti sebelumnya, namun kali ini ditambahkan fitur untuk mencari elemen berdasarkan nomor polisi. Setelah seluruh data kendaraan dimasukkan dan list terbentuk, program meminta pengguna memasukkan nomor polisi yang ingin dicari. Proses pencarian dilakukan dengan menelusuri list dari node pertama menggunakan pointer next, dan setiap node dicek apakah nomor polisinya sesuai dengan input pengguna.
+Jika data ditemukan, program menampilkan informasi lengkap dari node tersebut, seperti nomor polisi, warna kendaraan, dan tahun pembuatannya. Sebaliknya, jika tidak ada node yang memiliki nomor polisi tersebut, program menampilkan pesan bahwa data tidak ditemukan. Fitur pencarian ini memanfaatkan fungsi findElm(), yang mengembalikan alamat node jika cocok, atau nullptr jika tidak.
 
 #### Full code Screenshot:
 <img width="1919" height="894" alt="Image" src="https://github.com/user-attachments/assets/65353859-0d01-4427-8e58-9020d2e6008c" />  
