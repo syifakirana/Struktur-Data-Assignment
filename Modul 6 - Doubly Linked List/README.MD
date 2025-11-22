@@ -3,7 +3,25 @@
 <p align="center">103112400111</p>
 
 ## Dasar Teori
-Materi ini merupakan 
+Doubly Linked List adalah struktur data yang terdiri dari rangkaian node, dan setiap node punya dua pointer:
+next : menunjuk ke node berikutnya
+prev : menunjuk ke node sebelumnya
+
+Karena setiap node terhubung ke dua arah, DLL dapat ditelusuri dari depan ke belakang maupun dari belakang ke depan. Ini membuat DLL lebih fleksibel daripada Single Linked List, terutama saat ingin menambah atau menghapus data di posisi tertentu.
+Di dalam DLL ada dua pointer penting:
+First : menunjuk ke node pertama dalam list
+Last : menunjuk ke node terakhir dalam list  
+
+Operasi dasar pada Doubly Linked List:  
+CreateList() membuat list kosong dengan First dan Last bernilai null
+Alokasi() membuat node baru berisi data
+insertLast() menambah node di bagian belakang list
+deleteFirst() menghapus node paling depan
+deleteLast() menghapus node paling belakang
+deleteAfter() menghapus node setelah node tertentu
+findElm() mencari node berdasarkan nilai tertentu (misalnya nomor polisi)
+printInfo() menampilkan seluruh data, bisa dilakukan dari depan atau dari belakang
+dealokasi() menghapus node dari memori setelah dilepas dari list
 
 ---
 
@@ -766,5 +784,4 @@ Program menambahkan fitur untuk menghapus data kendaraan berdasarkan nomor polis
 
 
 ## Kesimpulan
-Dari praktikum ini dapat disimpulkan bahwa 
-
+Dari modul Doubly Linked List ini dapat disimpulkan bahwa DLL adalah struktur data yang dapat bergerak ke dua arah karena setiap node memiliki pointer next dan prev. Hal ini membuat proses penambahan, penghapusan, dan pencarian data menjadi lebih fleksibel, terutama ketika elemen tidak berada di posisi awal. Pengaturan pointer harus dilakukan dengan benar agar hubungan antar-node tetap terjaga dan list tidak rusak. Secara keseluruhan, DLL memberi cara yang lebih mudah untuk mengatur dan memodifikasi data yang posisinya bisa berubah-ubah di dalam list.
