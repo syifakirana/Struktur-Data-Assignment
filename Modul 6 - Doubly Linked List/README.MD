@@ -759,7 +759,7 @@ int main() {
 ### Output:
 <img width="1204" height="675" alt="Image" src="https://github.com/user-attachments/assets/61b014e3-512a-46c9-b215-c9bd892a2926" />
 
-Program di atas 
+Program menambahkan fitur untuk menghapus data kendaraan berdasarkan nomor polisi yang dimasukkan pengguna. Karena struktur yang digunakan adalah Doubly Linked List, proses penghapusan harus menyesuaikan posisi node yang ingin dihapus. Setelah pengguna memasukkan nomor polisi, program mencari node tersebut menggunakan fungsi findElm(). Jika datanya ditemukan dan ternyata berada di posisi pertama, program menghapusnya dengan deleteFirst(). Jika datanya berada di node terakhir, penghapusan dilakukan dengan deleteLast(). Namun jika datanya berada di tengah, program menggunakan deleteAfter() dengan memberikan node sebelumnya sebagai acuan. Setelah node dilepas dari list, program menampilkan pesan bahwa data berhasil dihapus dan kemudian menampilkan isi list yang tersisa. Dengan cara ini, program bisa menghapus data apa pun di dalam list tanpa merusak hubungan antar-node.
 
 ### Full Code Screenshot:
 <img width="1919" height="932" alt="Image" src="https://github.com/user-attachments/assets/ec903dc6-306c-490e-a26d-3966f036d297" />
