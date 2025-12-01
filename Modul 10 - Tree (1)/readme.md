@@ -555,23 +555,138 @@ Di file main.cpp, program mulai dengan membuat tree kosong, menampilkan “Hello
 
 File: bst.h
 ```cpp
+#ifndef BSTREE_H
+#define BSTREE_H
+#define Nil NULL
 
+typedef struct Node *address;
+
+struct Node {
+    int info;
+    address left;
+    address right;
+};
+
+typedef address BinTree;
+
+address alokasi(int x);
+void insertNode(BinTree &root, int x);
+address findNode(int x, BinTree root);
+void printInOrder(BinTree root);
+
+// tambahan 
+int hitungJumlahNode(BinTree root);
+int hitungTotalInfo(BinTree root);
+int hitungKedalaman(BinTree root, int start);
+
+#endif
 
 ```
 
 File: bst.cpp
 ```cpp
+#include <iostream>
+#include "bst.h"
+using namespace std;
+
+address alokasi(int x) {
+    address P = new Node;
+    P->info = x;
+    P->left = Nil;
+    P->right = Nil;
+    return P;
+}
+
+void insertNode(BinTree &root, int x) {
+    if (root == Nil) {
+        root = alokasi(x);
+    } else if (x < root->info) {
+        insertNode(root->left, x);
+    } else if (x > root->info) {
+        insertNode(root->right, x);
+    }
+}
+
+address findNode(int x, BinTree root) {
+    if (root == Nil) return Nil;
+
+    if (x < root->info) return findNode(x, root->left);
+    if (x > root->info) return findNode(x, root->right);
+
+    return root;
+}
+
+void printInOrder(BinTree root) {
+    if (root == Nil) return;
+
+    printInOrder(root->left);
+    cout << root->info << " - ";
+    printInOrder(root->right);
+}
+
+int hitungJumlahNode(BinTree root) {
+    if (root == Nil) return 0;
+    return 1 + hitungJumlahNode(root->left) + hitungJumlahNode(root->right);
+}
+
+int hitungTotalInfo(BinTree root) {
+    if (root == Nil) return 0;
+    return root->info + hitungTotalInfo(root->left) + hitungTotalInfo(root->right);
+}
+
+int hitungKedalaman(BinTree root, int start) {
+    if (root == Nil) return start - 1;
+
+    int kiri = hitungKedalaman(root->left, start + 1);
+    int kanan = hitungKedalaman(root->right, start + 1);
+
+    return (kiri > kanan ? kiri : kanan);
+}
 
 ```
 
 File: main.cpp
 ```cpp
+#include <iostream>
+#include "bst.h"
 
+using namespace std;
+
+int main() {
+    cout << "Hello World!" << endl;
+
+    address root = Nil;
+
+    insertNode(root, 1);
+    insertNode(root, 2);
+    insertNode(root, 6);
+    insertNode(root, 4);
+    insertNode(root, 5);
+    insertNode(root, 3);
+    insertNode(root, 6); 
+    insertNode(root, 7);
+
+    cout << "InOrder : ";
+    printInOrder(root);
+    cout << endl;
+
+    cout << "kedalaman : " << hitungKedalaman(root, 1) << endl;
+
+    cout << "jumlah node : " << hitungJumlahNode(root) << endl;
+    cout << "total : " << hitungTotalInfo(root) << endl;
+
+    return 0;
+}
 ```
 ### Output:
 <img width="513" height="300" alt="Image" src="https://github.com/user-attachments/assets/8357e0ea-2c26-4271-8c7b-97ea5fc0c9de" />
 
-Program ini bertujuan untuk 
+Program ini menggunakan Binary Search Tree (BST) yang dibangun dengan pointer dan rekursi. Setiap node menyimpan sebuah angka serta pointer ke anak kiri dan kanan. Data dimasukkan menggunakan insertNode, di mana angka yang lebih kecil masuk ke kiri dan yang lebih besar masuk ke kanan, sedangkan angka yang sama tidak dimasukkan lagi.  
+Program juga memiliki beberapa fungsi tambahan, yaitu:  
+hitungJumlahNode untuk menghitung berapa banyak node dalam tree  
+hitungTotalInfo untuk menjumlahkan semua nilai yang ada  
+hitungKedalaman untuk mengetahui kedalaman maksimum tree secara rekursif  
+Di fungsi main, program membuat BST dari beberapa angka, menampilkan isinya dengan inorder traversal, lalu menampilkan kedalaman tree, jumlah node, dan total nilai. Program ini menunjukkan cara kerja dasar BST dan bagaimana rekursi dipakai untuk operasi perhitungan di dalam tree.
 
 ### Full Code Screenshot:
 <img width="1357" height="875" alt="Image" src="https://github.com/user-attachments/assets/0b3c558a-1808-45c1-9037-b108d8d03c39" />
