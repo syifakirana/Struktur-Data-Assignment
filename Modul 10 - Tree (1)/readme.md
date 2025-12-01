@@ -689,7 +689,7 @@ hitungKedalaman untuk mengetahui kedalaman maksimum tree secara rekursif
 Di fungsi main, program membuat BST dari beberapa angka, menampilkan isinya dengan inorder traversal, lalu menampilkan kedalaman tree, jumlah node, dan total nilai. Program ini menunjukkan cara kerja dasar BST dan bagaimana rekursi dipakai untuk operasi perhitungan di dalam tree.
 
 ### Full Code Screenshot:
-<img width="1357" height="875" alt="Image" src="https://github.com/user-attachments/assets/0b3c558a-1808-45c1-9037-b108d8d03c39" />
+<img width="1919" height="920" alt="Image" src="https://github.com/user-attachments/assets/715cd153-7f93-4005-8379-4240b78204c2" />  
 
 ### 3. Diketahui sebuah array 1 dimensi sebagai berikut : arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}
 Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini :  
