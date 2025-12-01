@@ -691,102 +691,30 @@ Di fungsi main, program membuat BST dari beberapa angka, menampilkan isinya deng
 ### Full Code Screenshot:
 <img width="1919" height="920" alt="Image" src="https://github.com/user-attachments/assets/715cd153-7f93-4005-8379-4240b78204c2" />  
 
-### 3. Diketahui sebuah array 1 dimensi sebagai berikut : arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}
-Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini :  
---- Menu Program Array ---
-1. Tampilkan isi array
-2. cari nilai maksimum
-3. cari nilai minimum
-4. Hitung nilai rata - rata
+### 3. <img width="494" height="280" alt="Image" src="https://github.com/user-attachments/assets/669947c7-2e86-4b61-bc0d-bab65e9b2924" />  
 
+File: bst.h
 ```cpp
-#include <iostream>
-using namespace std;
 
-// Function untuk mencari nilai minimum
-int cariMinimum(int arr[], int n) {
-    int min = arr[0];
-    for (int i = 1; i < n; i++) {
-        if (arr[i] < min) {
-            min = arr[i];
-        }
-    }
-    return min;
-}
 
-// Function untuk mencari nilai maksimum
-int cariMaksimum(int arr[], int n) {
-    int max = arr[0];
-    for (int i = 1; i < n; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-        }
-    }
-    return max;
-}
+```
 
-// Prosedur untuk menghitung rata-rata
-void hitungRataRata(int arr[], int n) {
-    int total = 0;
-    for (int i = 0; i < n; i++) {
-        total += arr[i];
-    }
-    double rata = (double)total / n;
-    cout << "Nilai rata-rata dari array adalah: " << rata << endl;
-}
+File: bst.cpp
+```cpp
 
-int main() {
-    int arrA[] = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55};
-    int n = sizeof(arrA)/sizeof(arrA[0]);
-    int pilihan;
+```
 
-    do {
-        // Menampilkan menu
-        cout << "\n--- Menu Program Array ---\n";
-        cout << "1. Tampilkan isi array\n";
-        cout << "2. Cari nilai maksimum\n";
-        cout << "3. Cari nilai minimum\n";
-        cout << "4. Hitung nilai rata-rata\n";
-        cout << "5. Keluar\n";
-        cout << "Masukkan pilihan Anda: ";
-        cin >> pilihan;
-
-        switch(pilihan) {
-            case 1:
-                cout << "Isi array: ";
-                for (int i = 0; i < n; i++) {
-                    cout << arrA[i] << " ";
-                }
-                cout << endl;
-                break;
-            case 2:
-                cout << "Nilai maksimum dari array adalah: " << cariMaksimum(arrA, n) << endl;
-                break;
-            case 3:
-                cout << "Nilai minimum dari array adalah: " << cariMinimum(arrA, n) << endl;
-                break;
-            case 4:
-                hitungRataRata(arrA, n);
-                break;
-            case 5:
-                cout << "Program selesai. Terima kasih!\n";
-                break;
-            default:
-                cout << "Pilihan tidak valid. Silakan coba lagi.\n";
-        }
-    } while (pilihan != 5);
-
-    return 0;
-}
+File: main.cpp
+```cpp
 
 ```
 ### Output:
-<img width="1141" height="758" alt="Image" src="https://github.com/user-attachments/assets/2aa86a38-7096-4577-a220-b1d41ef647ac" />
 
-Program ini bertujuan untuk melakukan beberapa operasi pada array satu dimensi arrA, yaitu menampilkan isi array, mencari nilai maksimum, minimum, dan menghitung rata-rata. Function cariMinimum() digunakan untuk menemukan nilai terkecil, cariMaksimum() untuk nilai terbesar, dan prosedur hitungRataRata() untuk menghitung dan menampilkan rata-rata. Program menampilkan menu interaktif menggunakan switch-case, sehingga pengguna dapat memilih opsi yang diinginkan, dan setiap pilihan akan dijalankan sampai pengguna memilih keluar.
+
+Program ini bertujuan untuk 
+
 ### Full Code Screenshot:
-<img width="1364" height="1022" alt="Image" src="https://github.com/user-attachments/assets/85f33b1e-9610-4762-aa5e-b0f5a6a92998" />
-<img width="1322" height="1033" alt="Image" src="https://github.com/user-attachments/assets/3f256afc-08c0-48e1-bd90-0c35957a61dd" />
+
 
 ## Kesimpulan
 Dari praktikum ini, saya mendapatkan pemahaman tentang bagaimana menggunakan array, function, prosedur, pointer, reference, perulangan, dan percabangan untuk membangun program yang efektif. Praktikum ini membantu memperkuat konsep teori melalui penerapan langsung, sehingga kita bisa melihat bagaimana function dan prosedur mempermudah pengolahan data, bagaimana pointer dan reference memungkinkan pengubahan nilai variabel secara efisien, serta bagaimana switch-case dan loop mempermudah interaksi dan pengolahan data dalam program.
