@@ -427,18 +427,16 @@ int main() {
     return 0;
 }
 ```
-Program di atas digunakan untuk menampilkan isi array 1 dimensi, 2 dimensi, dan 3 dimensi menggunakan perulangan for dan menggunakan fungsi cout untuk menampilkan nilai-nilai tersebut ke layar sesuai urutan indeksnya.
-
+Program ini mengimplementasikan struktur Binary Search Tree (BST) untuk menyimpan data angka dengan aturan nilai lebih kecil disimpan di kiri dan nilai lebih besar di kanan. Program menyediakan berbagai operasi utama seperti menambah node (insertNode), menghapus node dengan semua kemungkinan kasus (leaf, satu child, dua child), dan mencari data sekaligus menampilkan informasi parent, sibling, serta child dari node tersebut. Isi tree dapat ditampilkan menggunakan traversal preOrder, inOrder, dan postOrder. Program ini juga memiliki fitur tambahan seperti menghitung jumlah node (size), tinggi tree (height), mencari nilai terkecil dan terbesar (mostLeft, mostRight), serta menghapus seluruh tree. Semua fungsi tersebut dapat dijalankan melalui menu interaktif, sehingga pengguna bisa melihat langsung cara kerja BST secara lengkap.
 
 ## Unguided 
 
-### 1. Buatlah ADT Binary Search Tree menggunakan Linked list sebagai berikut di dalam file
-“bstree.h”:<br>
+### 1. Buatlah ADT Binary Search Tree menggunakan Linked list sebagai berikut di dalam file “bstree.h”:<br>
 <img width="672" height="202" alt="Image" src="https://github.com/user-attachments/assets/6aed2a54-ba74-4d28-9280-6c891166bedc" /><br>
 Buatlah implementasi ADT Binary Search Tree pada file “bstree.cpp” dan cobalah hasil
 implementasi ADT pada file “main.cpp”  
-
-
+<img width="800" height="609" alt="Image" src="https://github.com/user-attachments/assets/2e04b202-9433-47f5-9807-238f76267c5e" /><br>
+File: bst.h
 ```cpp
 #include <iostream>
 using namespace std;
@@ -497,14 +495,14 @@ int main() {
 }
 
 ```
+File: bst.cpp
+
+File: main.cpp
+
 ### Output:
 <img width="585" height="344" alt="Image" src="https://github.com/user-attachments/assets/c3fe043b-1092-4dbd-b204-e94a0d1f1fa1" />
 
-Program di atas bertujuan untuk melakukan operasi penjumlahan, pengurangan, dan perkalian pada dua matriks 3x3. Matriks A dan B langsung didefinisikan di dalam program, kemudian program membuat matriks C sebagai tempat menyimpan hasil operasi.  
-Penjumlahan: setiap elemen C[i][j] diisi dengan A[i][j] + B[i][j].  
-Pengurangan: setiap elemen C[i][j] diisi dengan A[i][j] - B[i][j].  
-Perkalian: setiap elemen C[i][j] dihitung dengan menjumlahkan hasil perkalian elemen baris A[i][k] dengan elemen kolom B[k][j] untuk k dari 0 sampai 2.  
-Hasil dari setiap operasi ditampilkan ke layar menggunakan cout.
+Program di atas bertujuan untuk 
 
 ### Full Code Screenshot:
 <img width="1331" height="1003" alt="Image" src="https://github.com/user-attachments/assets/962a3d8e-3679-4cf4-bfff-4e50212b5ed2" />
