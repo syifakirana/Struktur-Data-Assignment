@@ -434,6 +434,9 @@ Program di atas digunakan untuk menampilkan isi array 1 dimensi, 2 dimensi, dan 
 
 ### 1. Buatlah ADT Binary Search Tree menggunakan Linked list sebagai berikut di dalam file
 “bstree.h”:<br>
+<img width="672" height="202" alt="Image" src="https://github.com/user-attachments/assets/6aed2a54-ba74-4d28-9280-6c891166bedc" /><br>
+Buatlah implementasi ADT Binary Search Tree pada file “bstree.cpp” dan cobalah hasil
+implementasi ADT pada file “main.cpp”  
 
 ```cpp
 #include <iostream>
