@@ -691,7 +691,8 @@ Di fungsi main, program membuat BST dari beberapa angka, menampilkan isinya deng
 ### Full Code Screenshot:
 <img width="1919" height="920" alt="Image" src="https://github.com/user-attachments/assets/715cd153-7f93-4005-8379-4240b78204c2" />  
 
-### 3. <img width="494" height="280" alt="Image" src="https://github.com/user-attachments/assets/669947c7-2e86-4b61-bc0d-bab65e9b2924" />  
+### 3. <br>
+<img width="494" height="280" alt="Image" src="https://github.com/user-attachments/assets/669947c7-2e86-4b61-bc0d-bab65e9b2924" />  
 
 File: bst.h
 ```cpp
