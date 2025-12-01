@@ -696,23 +696,94 @@ Di fungsi main, program membuat BST dari beberapa angka, menampilkan isinya deng
 
 File: bst.h
 ```cpp
+#ifndef BST_H
+#define BST_H
+#define Nil NULL
 
+typedef struct Node *address;
 
+struct Node {
+    int info;
+    address left;
+    address right;
+};
+
+typedef address BinTree;
+
+address newNode(int x);
+void printPreOrder(BinTree root);
+void printPostOrder(BinTree root);
+
+#endif
 ```
 
 File: bst.cpp
 ```cpp
+#include "bst.h"
+#include <iostream>
+using namespace std;
 
+address newNode(int x) {
+    address P = new Node;
+    P->info = x;
+    P->left = Nil;
+    P->right = Nil;
+    return P;
+}
+
+void printPreOrder(BinTree root) {
+    if (root == Nil) return;
+    cout << root->info << " - ";
+    printPreOrder(root->left);
+    printPreOrder(root->right);
+}
+
+void printPostOrder(BinTree root) {
+    if (root == Nil) return;
+    printPostOrder(root->left);
+    printPostOrder(root->right);
+    cout << root->info << " - ";
+}
 ```
 
 File: main.cpp
 ```cpp
+#include <iostream>
+#include "bst.h"
+using namespace std;
 
+int main() {
+
+    BinTree root = newNode(6);
+    root->left = newNode(4);
+    root->right = newNode(7);
+
+    root->left->left = newNode(2);
+    root->left->right = newNode(5);
+
+    root->left->left->left = newNode(1);
+    root->left->left->right = newNode(3);
+
+    cout << "PreOrder  : ";
+    printPreOrder(root);
+    cout << endl;
+
+    cout << "PostOrder : ";
+    printPostOrder(root);
+    cout << endl;
+
+    return 0;
+}
 ```
 ### Output:
 
 
-Program ini bertujuan untuk 
+Program ini membuat sebuah Binary Tree berdasarkan gambar yang ada di modul. Setiap node dibuat dengan fungsi newNode.  
+Setelah tree terbentuk, program menampilkan isinya menggunakan dua traversal:
+Pre-Order (Root -> Left -> Right)
+Pada traversal ini, program mencetak akar dulu, lalu bagian kiri, kemudian bagian kanan. Urutannya menunjukkan cara tree dijelajahi dari atas ke bawah.
+Post-Order (Left -> Right -> Root)
+Di traversal ini, subtree kiri dicetak dulu, lalu subtree kanan, dan terakhir akarnya. Urutan ini cocok untuk melihat bagaimana tree “dibongkar” dari bawah ke atas.  
 
 ### Full Code Screenshot:
 
