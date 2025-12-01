@@ -543,55 +543,35 @@ printInOrder(root) untuk menampilkan isi tree dari yang terkecil sampai terbesar
 Di file main.cpp, program mulai dengan membuat tree kosong, menampilkan “Hello World!”, lalu menambahkan beberapa angka ke dalam tree menggunakan insertNode(). Setelah semua data dimasukkan, tree ditampilkan dengan traversal inorder sehingga hasilnya muncul dalam bentuk angka yang sudah terurut. Program ini menunjukkan cara kerja dasar BST untuk menyimpan dan mengurutkan data secara otomatis.
 
 ### Full Code Screenshot:
-<img width="1331" height="1003" alt="Image" src="https://github.com/user-attachments/assets/962a3d8e-3679-4cf4-bfff-4e50212b5ed2" />
+<img width="1919" height="802" alt="Image" src="https://github.com/user-attachments/assets/1c842ece-2d39-4b7c-a5a6-94f68cf59030" />
 
+### 2. Buatlah fungsi untuk menghitung jumlah node dengan fungsi berikut.  
+➢ fungsi hitungJumlahNode( root:address ) : integer  
+/* fungsi mengembalikan integer banyak node yang ada di dalam BST*/  
+➢ fungsi hitungTotalInfo( root:address, start:integer ) : integer  
+/* fungsi mengembalikan jumlah (total) info dari node-node yang ada di dalam BST*/  
+➢ fungsi hitungKedalaman( root:address, start:integer ) : integer  
+/* fungsi rekursif mengembalikan integer kedalaman maksimal dari binary tree */  
 
-### 2. Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel
-
+File: bst.h
 ```cpp
-#include <iostream>
-using namespace std;
 
-// Fungsi menukar 3 variabel menggunakan POINTER
-void tukarPointer(int *x, int *y, int *z) {
-    int temp = *x;
-    *x = *y;
-    *y = *z;
-    *z = temp;
-}
 
-// Fungsi menukar 3 variabel menggunakan REFERENCE
-void tukarReference(int &x, int &y, int &z) {
-    int temp = x;
-    x = y;
-    y = z;
-    z = temp;
-}
+```
 
-int main() {
-    int a = 10, b = 20, c = 30;
+File: bst.cpp
+```cpp
 
-    cout << "=== Sebelum Ditukar ===" << endl;
-    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
+```
 
-    // Menukar dengan POINTER
-    tukarPointer(&a, &b, &c);
-    cout << "\n=== Setelah Tukar (Pointer) ===" << endl;
-    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
-
-    // Menukar lagi dengan REFERENCE
-    tukarReference(a, b, c);
-    cout << "\n=== Setelah Tukar (Reference) ===" << endl;
-    cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
-
-    return 0;
-}
+File: main.cpp
+```cpp
 
 ```
 ### Output:
 <img width="513" height="300" alt="Image" src="https://github.com/user-attachments/assets/8357e0ea-2c26-4271-8c7b-97ea5fc0c9de" />
 
-Program ini bertujuan untuk menukar nilai tiga variabel (a, b, c) dengan dua cara, yaitu menggunakan pointer dan reference. Fungsi pointer memakai alamat variabel untuk mengubah nilainya, sedangkan reference langsung mengubah variabel aslinya. Di main(), program menampilkan nilai awal, menukar dengan pointer, menampilkan hasilnya, lalu menukar lagi dengan reference dan menampilkan hasil akhirnya. Program ini menunjukkan cara mengubah nilai variabel lewat fungsi dengan dua metode berbeda.
+Program ini bertujuan untuk 
 
 ### Full Code Screenshot:
 <img width="1357" height="875" alt="Image" src="https://github.com/user-attachments/assets/0b3c558a-1808-45c1-9037-b108d8d03c39" />
