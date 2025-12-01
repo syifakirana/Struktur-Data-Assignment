@@ -438,71 +438,109 @@ implementasi ADT pada file “main.cpp”
 <img width="800" height="609" alt="Image" src="https://github.com/user-attachments/assets/2e04b202-9433-47f5-9807-238f76267c5e" /><br>
 File: bst.h
 ```cpp
+#ifndef BSTREE_H
+#define BSTREE_H
+
+#define Nil NULL
+
+typedef struct Node *address;
+
+struct Node {
+    int info;
+    address left;
+    address right;
+};
+
+typedef address BinTree;
+
+address alokasi(int x);
+void insertNode(BinTree &root, address P);
+address findNode(int x, BinTree root);
+void printInOrder(BinTree root);
+
+#endif
+```
+
+File: bst.cpp
+```cpp
 #include <iostream>
+#include "bst.h"
+using namespace std;
+
+address alokasi(int x) {
+    address P = new Node;
+    P->info = x;
+    P->left = Nil;
+    P->right = Nil;
+    return P;
+}
+
+void insertNode(BinTree &root, address P) {
+    if (root == Nil) {
+        root = P;
+    } else if (P->info < root->info) {
+        insertNode(root->left, P);
+    } else if (P->info > root->info) {
+        insertNode(root->right, P);
+    }
+}
+
+address findNode(int x, BinTree root) {
+    if (root == Nil) {
+        return Nil;
+    } else if (x < root->info) {
+        return findNode(x, root->left);
+    } else if (x > root->info) {
+        return findNode(x, root->right);
+    } else {
+        return root;
+    }
+}
+
+void printInOrder(BinTree root) {
+    if (root != Nil) {
+        printInOrder(root->left);
+        cout << root->info << " - ";
+        printInOrder(root->right);
+    }
+}
+```
+
+File: main.cpp
+```cpp
+#include <iostream>
+#include "bst.h"
 using namespace std;
 
 int main() {
-    // Matriks A
-    int A[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
+    cout << "Hello World!" << endl;
 
-    // Matriks B
-    int B[3][3] = {
-        {9, 8, 7},
-        {6, 5, 4},
-        {3, 2, 1}
-    };
+    address root = Nil;
 
-    int C[3][3]; // hasil operasi
+    insertNode(root, alokasi(1));
+    insertNode(root, alokasi(2));
+    insertNode(root, alokasi(6));
+    insertNode(root, alokasi(4));
+    insertNode(root, alokasi(5));
+    insertNode(root, alokasi(3));
+    insertNode(root, alokasi(7));
 
-    // Penjumlahan matriks
-    cout << "=== HASIL PENJUMLAHAN (A + B) ===" << endl;
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 3; j++) {
-            C[i][j] = A[i][j] + B[i][j];
-            cout << C[i][j] << "\t";
-        }
-        cout << endl;
-    }
+    cout << "InOrder : ";
+    printInOrder(root);
 
-    // Pengurangan matriks
-    cout << "\n=== HASIL PENGURANGAN (A - B) ===" << endl;
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 3; j++) {
-            C[i][j] = A[i][j] - B[i][j];
-            cout << C[i][j] << "\t";
-        }
-        cout << endl;
-    }
-
-    // Perkalian matriks
-    cout << "\n=== HASIL PERKALIAN (A x B) ===" << endl;
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 3; j++) {
-            C[i][j] = 0;
-            for(int k = 0; k < 3; k++) {
-                C[i][j] += A[i][k] * B[k][j];
-            }
-            cout << C[i][j] << "\t";
-        }
-        cout << endl;
-    }
-
+    cout << endl;
     return 0;
 }
-
 ```
-File: bst.cpp
-
-File: main.cpp
-
 ### Output:
 <img width="585" height="344" alt="Image" src="https://github.com/user-attachments/assets/c3fe043b-1092-4dbd-b204-e94a0d1f1fa1" />
 
-Program di atas bertujuan untuk 
+Program ini membuat struktur Binary Search Tree (BST) untuk menyimpan data angka. Setiap angka yang dimasukkan akan ditempatkan mengikuti aturan BST: jika nilainya lebih kecil, ia masuk ke bagian kiri, dan jika lebih besar, masuk ke bagian kanan. Program menyediakan beberapa fungsi utama, seperti:  
+alokasi(x) untuk membuat node baru  
+insertNode(root, x) untuk menambah angka ke dalam tree sesuai aturan BST  
+findNode(x, root) untuk mencari angka tertentu  
+printInOrder(root) untuk menampilkan isi tree dari yang terkecil sampai terbesar  
+Di file main.cpp, program mulai dengan membuat tree kosong, menampilkan “Hello World!”, lalu menambahkan beberapa angka ke dalam tree menggunakan insertNode(). Setelah semua data dimasukkan, tree ditampilkan dengan traversal inorder sehingga hasilnya muncul dalam bentuk angka yang sudah terurut. Program ini menunjukkan cara kerja dasar BST untuk menyimpan dan mengurutkan data secara otomatis.
 
 ### Full Code Screenshot:
 <img width="1331" height="1003" alt="Image" src="https://github.com/user-attachments/assets/962a3d8e-3679-4cf4-bfff-4e50212b5ed2" />
