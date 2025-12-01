@@ -3,7 +3,16 @@
 
 
 ## Dasar Teori
+Binary Tree adalah struktur data yang bentuknya bercabang, di mana setiap node bisa punya dua anak: kiri dan kanan. Tree dipakai ketika kita butuh menyimpan data yang punya hubungan bertingkat atau ketika proses pencarian harus dibuat lebih cepat dari struktur linear biasa.
 
+Supaya isi tree bisa dibaca atau diproses, kita butuh yang namanya traversal, yaitu cara mengunjungi node-node dalam urutan tertentu. Ada tiga jenis traversal dasar:
+Pre-Order (Root -> Left -> Right)
+Mengunjungi akar dulu, lalu ke anak kiri, dan terakhir anak kanan. Biasanya dipakai untuk menampilkan bentuk tree dari atas ke bawah.
+In-Order (Left -> Root -> Right)
+Kalau tree-nya BST, hasil traversal ini bakal otomatis terurut dari kecil ke besar.
+Post-Order (Left -> Right -> Root)
+Mengunjungi anak-anak dulu, baru induknya. Umumnya dipakai ketika kita ingin menghapus tree dari bawah ke atas.
+Traversal biasanya dibuat pakai rekursi, karena struktur tree memang alami untuk diproses secara berulang dari setiap cabangnya.
 
 ---
 
@@ -786,8 +795,9 @@ Post-Order (Left -> Right -> Root)
 Di traversal ini, subtree kiri dicetak dulu, lalu subtree kanan, dan terakhir akarnya. Urutan ini cocok untuk melihat bagaimana tree “dibongkar” dari bawah ke atas.  
 
 ### Full Code Screenshot:
-
+<img width="1919" height="856" alt="Image" src="https://github.com/user-attachments/assets/74372a04-5b1a-4fe4-8128-0612fa6f14cb" />
 
 ## Kesimpulan
-Dari praktikum ini, saya mendapatkan pemahaman tentang bagaimana menggunakan array, function, prosedur, pointer, reference, perulangan, dan percabangan untuk membangun program yang efektif. Praktikum ini membantu memperkuat konsep teori melalui penerapan langsung, sehingga kita bisa melihat bagaimana function dan prosedur mempermudah pengolahan data, bagaimana pointer dan reference memungkinkan pengubahan nilai variabel secara efisien, serta bagaimana switch-case dan loop mempermudah interaksi dan pengolahan data dalam program.
+Dari praktikum ini, menunjukkan cara dasar bekerja dengan Binary Tree: membuat node, menyusun node menjadi tree, dan membaca isinya lewat traversal. Tree ini menunjukkan bagaimana data bisa disusun dalam bentuk bertingkat, bukan hanya dalam barisan seperti array atau linked list.
 
+Dengan membuat tree dan menampilkan hasilnya menggunakan pre-order dan post-order, kita jadi paham bahwa urutan traversal akan mengubah urutan tampilnya data. Kita juga melihat bagaimana rekursi dipakai untuk menelusuri tree karena setiap node bisa punya anak dan subtree sendiri.
