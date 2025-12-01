@@ -5,14 +5,14 @@
 ## Dasar Teori
 Binary Tree adalah struktur data yang bentuknya bercabang, di mana setiap node bisa punya dua anak: kiri dan kanan. Tree dipakai ketika kita butuh menyimpan data yang punya hubungan bertingkat atau ketika proses pencarian harus dibuat lebih cepat dari struktur linear biasa.
 
-Supaya isi tree bisa dibaca atau diproses, kita butuh yang namanya traversal, yaitu cara mengunjungi node-node dalam urutan tertentu. Ada tiga jenis traversal dasar:
-Pre-Order (Root -> Left -> Right)
-Mengunjungi akar dulu, lalu ke anak kiri, dan terakhir anak kanan. Biasanya dipakai untuk menampilkan bentuk tree dari atas ke bawah.
-In-Order (Left -> Root -> Right)
-Kalau tree-nya BST, hasil traversal ini bakal otomatis terurut dari kecil ke besar.
-Post-Order (Left -> Right -> Root)
-Mengunjungi anak-anak dulu, baru induknya. Umumnya dipakai ketika kita ingin menghapus tree dari bawah ke atas.
-Traversal biasanya dibuat pakai rekursi, karena struktur tree memang alami untuk diproses secara berulang dari setiap cabangnya.
+Supaya isi tree bisa dibaca atau diproses, kita butuh yang namanya traversal, yaitu cara mengunjungi node-node dalam urutan tertentu. Ada tiga jenis traversal dasar:  
+Pre-Order (Root -> Left -> Right)  
+Mengunjungi akar dulu, lalu ke anak kiri, dan terakhir anak kanan. Biasanya dipakai untuk menampilkan bentuk tree dari atas ke bawah.  
+In-Order (Left -> Root -> Right)  
+Kalau tree-nya BST, hasil traversal ini bakal otomatis terurut dari kecil ke besar.  
+Post-Order (Left -> Right -> Root)  
+Mengunjungi anak-anak dulu, baru induknya. Umumnya dipakai ketika kita ingin menghapus tree dari bawah ke atas.  
+Traversal biasanya dibuat pakai rekursi, karena struktur tree memang alami untuk diproses secara berulang dari setiap cabangnya.  
 
 ---
 
