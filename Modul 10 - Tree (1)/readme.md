@@ -785,7 +785,7 @@ int main() {
 }
 ```
 ### Output:
-
+<img width="663" height="227" alt="Image" src="https://github.com/user-attachments/assets/2b9023d3-0d5d-4920-bc63-664244a61cfa" />
 
 Program ini membuat sebuah Binary Tree berdasarkan gambar yang ada di modul. Setiap node dibuat dengan fungsi newNode.  
 Setelah tree terbentuk, program menampilkan isinya menggunakan dua traversal:
