@@ -533,7 +533,7 @@ int main() {
 }
 ```
 ### Output:
-<img width="585" height="344" alt="Image" src="https://github.com/user-attachments/assets/c3fe043b-1092-4dbd-b204-e94a0d1f1fa1" />
+<img width="566" height="290" alt="Image" src="https://github.com/user-attachments/assets/ec2ea695-b49e-4c39-9f77-2d2e3e6a1f56" />
 
 Program ini membuat struktur Binary Search Tree (BST) untuk menyimpan data angka. Setiap angka yang dimasukkan akan ditempatkan mengikuti aturan BST: jika nilainya lebih kecil, ia masuk ke bagian kiri, dan jika lebih besar, masuk ke bagian kanan. Program menyediakan beberapa fungsi utama, seperti:  
 alokasi(x) untuk membuat node baru  
