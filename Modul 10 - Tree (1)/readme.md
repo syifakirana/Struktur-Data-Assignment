@@ -679,7 +679,7 @@ int main() {
 }
 ```
 ### Output:
-<img width="513" height="300" alt="Image" src="https://github.com/user-attachments/assets/8357e0ea-2c26-4271-8c7b-97ea5fc0c9de" />
+<img width="781" height="263" alt="Image" src="https://github.com/user-attachments/assets/b5aa0c8a-3f4d-479a-8926-b9a286162e3e" />  
 
 Program ini menggunakan Binary Search Tree (BST) yang dibangun dengan pointer dan rekursi. Setiap node menyimpan sebuah angka serta pointer ke anak kiri dan kanan. Data dimasukkan menggunakan insertNode, di mana angka yang lebih kecil masuk ke kiri dan yang lebih besar masuk ke kanan, sedangkan angka yang sama tidak dimasukkan lagi.  
 Program juga memiliki beberapa fungsi tambahan, yaitu:  
