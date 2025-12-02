@@ -1,0 +1,23 @@
+#include <iostream>
+#include "bst.h"
+using namespace std;
+
+int main() {
+    cout << "Hello World!" << endl;
+
+    address root = Nil;
+
+    insertNode(root, alokasi(1));
+    insertNode(root, alokasi(2));
+    insertNode(root, alokasi(6));
+    insertNode(root, alokasi(4));
+    insertNode(root, alokasi(5));
+    insertNode(root, alokasi(3));
+    insertNode(root, alokasi(7));
+
+    cout << "InOrder : ";
+    printInOrder(root);
+
+    cout << endl;
+    return 0;
+}
