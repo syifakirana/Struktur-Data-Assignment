@@ -3,16 +3,15 @@
 
 
 ## Dasar Teori
-Binary Tree adalah struktur data yang bentuknya bercabang, di mana setiap node bisa punya dua anak: kiri dan kanan. Tree dipakai ketika kita butuh menyimpan data yang punya hubungan bertingkat atau ketika proses pencarian harus dibuat lebih cepat dari struktur linear biasa.
-
-Supaya isi tree bisa dibaca atau diproses, kita butuh yang namanya traversal, yaitu cara mengunjungi node-node dalam urutan tertentu. Ada tiga jenis traversal dasar:  
-Pre-Order (Root -> Left -> Right)  
-Mengunjungi akar dulu, lalu ke anak kiri, dan terakhir anak kanan. Biasanya dipakai untuk menampilkan bentuk tree dari atas ke bawah.  
-In-Order (Left -> Root -> Right)  
-Kalau tree-nya BST, hasil traversal ini bakal otomatis terurut dari kecil ke besar.  
-Post-Order (Left -> Right -> Root)  
-Mengunjungi anak-anak dulu, baru induknya. Umumnya dipakai ketika kita ingin menghapus tree dari bawah ke atas.  
-Traversal biasanya dibuat pakai rekursi, karena struktur tree memang alami untuk diproses secara berulang dari setiap cabangnya.  
+Binary Tree adalah struktur data yang bentuknya seperti cabang pohon. di mana setiap node dapat memiliki maksimal dua anak, yaitu left child dan right child. Node paling atas disebut root, node yang tidak memiliki anak disebut leaf, dan setiap cabang di bawah sebuah node disebut subtree.
+Untuk membaca atau memproses isi tree, digunakan teknik traversal, yaitu cara mengunjungi setiap node dalam urutan tertentu. Terdapat tiga traversal dasar:  
+1. Pre-Order (Root -> Left -> Right)  
+Mengunjungi akar terlebih dahulu, lalu subtree kiri, kemudian subtree kanan. Umum digunakan untuk menampilkan struktur atau bentuk tree.  
+2. In-Order (Left -> Root -> Right)  
+Mengunjungi subtree kiri dulu, lalu akar, kemudian subtree kanan. Jika tree berbentuk Binary Search Tree (BST), traversal ini menghasilkan data terurut dari kecil ke besar.  
+3. Post-Order (Left -> Right -> Root)  
+Mengunjungi anak-anak terlebih dahulu, kemudian akarnya. Traversal ini sering dipakai ketika ingin menghapus node karena memproses tree dari bawah ke atas.
+Traversal pada tree biasanya dilakukan menggunakan rekursi, karena struktur tree bersifat bercabang dan setiap node dapat diproses dengan cara yang sama terhadap subtree-nya.
 
 ---
 
@@ -436,7 +435,9 @@ int main() {
     return 0;
 }
 ```
-Program ini mengimplementasikan struktur Binary Search Tree (BST) untuk menyimpan data angka dengan aturan nilai lebih kecil disimpan di kiri dan nilai lebih besar di kanan. Program menyediakan berbagai operasi utama seperti menambah node (insertNode), menghapus node dengan semua kemungkinan kasus (leaf, satu child, dua child), dan mencari data sekaligus menampilkan informasi parent, sibling, serta child dari node tersebut. Isi tree dapat ditampilkan menggunakan traversal preOrder, inOrder, dan postOrder. Program ini juga memiliki fitur tambahan seperti menghitung jumlah node (size), tinggi tree (height), mencari nilai terkecil dan terbesar (mostLeft, mostRight), serta menghapus seluruh tree. Semua fungsi tersebut dapat dijalankan melalui menu interaktif, sehingga pengguna bisa melihat langsung cara kerja BST secara lengkap.
+Program ini menggunakan Binary Search Tree (BST) untuk menyimpan angka, di mana angka yang lebih kecil disimpan di sebelah kiri dan angka yang lebih besar disimpan di sebelah kanan. Program menyediakan berbagai fungsi penting seperti menambah node, mencari data, menghapus node, dan menampilkan isi tree menggunakan traversal preOrder, inOrder, dan postOrder.
+Pada fungsi pencarian (searchByData), program tidak hanya mengecek apakah data ditemukan, tetapi juga menampilkan informasi lengkap seperti parent, sibling, dan child kiri/kanan dari node tersebut. Fungsi penghapusan (deleteNode) menangani semua kemungkinan kasus, mulai dari node leaf, node dengan satu child, sampai node dengan dua child (mengambil node pengganti menggunakan mostLeft dari subtree kanan).
+Program juga memiliki fitur tambahan seperti menghitung jumlah node (size), tinggi tree (height), mencari nilai paling kiri dan paling kanan (mostLeft dan mostRight), serta menghapus seluruh tree secara rekursif. Semua operasi ini dapat dijalankan lewat menu, sehingga pengguna bisa mencoba setiap fitur.
 
 ## Unguided 
 
@@ -544,12 +545,15 @@ int main() {
 ### Output:
 <img width="566" height="290" alt="Image" src="https://github.com/user-attachments/assets/ec2ea695-b49e-4c39-9f77-2d2e3e6a1f56" />
 
-Program ini membuat struktur Binary Search Tree (BST) untuk menyimpan data angka. Setiap angka yang dimasukkan akan ditempatkan mengikuti aturan BST: jika nilainya lebih kecil, ia masuk ke bagian kiri, dan jika lebih besar, masuk ke bagian kanan. Program menyediakan beberapa fungsi utama, seperti:  
-alokasi(x) untuk membuat node baru  
-insertNode(root, x) untuk menambah angka ke dalam tree sesuai aturan BST  
-findNode(x, root) untuk mencari angka tertentu  
-printInOrder(root) untuk menampilkan isi tree dari yang terkecil sampai terbesar  
-Di file main.cpp, program mulai dengan membuat tree kosong, menampilkan “Hello World!”, lalu menambahkan beberapa angka ke dalam tree menggunakan insertNode(). Setelah semua data dimasukkan, tree ditampilkan dengan traversal inorder sehingga hasilnya muncul dalam bentuk angka yang sudah terurut. Program ini menunjukkan cara kerja dasar BST untuk menyimpan dan mengurutkan data secara otomatis.
+Program ini membuat struktur Binary Search Tree (BST) untuk menyimpan data angka. Saat angka dimasukkan, posisi node ditentukan berdasarkan aturan BST:
+jika angkanya lebih kecil dari root, ia ditempatkan di subtree kiri, jika lebih besar, ditempatkan di subtree kanan.
+Program menyediakan beberapa fungsi dasar, yaitu:  
+alokasi(x) membuat node baru berisi nilai x  
+insertNode(root, P) menambah node ke dalam tree sesuai aturan BST  
+findNode(x, root) mencari apakah angka x ada di dalam tree  
+printInOrder(root) menampilkan isi tree dari angka yang paling kecil sampai paling besar  
+Di file main.cpp, program memulai dengan tree kosong lalu mencetak “Hello World!”. Setelah itu, beberapa angka dimasukkan ke tree menggunakan insertNode(). Ketika traversal inorder dilakukan, output yang muncul adalah data yang sudah terurut otomatis.  
+Secara keseluruhan, program ini menunjukkan cara kerja dasar BST dalam menyimpan data, menempatkan node sesuai nilainya, serta menampilkan isi tree dalam urutan yang terurut.
 
 ### Full Code Screenshot:
 <img width="1919" height="802" alt="Image" src="https://github.com/user-attachments/assets/1c842ece-2d39-4b7c-a5a6-94f68cf59030" />
@@ -798,6 +802,4 @@ Di traversal ini, subtree kiri dicetak dulu, lalu subtree kanan, dan terakhir ak
 <img width="1919" height="856" alt="Image" src="https://github.com/user-attachments/assets/74372a04-5b1a-4fe4-8128-0612fa6f14cb" />
 
 ## Kesimpulan
-Dari praktikum ini, menunjukkan cara dasar bekerja dengan Binary Tree: membuat node, menyusun node menjadi tree, dan membaca isinya lewat traversal. Tree ini menunjukkan bagaimana data bisa disusun dalam bentuk bertingkat, bukan hanya dalam barisan seperti array atau linked list.
-
-Dengan membuat tree dan menampilkan hasilnya menggunakan pre-order dan post-order, kita jadi paham bahwa urutan traversal akan mengubah urutan tampilnya data. Kita juga melihat bagaimana rekursi dipakai untuk menelusuri tree karena setiap node bisa punya anak dan subtree sendiri.
+Dari praktikum ini bisa disimpulkan bahwa struktur Tree adalah cara menyimpan data dalam bentuk bertingkat, di mana setiap node bisa bercabang ke kiri dan kanan. Praktikum ini menunjukkan bagaimana node dibuat, disusun menjadi sebuah tree, lalu dibaca kembali menggunakan traversal pre-order, post-order, atau in-order. Urutan traversal ini membuat hasil yang berbeda. Selain itu, penggunaan rekursi membuat proses penelusuran tree menjadi lebih mudah karena setiap bagian tree punya bentuk yang sama seperti struktur utamanya. Secara keseluruhan, praktikum ini memberi gambaran dasar tentang bagaimana tree bekerja dan bagaimana data bisa ditelusuri di dalamnya
