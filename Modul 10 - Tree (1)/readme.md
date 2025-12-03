@@ -11,6 +11,7 @@ Mengunjungi akar terlebih dahulu, lalu subtree kiri, kemudian subtree kanan. Umu
 Mengunjungi subtree kiri dulu, lalu akar, kemudian subtree kanan. Jika tree berbentuk Binary Search Tree (BST), traversal ini menghasilkan data terurut dari kecil ke besar.  
 3. Post-Order (Left -> Right -> Root)  
 Mengunjungi anak-anak terlebih dahulu, kemudian akarnya. Traversal ini sering dipakai ketika ingin menghapus node karena memproses tree dari bawah ke atas.
+
 Traversal pada tree biasanya dilakukan menggunakan rekursi, karena struktur tree bersifat bercabang dan setiap node dapat diproses dengan cara yang sama terhadap subtree-nya.
 
 ---
