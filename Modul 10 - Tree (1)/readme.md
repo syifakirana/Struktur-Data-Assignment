@@ -557,7 +557,7 @@ Di file main.cpp, program memulai dengan tree kosong lalu mencetak “Hello Worl
 Secara keseluruhan, program ini menunjukkan cara kerja dasar BST dalam menyimpan data, menempatkan node sesuai nilainya, serta menampilkan isi tree dalam urutan yang terurut.
 
 ### Full Code Screenshot:
-<img width="1919" height="802" alt="Image" src="https://github.com/user-attachments/assets/1c842ece-2d39-4b7c-a5a6-94f68cf59030" />
+<img width="1859" height="972" alt="Image" src="https://github.com/user-attachments/assets/4905b2f5-cd88-4e36-b711-ea665db18ea0" />
 
 ### 2. Buatlah fungsi untuk menghitung jumlah node dengan fungsi berikut.  
 ➢ fungsi hitungJumlahNode( root:address ) : integer  
