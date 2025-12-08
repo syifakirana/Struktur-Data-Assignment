@@ -11,12 +11,12 @@
 
 ### 1. 
 
-File: mahasiswa.h
+File: mll.h
 ```C++
 
 ```
 
-File: mahasiswa.cpp
+File: mll.cpp
 ```C++
 
 ```
