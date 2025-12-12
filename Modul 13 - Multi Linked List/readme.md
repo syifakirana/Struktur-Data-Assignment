@@ -726,8 +726,7 @@ Selain itu ada hapusListAnak dan hapusListInduk digunakan untuk menghapus seluru
 
 ## Unguided 
 
-### 2. 
-
+### 2. Perhatikan program 46 multilist.h, buat multilist.cpp untuk implementasi semua fungsi pada multilist.h. Buat main.cpp untuk pemanggilan fungsi-fungsi tersebut.
 
 #### Output:
 
@@ -737,7 +736,8 @@ Kode di atas digunakan untuk
 #### Full code Screenshot:
 
 
-### 2. 
+### 3. Buatlah ADT Multi Linked list sebagai berikut di dalam file “circularlist.h”: 
+
 
 File : pelajaran.h
 ```C++
@@ -759,20 +759,6 @@ File : main.cpp
 
 Program ini
 
-
-#### Full code Screenshot:
-
-
-
-### 3. 
-
-```C++
-
-```
-#### Output:
-
-
-Program di atas 
 
 #### Full code Screenshot:
 
