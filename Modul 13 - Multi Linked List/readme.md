@@ -712,13 +712,16 @@ Program ini juga menyediakan berbagai fungsi untuk mengelola data.
 - findChildByID mencari menu berdasarkan ID dengan memeriksa semua child di setiap parent, kemudian menampilkan detail child dan informasi kategori tempat menu tersebut berada.
 - updateDataParentByID mengganti nama kategori jika ID parent ditemukan.
 - updateDataChildByID memperbarui nama dan harga menu tertentu pada kategori yang sesuai.
-Untuk penghapusan data, terdapat fungsi delete pada parent maupun child.
+
+Untuk penghapusan data, terdapat fungsi delete pada parent maupun child.  
 - Pada parent: deleteFirstParent, deleteLastParent, dan deleteAfterParent menghapus kategori dari posisi tertentu, dan setiap kali parent dihapus, seluruh child di dalamnya ikut dihapus melalui hapusListAnak.
 - Pada child: deleteFirstChild, deleteLastChild, dan deleteAfterChild menghapus menu dari posisi yang diperlukan di list anak.
-Struktur data dapat ditampilkan melalui beberapa fungsi cetak.
+
+Struktur data dapat ditampilkan melalui beberapa fungsi cetak.  
 - printStrukturMLL menampilkan seluruh kategori beserta seluruh menu di dalamnya (tampilan paling lengkap).
 - printListInduk hanya menampilkan daftar kategori.
 - printListAnak menampilkan semua menu milik satu kategori tertentu.
+
 Selain itu ada hapusListAnak dan hapusListInduk digunakan untuk menghapus seluruh isi list jika dibutuhkan.
 
 ## Unguided 
