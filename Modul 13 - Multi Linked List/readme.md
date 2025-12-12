@@ -703,13 +703,27 @@ int main() {
     return 0;
 }
 ```
+Program ini membuat sebuah struktur data Multi Linked List, yaitu list induk (parent) yang masing-masing memiliki list anak (child). Pada program ini, kategori makanan berperan sebagai parent, sedangkan menu makanan menjadi child. Setiap kategori dapat memiliki banyak menu.
 
-Program di atas digunakan untuk 
+Pertama, program menyiapkan list induk kosong menggunakan createListInduk(), lalu membuat beberapa kategori seperti Makanan Berat, Minuman, dan Dessert. Tiap kategori dibuat melalui alokasiNodeParent() lalu dimasukkan ke list menggunakan operasi insert seperti insertFirstParent, insertAfterParent, dan insertLastParent. Setelah parent tersedia, program mulai menambahkan menu ke tiap kategori. Node child dibuat dengan alokasiNodeChild() lalu dimasukkan ke list anak parent yang sesuai menggunakan insertFirstChild atau insertLastChild, sehingga setiap kategori memiliki daftar menu sendiri tanpa tercampur.
 
+Program ini juga menyediakan berbagai fungsi untuk mengelola data.
+- findParentByID menelusuri list induk untuk mencari kategori berdasarkan ID dan menampilkan posisinya.
+- findChildByID mencari menu berdasarkan ID dengan memeriksa semua child di setiap parent, kemudian menampilkan detail child dan informasi kategori tempat menu tersebut berada.
+- updateDataParentByID mengganti nama kategori jika ID parent ditemukan.
+- updateDataChildByID memperbarui nama dan harga menu tertentu pada kategori yang sesuai.
+Untuk penghapusan data, terdapat fungsi delete pada parent maupun child.
+- Pada parent: deleteFirstParent, deleteLastParent, dan deleteAfterParent menghapus kategori dari posisi tertentu, dan setiap kali parent dihapus, seluruh child di dalamnya ikut dihapus melalui hapusListAnak.
+- Pada child: deleteFirstChild, deleteLastChild, dan deleteAfterChild menghapus menu dari posisi yang diperlukan di list anak.
+Struktur data dapat ditampilkan melalui beberapa fungsi cetak.
+- printStrukturMLL menampilkan seluruh kategori beserta seluruh menu di dalamnya (tampilan paling lengkap).
+- printListInduk hanya menampilkan daftar kategori.
+- printListAnak menampilkan semua menu milik satu kategori tertentu.
+Selain itu ada hapusListAnak dan hapusListInduk digunakan untuk menghapus seluruh isi list jika dibutuhkan.
 
 ## Unguided 
 
-### 1. 
+### 2. 
 
 
 #### Output:
