@@ -754,13 +754,19 @@ Keterangan :
 • fungsi findElm mencari elemen di dalam list L berdasarkan nim  
     o fungsi mengembalikan elemen dengan dengan info nim == x.nim jika ditemukan  
     o fungsi mengembalikan NIL jika tidak ditemukan  
+<img width="631" height="286" alt="Image" src="https://github.com/user-attachments/assets/a317cc81-6ecb-4caf-9dff-3a27686b37ca" /><br>
+Buatlah implementasi ADT Doubly Linked list pada file “circularlist.cpp”. Tambahkan fungsi/prosedur  
+berikut pada file “main.cpp”.  
+• fungsi create ( in nama, nim : string, jenis_kelamin : char, ipk : float)  
+o fungsi disediakan, ketik ulang code yang diberikan  
+o fungsi mengalokasikan sebuah elemen list dengan info sesuai input  
 
 File : circularlist.h
 ```C++
 
 ```
 
-File : pelajaran.cpp
+File : circularlist.cpp
 ```C++
 
 ```
