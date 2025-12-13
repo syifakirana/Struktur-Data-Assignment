@@ -763,6 +763,7 @@ berikut pada file “main.cpp”.
 <img width="611" height="241" alt="Image" src="https://github.com/user-attachments/assets/04456691-b639-4a3d-99cd-5a39e61e90d6" /><br>
 
 Cobalah hasil implementasi ADT pada file “main.cpp”  
+<img width="613" height="213" alt="Image" src="https://github.com/user-attachments/assets/3ccd70a5-a8cf-4eb9-8ab7-b4f4941392a3" /><br>
 
 File : circularlist.h
 ```C++
