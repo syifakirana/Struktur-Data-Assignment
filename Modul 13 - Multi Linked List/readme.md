@@ -764,7 +764,7 @@ berikut pada file “main.cpp”.
 
 Cobalah hasil implementasi ADT pada file “main.cpp”  
 <img width="613" height="213" alt="Image" src="https://github.com/user-attachments/assets/3ccd70a5-a8cf-4eb9-8ab7-b4f4941392a3" /><br>
-
+<img width="617" height="399" alt="Image" src="https://github.com/user-attachments/assets/54738246-bd82-474d-9386-cd2a35c95dc4" /><br>
 File : circularlist.h
 ```C++
 
