@@ -758,8 +758,11 @@ Keterangan :
 Buatlah implementasi ADT Doubly Linked list pada file “circularlist.cpp”. Tambahkan fungsi/prosedur  
 berikut pada file “main.cpp”.  
 • fungsi create ( in nama, nim : string, jenis_kelamin : char, ipk : float)  
-o fungsi disediakan, ketik ulang code yang diberikan  
-o fungsi mengalokasikan sebuah elemen list dengan info sesuai input  
+    o fungsi disediakan, ketik ulang code yang diberikan  
+    o fungsi mengalokasikan sebuah elemen list dengan info sesuai input  
+<img width="611" height="241" alt="Image" src="https://github.com/user-attachments/assets/04456691-b639-4a3d-99cd-5a39e61e90d6" /><br>
+
+Cobalah hasil implementasi ADT pada file “main.cpp”  
 
 File : circularlist.h
 ```C++
