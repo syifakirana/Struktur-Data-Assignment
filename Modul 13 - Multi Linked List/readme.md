@@ -737,25 +737,25 @@ Kode di atas digunakan untuk
 
 
 ### 3. Buatlah ADT Multi Linked list sebagai berikut di dalam file “circularlist.h”:  
-<img width="647" height="195" alt="Image" src="https://github.com/user-attachments/assets/515764b9-4a93-480d-82af-d8978779d541" />  
-• Terdapat 11 fungsi/prosedur untuk ADT circularlist
-    o procedure CreateList( input/output L : List )
-    o function alokasi( x : infotype ) → address
-    o procedure dealokasi( input/output t P : address )
-    o procedure insertFirst( input/output L : List, input P : address )
-    o procedure insertAfter( input/output L : List, input Prec : address, P : address)
-    o procedure insertLast( input/output L : List, input P : address )
-    o procedure deleteFirst( input/output L : List, input/output P : address )
-    o procedure deleteAfter( input/output L : List, input Prec : address, input/output t P : address)
-    o procedure deleteLast( input/output L : List, P : address )
-    o function findElm( L : List, x : infotype ) → address
-    o procedure printInfo( input L : List )
-Keterangan :
-• fungsi findElm mencari elemen di dalam list L berdasarkan nim
-    o fungsi mengembalikan elemen dengan dengan info nim == x.nim jika ditemukan
-    o fungsi mengembalikan NIL jika tidak ditemukan
+<img width="647" height="195" alt="Image" src="https://github.com/user-attachments/assets/515764b9-4a93-480d-82af-d8978779d541" /><br>
+• Terdapat 11 fungsi/prosedur untuk ADT circularlist  
+    o procedure CreateList( input/output L : List )  
+    o function alokasi( x : infotype ) → address  
+    o procedure dealokasi( input/output t P : address )  
+    o procedure insertFirst( input/output L : List, input P : address )  
+    o procedure insertAfter( input/output L : List, input Prec : address, P : address)  
+    o procedure insertLast( input/output L : List, input P : address )  
+    o procedure deleteFirst( input/output L : List, input/output P : address )  
+    o procedure deleteAfter( input/output L : List, input Prec : address, input/output t P : address)  
+    o procedure deleteLast( input/output L : List, P : address )  
+    o function findElm( L : List, x : infotype ) → address  
+    o procedure printInfo( input L : List )  
+Keterangan :  
+• fungsi findElm mencari elemen di dalam list L berdasarkan nim  
+    o fungsi mengembalikan elemen dengan dengan info nim == x.nim jika ditemukan  
+    o fungsi mengembalikan NIL jika tidak ditemukan  
 
-File : pelajaran.h
+File : circularlist.h
 ```C++
 
 ```
