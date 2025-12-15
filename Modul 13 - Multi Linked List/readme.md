@@ -1024,7 +1024,7 @@ Urutan ini dihasilkan berdasarkan operasi insertFirst, insertLast, dan insertAft
 
 #### Full code Screenshot:
 <img width="1919" height="1020" alt="Image" src="https://github.com/user-attachments/assets/0dd7ca37-0668-4f9e-b54e-d0c87d5c2346" /><br>
-
+<img width="1893" height="1004" alt="Image" src="https://github.com/user-attachments/assets/625839e6-96b2-4683-9fc5-6070ab47522e" /><br>
 
 ## Kesimpulan
 Dari modul ini dapat disimpulkan bahwa Circular Linked List dapat digunakan untuk menyimpan dan mengelola data yang saling terhubung. Operasi insertFirst, insertLast, dan insertAfter memungkinkan penambahan data di awal, di akhir, maupun setelah node tertentu. Urutan data yang dihasilkan ditentukan oleh operasi yang digunakan, terutama insertAfter yang menempatkan data berdasarkan node tujuan, sehingga urutan akhir mengikuti keterhubungan antar node dalam circular linked list. Melalui praktikum pada modul Multi Linked List ini, pemahaman dasar tentang cara kerja linked list sebagai bagian dari struktur data dapat diperoleh dengan baik.
