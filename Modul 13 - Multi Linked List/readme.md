@@ -728,14 +728,6 @@ Selain itu ada hapusListAnak dan hapusListInduk digunakan untuk menghapus seluru
 
 ### 2. Perhatikan program 46 multilist.h, buat multilist.cpp untuk implementasi semua fungsi pada multilist.h. Buat main.cpp untuk pemanggilan fungsi-fungsi tersebut.
 
-#### Output:
-
-
-Kode di atas digunakan untuk 
-
-#### Full code Screenshot:
-
-
 ### 3. Buatlah ADT Multi Linked list sebagai berikut di dalam file “circularlist.h”:  
 <img width="647" height="195" alt="Image" src="https://github.com/user-attachments/assets/515764b9-4a93-480d-82af-d8978779d541" /><br>
 • Terdapat 11 fungsi/prosedur untuk ADT circularlist  
@@ -767,24 +759,272 @@ Cobalah hasil implementasi ADT pada file “main.cpp”
 <img width="617" height="399" alt="Image" src="https://github.com/user-attachments/assets/54738246-bd82-474d-9386-cd2a35c95dc4" /><br>
 File : circularlist.h
 ```C++
+#ifndef CIRCULARLIST_H_INCLUDED
+#define CIRCULARLIST_H_INCLUDED
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+#define Nil NULL
+
+typedef struct mahasiswa {
+    string nama;
+    string nim;
+    char jenis_kelamin;
+    float ipk;
+} infotype;
+
+typedef struct ElmList *address;
+
+struct ElmList {
+    infotype info;
+    address next;
+};
+
+struct List {
+    address First;
+};
+
+/* 11 FUNGSI SESUAI MODUL */
+void createList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+
+void insertFirst(List &L, address P);
+void insertAfter(List &L, address Prec, address P);
+void insertLast(List &L, address P);
+
+void deleteFirst(List &L, address &P);
+void deleteAfter(List &L, address Prec, address &P);
+void deleteLast(List &L, address &P);
+
+address findElm(List L, infotype x);
+void printInfo(List L);
+
+address createData(string nama, string nim, char jenis_kelamin, float ipk);
+
+#endif
 ```
 
 File : circularlist.cpp
 ```C++
+#include "circularlist.h"
 
+void createList(List &L) {
+    L.First = Nil;
+}
+
+address alokasi(infotype x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = Nil;
+    return P;
+}
+
+void dealokasi(address &P) {
+    delete P;
+    P = Nil;
+}
+
+void insertFirst(List &L, address P) {
+    if (L.First == Nil) {
+        L.First = P;
+        P->next = P;
+    } else {
+        address Q = L.First;
+        while (Q->next != L.First)
+            Q = Q->next;
+
+        P->next = L.First;
+        Q->next = P;
+        L.First = P;
+    }
+}
+
+void insertLast(List &L, address P) {
+    if (L.First == Nil) {
+        L.First = P;
+        P->next = P;
+    } else {
+        address Q = L.First;
+        while (Q->next != L.First)
+            Q = Q->next;
+
+        Q->next = P;
+        P->next = L.First;
+    }
+}
+
+void insertAfter(List &L, address Prec, address P) {
+    P->next = Prec->next;
+    Prec->next = P;
+}
+
+void deleteFirst(List &L, address &P) {
+    if (L.First != Nil) {
+        address Q = L.First;
+        while (Q->next != L.First)
+            Q = Q->next;
+
+        P = L.First;
+        if (P->next == P)
+            L.First = Nil;
+        else {
+            L.First = P->next;
+            Q->next = L.First;
+        }
+        P->next = Nil;
+    }
+}
+
+void deleteLast(List &L, address &P) {
+    if (L.First != Nil) {
+        address Q = L.First;
+        address Prec = Nil;
+
+        while (Q->next != L.First) {
+            Prec = Q;
+            Q = Q->next;
+        }
+
+        P = Q;
+        if (Prec == Nil)
+            L.First = Nil;
+        else
+            Prec->next = L.First;
+
+        P->next = Nil;
+    }
+}
+
+void deleteAfter(List &L, address Prec, address &P) {
+    P = Prec->next;
+    Prec->next = P->next;
+    P->next = Nil;
+}
+
+address findElm(List L, infotype x) {
+    if (L.First == Nil) return Nil;
+
+    address P = L.First;
+    do {
+        if (P->info.nim == x.nim)
+            return P;
+        P = P->next;
+    } while (P != L.First);
+
+    return Nil;
+}
+
+void printInfo(List L) {
+    if (L.First == Nil) return;
+
+    address P = L.First;
+    do {
+        cout << "Nama : " << P->info.nama << endl;
+        cout << "NIM  : " << P->info.nim << endl;
+        cout << "L/P  : " << P->info.jenis_kelamin << endl;
+        cout << "IPK  : " << P->info.ipk << endl << endl;
+        P = P->next;
+    } while (P != L.First);
+}
+
+address createData(string nama, string nim, char jenis_kelamin, float ipk) {
+    infotype x;
+    x.nama = nama;
+    x.nim = nim;
+    x.jenis_kelamin = jenis_kelamin;
+    x.ipk = ipk;
+    return alokasi(x);
+}
 ```
 
 File : main.cpp
 ```C++
+#include "circularlist.h"
 
+int main() {
+    List L;
+    address P1 = Nil;
+    address P2 = Nil;
+    infotype x;
+
+    createList(L);
+
+    cout<<"coba insert first, last, dan after"<<endl;
+
+    P1 = createData("Danu", "04", 'l', 4.0);
+    insertFirst(L,P1);
+
+    P1 = createData("Fahmi", "06", 'l',3.45);
+    insertLast(L,P1);
+
+    P1 = createData("Bobi", "02", 'l',3.71);
+    insertFirst(L,P1);
+
+    P1 = createData("Ali", "01", 'l', 3.3);
+    insertFirst(L,P1);
+
+    P1 = createData("Gita", "07", 'p', 3.75);
+    insertLast(L,P1);
+
+    x.nim = "07";
+    P1 = findElm(L,x);
+    P2 = createData("Cindi", "03", 'p', 3.5);
+    insertAfter(L, P1, P2);
+
+    x.nim = "02";
+    P1 = findElm(L,x);
+    P2 = createData("Hilmi", "08", 'p', 3.3);
+    insertAfter(L, P1, P2);
+
+    x.nim = "04";
+    P1 = findElm(L,x);
+    P2 = createData("Eli", "05", 'p', 3.4);
+    insertAfter(L, P1, P2);
+
+    printInfo(L);
+    return 0;
+}
 ```
 
 #### Output:
 
 
-Program ini
+Program menguji beberapa operasi dasar pada struktur multi linked list, yaitu insertFirst, insertLast, dan insertAfter, kemudian menampilkan seluruh data yang tersimpan menggunakan fungsi printInfo. 
+Langkah–langkah Program
+1. CreateList
+Program diawali dengan pembuatan list induk kosong menggunakan prosedur createList, sehingga pointer First bernilai Nil.
+2. Insert First
+Data mahasiswa Danu (04), Bobi (02), dan Ali (01) dimasukkan menggunakan insertFirst.
+Operasi ini menempatkan elemen baru pada bagian awal list induk.
+3. Insert Last
+Data mahasiswa Fahmi (06) dan Gita (07) dimasukkan menggunakan insertLast, sehingga berada di bagian akhir list induk.
+4. Insert After
+Operasi insertAfter digunakan untuk menyisipkan data berdasarkan elemen induk tertentu:
+Cindi (03) disisipkan setelah induk dengan NIM 07 (Gita)
+Hilmi (08) disisipkan setelah induk dengan NIM 02 (Bobi)
+Eli (05) disisipkan setelah induk dengan NIM 04 (Danu)
+Pada operasi ini, posisi elemen yang disisipkan ditentukan oleh induk yang menjadi target, bukan oleh urutan penulisan program.
+Print Info
+5. Fungsi printInfo menampilkan seluruh data mahasiswa yang terdapat pada struktur multi linked list sesuai dengan keterhubungan antar elemen.
 
+Hasil Akhir Struktur List
+
+Urutan data mahasiswa yang dihasilkan adalah:
+1. Ali (01)
+2. Bobi (02)
+3. Hilmi (08)
+4. Danu (04)
+5. Eli (05)
+6. Fahmi (06)
+7. Gita (07)
+8. Cindi (03)
+Urutan ini sudah benar dan sesuai dengan modul, karena:
+Hilmi disisipkan setelah Bobi yang berada di bagian awal list
+Cindi disisipkan setelah Gita yang berada di bagian akhir list
+Sehingga meskipun Cindi dibuat lebih dulu di program, posisinya tetap berada di akhir karena target insertAfter-nya berada di akhir list.
 
 #### Full code Screenshot:
 
