@@ -990,6 +990,7 @@ int main() {
 ```
 
 #### Output:
+<img width="1118" height="755" alt="Image" src="https://github.com/user-attachments/assets/f059ee9a-db86-4ba5-b4c9-7928eca9cf93" /><br>
 
 Program ini digunakan untuk menguji operasi dasar pada ADT Circular Linked List yang ada di modul Multi Linked List, yaitu insertFirst, insertLast, dan insertAfter. Setelah itu, seluruh data yang ada di dalam list ditampilkan menggunakan fungsi printInfo.
 Langkah–langkah Program
