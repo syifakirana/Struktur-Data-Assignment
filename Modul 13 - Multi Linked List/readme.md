@@ -4,8 +4,8 @@
 
 
 ## Dasar Teori
-
-
+Multi Linked List adalah struktur data yang digunakan untuk menyimpan data yang saling berhubungan. Pada struktur ini, satu data dapat terhubung dengan lebih dari satu data lain sehingga dapat membentuk hubungan yang lebih kompleks. Pada modul Multi Linked List terdapat latihan implementasi Circular Linked List. Circular Linked List merupakan linked list di mana node terakhir menunjuk kembali ke node pertama, sehingga membentuk struktur melingkar dan tidak memiliki penunjuk akhir berupa NULL. 
+Pada praktikum ini, Circular Linked List digunakan untuk menguji operasi dasar linked list, seperti pembuatan list, penambahan data di awal, penambahan data di akhir, serta penyisipan data setelah node tertentu. Data yang telah dimasukkan kemudian ditampilkan untuk melihat hasil dari operasi yang dilakukan.
 
 ## Guided 
 
@@ -991,27 +991,25 @@ int main() {
 
 #### Output:
 
-
-Program menguji beberapa operasi dasar pada struktur multi linked list, yaitu insertFirst, insertLast, dan insertAfter, kemudian menampilkan seluruh data yang tersimpan menggunakan fungsi printInfo. 
+Program ini digunakan untuk menguji operasi dasar pada ADT Circular Linked List yang ada di modul Multi Linked List, yaitu insertFirst, insertLast, dan insertAfter. Setelah itu, seluruh data yang ada di dalam list ditampilkan menggunakan fungsi printInfo.
 Langkah–langkah Program
 1. CreateList
-Program diawali dengan pembuatan list induk kosong menggunakan prosedur createList, sehingga pointer First bernilai Nil.
+Program diawali dengan pembuatan list kosong menggunakan prosedur createList, sehingga pointer First bernilai Nil.
 2. Insert First
 Data mahasiswa Danu (04), Bobi (02), dan Ali (01) dimasukkan menggunakan insertFirst.
-Operasi ini menempatkan elemen baru pada bagian awal list induk.
+Operasi ini menempatkan elemen baru pada bagian awal list.
 3. Insert Last
-Data mahasiswa Fahmi (06) dan Gita (07) dimasukkan menggunakan insertLast, sehingga berada di bagian akhir list induk.
+Data mahasiswa Fahmi (06) dan Gita (07) dimasukkan menggunakan insertLast, sehingga berada di bagian akhir list.
 4. Insert After
-Operasi insertAfter digunakan untuk menyisipkan data berdasarkan elemen induk tertentu:
-Cindi (03) disisipkan setelah induk dengan NIM 07 (Gita)
-Hilmi (08) disisipkan setelah induk dengan NIM 02 (Bobi)
-Eli (05) disisipkan setelah induk dengan NIM 04 (Danu)
-Pada operasi ini, posisi elemen yang disisipkan ditentukan oleh induk yang menjadi target, bukan oleh urutan penulisan program.
-Print Info
-5. Fungsi printInfo menampilkan seluruh data mahasiswa yang terdapat pada struktur multi linked list sesuai dengan keterhubungan antar elemen.
+Operasi insertAfter digunakan untuk menyisipkan data berdasarkan elemen tertentu:
+Cindi (03) disisipkan setelah mahasiswa dengan NIM 07 (Gita)
+Hilmi (08) disisipkan setelah mahasiswa dengan NIM 02 (Bobi)
+Eli (05) disisipkan setelah mahasiswa dengan NIM 04 (Danu)
+Pada operasi ini, posisi elemen yang disisipkan ditentukan oleh node yang menjadi target, bukan oleh urutan penulisan program.
+5. Print Info
+Fungsi printInfo menampilkan seluruh data mahasiswa yang terdapat pada circular linked list sesuai dengan keterhubungan antar elemen.
 
-Hasil Akhir Struktur List
-
+Hasil Akhir 
 Urutan data mahasiswa yang dihasilkan adalah:
 1. Ali (01)
 2. Bobi (02)
@@ -1021,13 +1019,10 @@ Urutan data mahasiswa yang dihasilkan adalah:
 6. Fahmi (06)
 7. Gita (07)
 8. Cindi (03)
-Urutan ini sudah benar dan sesuai dengan modul, karena:
-Hilmi disisipkan setelah Bobi yang berada di bagian awal list
-Cindi disisipkan setelah Gita yang berada di bagian akhir list
-Sehingga meskipun Cindi dibuat lebih dulu di program, posisinya tetap berada di akhir karena target insertAfter-nya berada di akhir list.
+Urutan ini dihasilkan berdasarkan operasi insertFirst, insertLast, dan insertAfter yang dilakukan, karena Hilmi disisipkan setelah Bobi yang berada di bagian awal list dan Cindi disisipkan setelah Gita yang berada di bagian akhir list. Sehingga meskipun Cindi dibuat lebih dulu di program, posisinya tetap berada di akhir karena target insertAfter-nya berada di akhir list. Posisi setiap data ditentukan oleh target node pada operasi insertAfter, sehingga urutan akhir mengikuti keterhubungan antar node pada circular linked list.
 
 #### Full code Screenshot:
 
 
 ## Kesimpulan
-Dari modul ini bisa disimpulkan bahwa 
+Dari modul ini dapat disimpulkan bahwa Circular Linked List dapat digunakan untuk menyimpan dan mengelola data yang saling terhubung. Operasi insertFirst, insertLast, dan insertAfter memungkinkan penambahan data di awal, di akhir, maupun setelah node tertentu. Urutan data yang dihasilkan ditentukan oleh operasi yang digunakan, terutama insertAfter yang menempatkan data berdasarkan node tujuan, sehingga urutan akhir mengikuti keterhubungan antar node dalam circular linked list. Melalui praktikum pada modul Multi Linked List ini, pemahaman dasar tentang cara kerja linked list sebagai bagian dari struktur data dapat diperoleh dengan baik.
