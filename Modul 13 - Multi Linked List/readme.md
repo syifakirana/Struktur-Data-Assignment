@@ -1020,6 +1020,7 @@ Urutan data mahasiswa yang dihasilkan adalah:
 6. Fahmi (06)
 7. Gita (07)
 8. Cindi (03)  
+
 Urutan ini dihasilkan berdasarkan operasi insertFirst, insertLast, dan insertAfter yang dilakukan, karena Hilmi disisipkan setelah Bobi yang berada di bagian awal list dan Cindi disisipkan setelah Gita yang berada di bagian akhir list. Sehingga meskipun Cindi dibuat lebih dulu di program, posisinya tetap berada di akhir karena target insertAfter-nya berada di akhir list. Posisi setiap data ditentukan oleh target node pada operasi insertAfter, sehingga urutan akhir mengikuti keterhubungan antar node pada circular linked list.
 
 #### Full code Screenshot:
