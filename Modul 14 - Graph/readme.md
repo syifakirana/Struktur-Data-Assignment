@@ -370,8 +370,9 @@ Selain itu, program menguji penghapusan node menggunakan prosedur DeleteNode. Pa
 
 ## Unguided 
 
-### 1. Buatlah ADT Graph tidak berarah file “graph.h”:
-
+### 1. Buatlah ADT Graph tidak berarah file “graph.h”:  
+<img width="687" height="348" alt="Image" src="https://github.com/user-attachments/assets/aeeb40ed-69e3-4932-b551-0138b179be84" /><br>
+Buatlah implementasi ADT Graph pada file “graph.cpp” dan cobalah hasil implementasi ADT pada file “main.cpp”.  
 
 #### Output:
 
