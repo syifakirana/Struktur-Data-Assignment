@@ -537,13 +537,12 @@ int main() {
 ```
 #### Output:
 
-Program di atas berfungsi untuk mengimplementasikan struktur data Graph menggunakan representasi adjacency list. Graph terdiri dari kumpulan node yang saling terhubung melalui edge. Graph yang digunakan bersifat tidak berarah (undirected), sehingga jika dua node dihubungkan, maka hubungan tersebut berlaku dua arah. 
 
-Program diawali dengan pembuatan graph kosong menggunakan prosedur CreateGraph, yang mengatur pointer First bernilai NULL. Setelah itu, beberapa node dimasukkan ke dalam graph menggunakan  InsertNode, yaitu node A, B, C, D, E, F, G dan H. Node-node tersebut disimpan dalam bentuk 
-linked list.
+Program ini dibuat untuk mengimplementasikan struktur data graph menggunakan representasi adjacency list. Graph tersusun dari beberapa node yang saling terhubung melalui edge. Graph pada program ini bersifat tidak berarah (undirected), sehingga setiap hubungan antar dua node berlaku dua arah.
 
-Selanjutnya, hubungan antar node dibuat menggunakan ConnectNode yang digunakan untuk menghubungkan dua node dengan menambahkan edge pada masing-masing node, sehingga terbentuk graph tidak berarah. Setelah semua node dan hubungan dibuat, isi graph ditampilkan menggunakan PrintInfoGraph dalam bentuk adjacency list.
+Program diawali dengan pembuatan graph kosong menggunakan CreateGraph, yang mengatur pointer First bernilai NULL. Setelah itu, beberapa node dimasukkan ke dalam graph menggunakan InsertNode, yaitu node A, B, C, D, E, F, G dan H. Node-node tersebut disimpan dalam bentuk linked list.
 
+Selanjutnya, hubungan antar node dibuat menggunakan ConnectNode yang digunakan untuk menghubungkan dua node dengan menambahkan edge pada masing-masing node, sehingga terbentuk graph tidak berarah. Terakhir, isi graph ditampilkan menggunakan prosedur PrintInfoGraph. Output yang dihasilkan menunjukkan setiap node beserta daftar node lain yang terhubung dengannya dalam bentuk adjacency list.
 
 #### Full code Screenshot:
 
