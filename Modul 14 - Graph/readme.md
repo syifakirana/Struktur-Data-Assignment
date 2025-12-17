@@ -536,7 +536,7 @@ int main() {
 }
 ```
 #### Output:
-
+<img width="708" height="255" alt="Image" src="https://github.com/user-attachments/assets/a7649b36-abf4-4d95-9e53-8ea3e82e34df" /><br>
 
 Program ini dibuat untuk mengimplementasikan struktur data graph menggunakan representasi adjacency list. Graph tersusun dari beberapa node yang saling terhubung melalui edge. Graph pada program ini bersifat tidak berarah (undirected), sehingga setiap hubungan antar dua node berlaku dua arah.
 
@@ -547,7 +547,7 @@ Selanjutnya, hubungan antar node dibuat menggunakan ConnectNode yang digunakan u
 #### Full code Screenshot:
 
 
-### 3. 
+### 2. 
 
 File : circularlist.h
 ```C++
