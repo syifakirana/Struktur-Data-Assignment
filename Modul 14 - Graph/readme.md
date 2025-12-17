@@ -729,7 +729,7 @@ Di dalam main.cpp, graph dibuat dan diisi node A sampai H, lalu node-node terseb
 Prosedur PrintDFS akan mengunjungi node awal terlebih dahulu, kemudian menelusuri node-node tetangganya secara mendalam (depth) sebelum berpindah ke cabang lain. Setiap node yang sudah dikunjungi akan ditandai agar tidak dikunjungi kembali. Hasil DFS yang ditampilkan menunjukkan urutan kunjungan node berdasarkan algoritma DFS pada graph tersebut.
 
 #### Full code Screenshot:
-
+<img width="1917" height="973" alt="Image" src="https://github.com/user-attachments/assets/075fbf2b-6d10-477c-8e72-4ef980aae202" /><br>
 
 ### 3. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
 prosedur PrintBFS (Graph G, adrNode N);
