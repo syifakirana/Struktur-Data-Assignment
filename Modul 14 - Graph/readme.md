@@ -357,11 +357,21 @@ int main() {
     return 0;
 }
 ```
+Pada soal guided ini dibuat sebuah program untuk menerapkan struktur data Graph dengan menggunakan representasi Adjacency List. Graph terdiri dari node dan edge yang menunjukkan hubungan antar node. Graph yang digunakan bersifat undirected, sehingga jika dua node terhubung, hubungan tersebut berlaku dua arah.
+
+Program dimulai dengan membuat graph kosong menggunakan prosedur CreateGraph. Setelah itu, beberapa node dimasukkan ke dalam graph menggunakan InsertNode, yaitu node A, B, C, D, E, dan F. Node-node tersebut disimpan dalam bentuk linked list.
+
+Selanjutnya, hubungan antar node dibuat menggunakan prosedur ConnectNode. Setiap kali dua node dihubungkan, akan dibuat edge dari node pertama ke node kedua dan sebaliknya. Seluruh hubungan yang terbentuk kemudian ditampilkan menggunakan fungsi PrintInfoGraph dalam bentuk adjacency list.
+
+Program juga melakukan penelusuran graph menggunakan dua metode, yaitu Breadth First Search (BFS) dan Depth First Search (DFS). BFS dijalankan dengan bantuan queue, sedangkan DFS menggunakan stack. Sebelum traversal dilakukan, nilai visited pada setiap node direset agar proses penelusuran berjalan dengan benar.
+
+Selain itu, program menguji penghapusan node menggunakan prosedur DeleteNode. Pada contoh ini, node E dihapus dari graph dengan cara memutus semua edge yang terhubung dengannya, lalu menghapus node tersebut dari list graph. Setelah penghapusan dilakukan, graph kembali ditampilkan dan traversal BFS serta DFS dijalankan kembali untuk melihat perubahan struktur graph.
 
 
 ## Unguided 
 
-### 2. 
+### 1. Buatlah ADT Graph tidak berarah file “graph.h”:
+
 
 #### Output:
 
