@@ -545,22 +545,23 @@ Program diawali dengan pembuatan graph kosong menggunakan CreateGraph, yang meng
 Selanjutnya, hubungan antar node dibuat menggunakan ConnectNode yang digunakan untuk menghubungkan dua node dengan menambahkan edge pada masing-masing node, sehingga terbentuk graph tidak berarah. Terakhir, isi graph ditampilkan menggunakan prosedur PrintInfoGraph. Output yang dihasilkan menunjukkan setiap node beserta daftar node lain yang terhubung dengannya dalam bentuk adjacency list.
 
 #### Full code Screenshot:
+<img width="1919" height="1020" alt="Image" src="https://github.com/user-attachments/assets/3a11ac20-eead-47ee-9d01-c6ccb2e0f391" /><br>
 
+### 2. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
+prosedur PrintDFS (Graph G, adrNode N);
 
-### 2. 
-
-File : circularlist.h
-```C++
+File : graph.h
+```cpp
 
 ```
 
-File : circularlist.cpp
-```C++
+File : graph.cpp
+```cpp
 
 ```
 
 File : main.cpp
-```C++
+```cpp
 
 ```
 
@@ -572,6 +573,23 @@ Program ini
 
 #### Full code Screenshot:
 
+### 3. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
+prosedur PrintBFS (Graph G, adrNode N);
+
+File: graph.h
+```cpp
+
+```
+
+File: graph.cpp
+```cpp
+
+```
+
+File: main.cpp
+```cpp
+
+```
 
 ## Kesimpulan
 Dari modul ini bisa disimpulkan bahwa 
