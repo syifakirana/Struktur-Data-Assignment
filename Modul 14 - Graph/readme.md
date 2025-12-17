@@ -552,44 +552,394 @@ prosedur PrintDFS (Graph G, adrNode N);
 
 File : graph.h
 ```cpp
+#ifndef GRAPH_H
+#define GRAPH_H
 
+#include <iostream>
+using namespace std;
+
+typedef char infoGraph;
+typedef struct ElmNode *adrNode;
+typedef struct ElmEdge *adrEdge;
+
+struct ElmNode {
+    infoGraph info;
+    int visited;
+    adrEdge firstEdge;
+    adrNode next;
+};
+
+struct ElmEdge {
+    adrNode node;
+    adrEdge next;
+};
+
+struct Graph {
+    adrNode first;
+};
+
+void CreateGraph(Graph &G);
+adrNode AlokasiNode(infoGraph X);
+adrEdge AlokasiEdge(adrNode N);
+
+void InsertNode(Graph &G, infoGraph X);
+adrNode FindNode(Graph G, infoGraph X);
+void ConnectNode(adrNode N1, adrNode N2);
+
+void PrintInfoGraph(Graph G);
+void PrintDFS(Graph G, adrNode N); //tambahan
+
+#endif
 ```
 
 File : graph.cpp
 ```cpp
+#include "graph.h"
+void CreateGraph(Graph &G) { // membuat graph kosong
+    G.first = NULL;
+}
+adrNode AlokasiNode(infoGraph X) { // alokasi node
+    adrNode P = new ElmNode;
+    P->info = X;
+    P->visited = 0;
+    P->firstEdge = NULL;
+    P->next = NULL;
+    return P;
+}
+adrEdge AlokasiEdge(adrNode N) { // alokasi edge
+    adrEdge E = new ElmEdge;
+    E->node = N;
+    E->next = NULL;
+    return E;
+}
+void InsertNode(Graph &G, infoGraph X) { // insert node ke graph
+    adrNode P = AlokasiNode(X);
+    if (G.first == NULL) {
+        G.first = P;
+    } else {
+        adrNode Q = G.first;
+        while (Q->next != NULL) {
+            Q = Q->next;
+        }
+        Q->next = P;
+    }
+}
+adrNode FindNode(Graph G, infoGraph X) { // mencari node pake info
+    adrNode P = G.first;
+    while (P != NULL) {
+        if (P->info == X) {
+            return P;
+        }
+        P = P->next;
+    }
+    return NULL;
+}
+void ConnectNode(adrNode N1, adrNode N2) { // menghubungkan node
+    if (N1 != NULL && N2 != NULL) {
+        adrEdge E1 = AlokasiEdge(N2);
+        E1->next = N1->firstEdge;
+        N1->firstEdge = E1;
 
+        adrEdge E2 = AlokasiEdge(N1);
+        E2->next = N2->firstEdge;
+        N2->firstEdge = E2;
+    }
+}
+void PrintInfoGraph(Graph G) { // menampilkan graph 
+    adrNode P = G.first;
+    while (P != NULL) {
+        cout << P->info << " : ";
+        adrEdge E = P->firstEdge;
+        while (E != NULL) {
+            cout << E->node->info << " ";
+            E = E->next;
+        }
+        cout << endl;
+        P = P->next;
+    }
+}
+void PrintDFS(Graph G, adrNode N) { //tambahan
+    if (N == NULL) return;
+    if (N->visited == 1) return;
+
+    N->visited = 1;
+    cout << N->info << " ";
+
+    adrEdge E = N->firstEdge;
+    while (E != NULL) {
+        PrintDFS(G, E->node);
+        E = E->next;
+    }
+}
 ```
 
 File : main.cpp
 ```cpp
+#include "graph.h"
 
+int main() {
+    Graph G;
+    CreateGraph(G);
+
+    // insert node sesuai soal
+    InsertNode(G, 'A');
+    InsertNode(G, 'B');
+    InsertNode(G, 'C');
+    InsertNode(G, 'D');
+    InsertNode(G, 'E');
+    InsertNode(G, 'F');
+    InsertNode(G, 'G');
+    InsertNode(G, 'H');
+
+    // hubungkan node sesuai gambar kaya di soal
+    ConnectNode(FindNode(G,'A'), FindNode(G,'B'));
+    ConnectNode(FindNode(G,'A'), FindNode(G,'C'));
+
+    ConnectNode(FindNode(G,'B'), FindNode(G,'D'));
+    ConnectNode(FindNode(G,'B'), FindNode(G,'E'));
+
+    ConnectNode(FindNode(G,'C'), FindNode(G,'F'));
+    ConnectNode(FindNode(G,'C'), FindNode(G,'G'));
+
+    ConnectNode(FindNode(G,'D'), FindNode(G,'H'));
+    ConnectNode(FindNode(G,'E'), FindNode(G,'H'));
+    ConnectNode(FindNode(G,'F'), FindNode(G,'H'));
+    ConnectNode(FindNode(G,'G'), FindNode(G,'H'));
+
+    cout << "Representasi Graph :" << endl;
+    PrintInfoGraph(G);
+    cout << endl;
+
+    cout << "DFS Traversal : ";
+    PrintDFS(G, FindNode(G, 'A'));
+    cout << endl;
+
+
+    return 0;
+}
 ```
 
 #### Output:
 
 
-Program ini
+Program ini menambahkan fitur penelusuran Depth First Search (DFS) pada graph yang sudah dibuat sebelumnya. Graph direpresentasikan menggunakan adjacency list dan bersifat tidak berarah, sehingga setiap edge menghubungkan dua node secara dua arah.
 
+Di dalam main.cpp, graph dibuat dan diisi node A sampai H, lalu node-node tersebut dihubungkan sesuai dengan gambar pada soal. Setelah graph ditampilkan menggunakan PrintInfoGraph, program memanggil prosedur PrintDFS(G, FindNode(G, 'A')) untuk menampilkan hasil penelusuran DFS yang dimulai dari node A.
+
+Prosedur PrintDFS akan mengunjungi node awal terlebih dahulu, kemudian menelusuri node-node tetangganya secara mendalam (depth) sebelum berpindah ke cabang lain. Setiap node yang sudah dikunjungi akan ditandai agar tidak dikunjungi kembali. Hasil DFS yang ditampilkan menunjukkan urutan kunjungan node berdasarkan algoritma DFS pada graph tersebut.
 
 #### Full code Screenshot:
+
 
 ### 3. Buatlah prosedur untuk menampilkanhasil penelusuran DFS.
 prosedur PrintBFS (Graph G, adrNode N);
 
 File: graph.h
 ```cpp
+#ifndef GRAPH_H
+#define GRAPH_H
 
+#include <iostream>
+using namespace std;
+
+typedef char infoGraph;
+typedef struct ElmNode *adrNode;
+typedef struct ElmEdge *adrEdge;
+
+struct ElmNode {
+    infoGraph info;
+    int visited;
+    adrEdge firstEdge;
+    adrNode next;
+};
+
+struct ElmEdge {
+    adrNode node;
+    adrEdge next;
+};
+
+struct Graph {
+    adrNode first;
+};
+
+void CreateGraph(Graph &G);
+adrNode AlokasiNode(infoGraph X);
+adrEdge AlokasiEdge(adrNode N);
+
+void InsertNode(Graph &G, infoGraph X);
+adrNode FindNode(Graph G, infoGraph X);
+void ConnectNode(adrNode N1, adrNode N2);
+
+void PrintInfoGraph(Graph G);
+void PrintDFS(Graph G, adrNode N); 
+
+void PrintBFS(Graph G, adrNode N); //tambahan
+
+#endif
 ```
 
 File: graph.cpp
 ```cpp
+#include "graph.h"
+void CreateGraph(Graph &G) { // membuat graph kosong
+    G.first = NULL;
+}
+adrNode AlokasiNode(infoGraph X) { // alokasi node
+    adrNode P = new ElmNode;
+    P->info = X;
+    P->visited = 0;
+    P->firstEdge = NULL;
+    P->next = NULL;
+    return P;
+}
+adrEdge AlokasiEdge(adrNode N) { // alokasi edge
+    adrEdge E = new ElmEdge;
+    E->node = N;
+    E->next = NULL;
+    return E;
+}
+void InsertNode(Graph &G, infoGraph X) { // insert node ke graph
+    adrNode P = AlokasiNode(X);
+    if (G.first == NULL) {
+        G.first = P;
+    } else {
+        adrNode Q = G.first;
+        while (Q->next != NULL) {
+            Q = Q->next;
+        }
+        Q->next = P;
+    }
+}
+adrNode FindNode(Graph G, infoGraph X) { // mencari node pake info
+    adrNode P = G.first;
+    while (P != NULL) {
+        if (P->info == X) {
+            return P;
+        }
+        P = P->next;
+    }
+    return NULL;
+}
+void ConnectNode(adrNode N1, adrNode N2) { // menghubungkan node
+    if (N1 != NULL && N2 != NULL) {
+        adrEdge E1 = AlokasiEdge(N2);
+        E1->next = N1->firstEdge;
+        N1->firstEdge = E1;
+
+        adrEdge E2 = AlokasiEdge(N1);
+        E2->next = N2->firstEdge;
+        N2->firstEdge = E2;
+    }
+}
+void PrintInfoGraph(Graph G) { // menampilkan graph 
+    adrNode P = G.first;
+    while (P != NULL) {
+        cout << P->info << " : ";
+        adrEdge E = P->firstEdge;
+        while (E != NULL) {
+            cout << E->node->info << " ";
+            E = E->next;
+        }
+        cout << endl;
+        P = P->next;
+    }
+}
+void PrintDFS(Graph G, adrNode N) { 
+    if (N == NULL) return;
+    if (N->visited == 1) return;
+
+    N->visited = 1;
+    cout << N->info << " ";
+
+    adrEdge E = N->firstEdge;
+    while (E != NULL) {
+        PrintDFS(G, E->node);
+        E = E->next;
+    }
+}
+
+void PrintBFS(Graph G, adrNode N) { //tambahan
+    if (N == NULL) return;
+
+    adrNode P = G.first;
+    while (P != NULL) {
+        P->visited = 0;
+        P = P->next;
+    }
+    adrNode Q[100];
+    int front = 0, rear = 0;
+    Q[rear++] = N;
+    N->visited = 1;
+
+    while (front < rear) {
+        adrNode curr = Q[front++];
+        cout << curr->info << " ";
+
+        adrEdge E = curr->firstEdge;
+        while (E != NULL) {
+            if (E->node->visited == 0) {
+                E->node->visited = 1;
+                Q[rear++] = E->node;
+            }
+            E = E->next;
+        }
+    }
+}
 
 ```
 
 File: main.cpp
 ```cpp
+#include "graph.h"
 
+int main() {
+    Graph G;
+    CreateGraph(G);
+
+    // insert node sesuai soal
+    InsertNode(G, 'A');
+    InsertNode(G, 'B');
+    InsertNode(G, 'C');
+    InsertNode(G, 'D');
+    InsertNode(G, 'E');
+    InsertNode(G, 'F');
+    InsertNode(G, 'G');
+    InsertNode(G, 'H');
+
+    // hubungkan node sesuai gambar kaya di soal
+    ConnectNode(FindNode(G,'A'), FindNode(G,'B'));
+    ConnectNode(FindNode(G,'A'), FindNode(G,'C'));
+
+    ConnectNode(FindNode(G,'B'), FindNode(G,'D'));
+    ConnectNode(FindNode(G,'B'), FindNode(G,'E'));
+
+    ConnectNode(FindNode(G,'C'), FindNode(G,'F'));
+    ConnectNode(FindNode(G,'C'), FindNode(G,'G'));
+
+    ConnectNode(FindNode(G,'D'), FindNode(G,'H'));
+    ConnectNode(FindNode(G,'E'), FindNode(G,'H'));
+    ConnectNode(FindNode(G,'F'), FindNode(G,'H'));
+    ConnectNode(FindNode(G,'G'), FindNode(G,'H'));
+
+    cout << "Representasi Graph :" << endl;
+    PrintInfoGraph(G);
+    cout << endl;
+
+    cout << "BFS Traversal : ";
+    PrintBFS(G, FindNode(G, 'A'));
+    cout << endl;
+
+    return 0;
+}
 ```
+
+#### Output :
+
+Program ini menambahkan fitur penelusuran BFS (Breadth First Search) pada graph yang sudah dibuat sebelumnya. Graph direpresentasikan menggunakan adjacency list, di mana setiap node menyimpan daftar node lain yang terhubung dengannya.
+
+PrintBFS(Graph G, adrNode N) digunakan untuk menampilkan hasil penelusuran graph secara BFS, yaitu menelusuri graph per level. Penelusuran dimulai dari node awal (dalam program ini node A). Node yang sudah dikunjungi ditandai dengan variabel visited agar tidak diproses berulang.
+
+Pada BFS, program menggunakan queue sederhana (array) untuk menyimpan urutan node yang akan diproses. Node awal dimasukkan ke queue terlebih dahulu, lalu node tersebut dicetak. Setelah itu, semua tetangga yang belum dikunjungi dimasukkan ke queue. Proses ini diulang sampai queue kosong. Urutan pada output sesuai dengan prinsip BFS, karena node-node yang berada dekat dengan node awal akan diproses lebih dulu sebelum berpindah ke level berikutnya.
 
 ## Kesimpulan
 Dari modul ini bisa disimpulkan bahwa 
