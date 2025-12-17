@@ -941,5 +941,8 @@ PrintBFS(Graph G, adrNode N) digunakan untuk menampilkan hasil penelusuran graph
 
 Pada BFS, program menggunakan queue sederhana (array) untuk menyimpan urutan node yang akan diproses. Node awal dimasukkan ke queue terlebih dahulu, lalu node tersebut dicetak. Setelah itu, semua tetangga yang belum dikunjungi dimasukkan ke queue. Proses ini diulang sampai queue kosong. Urutan pada output sesuai dengan prinsip BFS, karena node-node yang berada dekat dengan node awal akan diproses lebih dulu sebelum berpindah ke level berikutnya.
 
+#### Full code screenshoot :
+<img width="1919" height="1007" alt="Image" src="https://github.com/user-attachments/assets/60cf8d56-af11-4c3f-8b49-2e586d4347cc" /><br>
+
 ## Kesimpulan
 Dari modul ini bisa disimpulkan bahwa 
