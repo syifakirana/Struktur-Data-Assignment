@@ -4,8 +4,9 @@
 
 
 ## Dasar Teori
+Graph adalah struktur data yang terdiri dari kumpulan node dan edge yang menunjukkan hubungan antar node. Pada modul praktikum ini, graph direpresentasikan menggunakan adjacency list, yaitu setiap node menyimpan daftar node lain yang terhubung dengannya melalui edge. Graph yang digunakan bersifat tidak berarah (undirected), sehingga jika dua node dihubungkan, maka hubungan tersebut berlaku dua arah. 
 
-
+Penelusuran graph dapat dilakukan dengan beberapa metode, di antaranya Depth First Search (DFS) dan Breadth First Search (BFS). DFS melakukan penelusuran dengan cara masuk sedalam mungkin ke satu cabang terlebih dahulu sebelum berpindah ke cabang lain. Penelusuran ini biasanya dilakukan secara rekursif dan menggunakan penanda visited agar node yang sudah dikunjungi tidak dikunjungi kembali. Sementara itu, BFS menelusuri graph secara melebar berdasarkan tingkatan (level). Penelusuran dimulai dari node awal, kemudian dilanjutkan ke semua node yang bertetangga langsung, lalu ke level berikutnya dan juga menggunakan penanda visited supaya setiap node hanya diproses satu kali.
 
 ## Guided 
 
@@ -946,4 +947,5 @@ Pada BFS, program menggunakan queue sederhana (array) untuk menyimpan urutan nod
 <img width="1919" height="1007" alt="Image" src="https://github.com/user-attachments/assets/60cf8d56-af11-4c3f-8b49-2e586d4347cc" /><br>
 
 ## Kesimpulan
-Dari modul ini bisa disimpulkan bahwa 
+Dari praktikum ini dapat disimpulkan bahwa struktur data graph digunakan untuk menggambarkan hubungan antar data dengan lebih fleksibel. Dengan menggunakan adjacency list, setiap node dapat menyimpan daftar node lain yang terhubung dengannya sehingga hubungan antar node mudah dilihat dan diproses.
+Pada praktikum ini juga dipelajari dua metode penelusuran graph, yaitu DFS (Depth First Search) dan BFS (Breadth First Search). DFS menelusuri graph dengan cara masuk sedalam mungkin ke satu jalur sebelum berpindah ke jalur lain, sedangkan BFS menelusuri graph secara bertahap berdasarkan level atau jarak dari node awal. Kedua metode ini menggunakan penanda visited agar setiap node hanya dikunjungi satu kali dan tidak terjadi pengulangan.
