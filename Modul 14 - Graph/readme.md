@@ -934,6 +934,7 @@ int main() {
 ```
 
 #### Output :
+<img width="750" height="432" alt="Image" src="https://github.com/user-attachments/assets/07941c4b-5188-4991-9973-a9e367e4884b" /><br>
 
 Program ini menambahkan fitur penelusuran BFS (Breadth First Search) pada graph yang sudah dibuat sebelumnya. Graph direpresentasikan menggunakan adjacency list, di mana setiap node menyimpan daftar node lain yang terhubung dengannya.
 
