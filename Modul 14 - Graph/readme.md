@@ -9,7 +9,7 @@
 
 ## Guided 
 
-### 1. 
+### 1. Implementasi Graph dengan Adjacency List
 
 File: graph.h
 ```C++
@@ -373,11 +373,177 @@ Selain itu, program menguji penghapusan node menggunakan prosedur DeleteNode. Pa
 ### 1. Buatlah ADT Graph tidak berarah file “graph.h”:  
 <img width="687" height="348" alt="Image" src="https://github.com/user-attachments/assets/aeeb40ed-69e3-4932-b551-0138b179be84" /><br>
 Buatlah implementasi ADT Graph pada file “graph.cpp” dan cobalah hasil implementasi ADT pada file “main.cpp”.  
+<img width="290" height="269" alt="Image" src="https://github.com/user-attachments/assets/4a6f6306-b8e0-462f-9962-37cae750c3d0" /><br>
 
+File: graph.h
+```cpp
+#ifndef GRAPH_H
+#define GRAPH_H
+
+#include <iostream>
+using namespace std;
+
+typedef char infoGraph;
+typedef struct ElmNode *adrNode;
+typedef struct ElmEdge *adrEdge;
+
+struct ElmNode {
+    infoGraph info;
+    int visited;
+    adrEdge firstEdge;
+    adrNode next;
+};
+
+struct ElmEdge {
+    adrNode node;
+    adrEdge next;
+};
+
+struct Graph {
+    adrNode first;
+};
+
+void CreateGraph(Graph &G);
+adrNode AlokasiNode(infoGraph X);
+adrEdge AlokasiEdge(adrNode N);
+
+void InsertNode(Graph &G, infoGraph X);
+adrNode FindNode(Graph G, infoGraph X);
+void ConnectNode(adrNode N1, adrNode N2);
+
+void PrintInfoGraph(Graph G);
+
+#endif
+```
+File: graph.cpp
+```cpp
+#include "graph.h"
+
+// membuat graph kosong
+void CreateGraph(Graph &G) {
+    G.first = NULL;
+}
+
+// alokasi node
+adrNode AlokasiNode(infoGraph X) {
+    adrNode P = new ElmNode;
+    P->info = X;
+    P->visited = 0;
+    P->firstEdge = NULL;
+    P->next = NULL;
+    return P;
+}
+
+// alokasi edge
+adrEdge AlokasiEdge(adrNode N) {
+    adrEdge E = new ElmEdge;
+    E->node = N;
+    E->next = NULL;
+    return E;
+}
+
+// insert node ke graph
+void InsertNode(Graph &G, infoGraph X) {
+    adrNode P = AlokasiNode(X);
+    if (G.first == NULL) {
+        G.first = P;
+    } else {
+        adrNode Q = G.first;
+        while (Q->next != NULL) {
+            Q = Q->next;
+        }
+        Q->next = P;
+    }
+}
+
+// mencari node pake info
+adrNode FindNode(Graph G, infoGraph X) {
+    adrNode P = G.first;
+    while (P != NULL) {
+        if (P->info == X) {
+            return P;
+        }
+        P = P->next;
+    }
+    return NULL;
+}
+
+// menghubungkan node
+void ConnectNode(adrNode N1, adrNode N2) {
+    if (N1 != NULL && N2 != NULL) {
+        adrEdge E1 = AlokasiEdge(N2);
+        E1->next = N1->firstEdge;
+        N1->firstEdge = E1;
+
+        adrEdge E2 = AlokasiEdge(N1);
+        E2->next = N2->firstEdge;
+        N2->firstEdge = E2;
+    }
+}
+
+// menampilkan graph 
+void PrintInfoGraph(Graph G) {
+    adrNode P = G.first;
+    while (P != NULL) {
+        cout << P->info << " : ";
+        adrEdge E = P->firstEdge;
+        while (E != NULL) {
+            cout << E->node->info << " ";
+            E = E->next;
+        }
+        cout << endl;
+        P = P->next;
+    }
+}
+```
+File: main.cpp
+```cpp
+#include "graph.h"
+
+int main() {
+    Graph G;
+    CreateGraph(G);
+
+    // insert node sesuai soal
+    InsertNode(G, 'A');
+    InsertNode(G, 'B');
+    InsertNode(G, 'C');
+    InsertNode(G, 'D');
+    InsertNode(G, 'E');
+    InsertNode(G, 'F');
+    InsertNode(G, 'G');
+    InsertNode(G, 'H');
+
+    // hubungkan node sesuai gambar kaya di soal
+    ConnectNode(FindNode(G,'A'), FindNode(G,'B'));
+    ConnectNode(FindNode(G,'A'), FindNode(G,'C'));
+
+    ConnectNode(FindNode(G,'B'), FindNode(G,'D'));
+    ConnectNode(FindNode(G,'B'), FindNode(G,'E'));
+
+    ConnectNode(FindNode(G,'C'), FindNode(G,'F'));
+    ConnectNode(FindNode(G,'C'), FindNode(G,'G'));
+
+    ConnectNode(FindNode(G,'D'), FindNode(G,'H'));
+    ConnectNode(FindNode(G,'E'), FindNode(G,'H'));
+    ConnectNode(FindNode(G,'F'), FindNode(G,'H'));
+    ConnectNode(FindNode(G,'G'), FindNode(G,'H'));
+
+    cout << "Representasi Graph :" << endl;
+    PrintInfoGraph(G);
+
+    return 0;
+}
+```
 #### Output:
 
+Program di atas berfungsi untuk mengimplementasikan struktur data Graph menggunakan representasi adjacency list. Graph terdiri dari kumpulan node yang saling terhubung melalui edge. Graph yang digunakan bersifat tidak berarah (undirected), sehingga jika dua node dihubungkan, maka hubungan tersebut berlaku dua arah. 
 
-Kode di atas digunakan untuk 
+Program diawali dengan pembuatan graph kosong menggunakan prosedur CreateGraph, yang mengatur pointer First bernilai NULL. Setelah itu, beberapa node dimasukkan ke dalam graph menggunakan  InsertNode, yaitu node A, B, C, D, E, F, G dan H. Node-node tersebut disimpan dalam bentuk 
+linked list.
+
+Selanjutnya, hubungan antar node dibuat menggunakan ConnectNode yang digunakan untuk menghubungkan dua node dengan menambahkan edge pada masing-masing node, sehingga terbentuk graph tidak berarah. Setelah semua node dan hubungan dibuat, isi graph ditampilkan menggunakan PrintInfoGraph dalam bentuk adjacency list.
+
 
 #### Full code Screenshot:
 
