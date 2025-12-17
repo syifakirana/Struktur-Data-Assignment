@@ -720,7 +720,7 @@ int main() {
 ```
 
 #### Output:
-
+<img width="559" height="275" alt="Image" src="https://github.com/user-attachments/assets/b1ae7443-268f-4d6b-8c98-f8f475493079" /><br>
 
 Program ini menambahkan fitur penelusuran Depth First Search (DFS) pada graph yang sudah dibuat sebelumnya. Graph direpresentasikan menggunakan adjacency list dan bersifat tidak berarah, sehingga setiap edge menghubungkan dua node secara dua arah.
 
